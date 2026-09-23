@@ -11,6 +11,8 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
 from cocotb_tools.runner import get_runner
 
+module_name = "top"
+
 LANGUAGE = os.getenv("TOPLEVEL_LANG", "verilog").lower().strip()
 
 
@@ -50,17 +52,17 @@ def test_simple_top_runner():
     proj_path = Path(__file__).resolve().parent
 
     if LANGUAGE == "verilog":
-        sources = [proj_path / "../src/top.v"]
+        sources = [proj_path / "../src/top/top.v"]
 
     runner = get_runner(sim)
     runner.build(
         sources=sources,
-        hdl_toplevel="top",
+        hdl_toplevel=module_name,
         always=True,
         defines={"COCOTB_SIM": 1},
     )
 
-    runner.test(hdl_toplevel="top", test_module="test_top")
+    runner.test(hdl_toplevel=module_name, test_module="test_top")
 
 
 if __name__ == "__main__":
