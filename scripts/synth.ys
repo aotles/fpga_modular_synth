@@ -1,0 +1,8 @@
+read_verilog ../src/top.v 
+hierarchy -top top 
+proc; opt
+techmap; opt
+write_verilog ../build/synth_output.v
+# synth target tang nano 9k
+synth_gowin -top top 
+write_json ../build/synth.json
