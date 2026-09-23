@@ -1,4 +1,4 @@
-read_verilog ../src/top.v 
+read_verilog ../src/top/top.v 
 hierarchy -top top 
 proc; opt
 techmap; opt
