@@ -14,18 +14,27 @@ module_name = "wave_table"
 
 LANGUAGE = os.getenv("TOPLEVEL_LANG", "verilog").lower().strip()
 
-# Must match the TABLE contents in wave_table_pkg.sv (raw 16-bit two's complement bit patterns)
+# Must match the SQUARE_TABLE_FLAT contents in wave_table_pkg.sv (raw 16-bit two's complement bit patterns)
 EXPECTED_TABLE = [
-    0x0000, 0x30FC, 0x5A82, 0x7642,
-    0x7FFF, 0x7642, 0x5A82, 0x30FC,
-    0x0000, 0xCF04, 0xA57E, 0x89BE,
-    0x8001, 0x89BE, 0xA57E, 0xCF04,
+    0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF,
+    0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF,
+    0x8000, 0x8000, 0x8000, 0x8000,
+    0x8000, 0x8000, 0x8000, 0x8000,
 ]
+
+# Must match wave_table.sv's default parameters and DDS phase accumulator math
+DEPTH      = len(EXPECTED_TABLE)
+ADDR_W     = DEPTH.bit_length() - 1
+FREQ_HZ    = 440
+SAMPLE_RATE = 44_100
+FRAC_W     = 16
+ACC_W      = ADDR_W + FRAC_W
+PHASE_INC  = (FREQ_HZ * (1 << ACC_W)) // SAMPLE_RATE
 
 
 @cocotb.test()
 async def wave_table_outputs_samples_in_order(dut):
-    """The table should stream its samples in order, wrapping around, while the FIFO isn't full"""
+    """The table should advance its DDS phase accumulator and stream samples at FREQ_HZ"""
 
     dut.rst_n.value = 0
     dut.fifo_full.value = 0
@@ -37,12 +46,15 @@ async def wave_table_outputs_samples_in_order(dut):
     dut.rst_n.value = 1
     await RisingEdge(dut.clk)
 
-    for i in range(len(EXPECTED_TABLE) * 2):
-        expected = EXPECTED_TABLE[i % len(EXPECTED_TABLE)]
+    phase_acc = 0
+    for i in range(DEPTH * 8):
+        addr = phase_acc >> FRAC_W
+        expected = EXPECTED_TABLE[addr]
         assert dut.wr_en.value == 1, f"wr_en should be high on cycle {i}"
         assert dut.wr_data.value == expected, (
             f"wr_data was {int(dut.wr_data.value):#x} on cycle {i}, expected {expected:#x}"
         )
+        phase_acc = (phase_acc + PHASE_INC) & ((1 << ACC_W) - 1)
         await RisingEdge(dut.clk)
 
 

@@ -16,14 +16,15 @@ module fifo #(
 );
 
     localparam int ADDR_W = $clog2(DEPTH);
+    localparam logic [ADDR_W-1:0] LAST_ADDR = ADDR_W'(DEPTH-1);
 
     logic [WIDTH-1:0] mem [0:DEPTH-1];
 
     logic [ADDR_W-1:0] wr_ptr, rd_ptr;
     logic [ADDR_W:0]   count;
 
-    assign full  = (count == DEPTH);
-    assign empty = (count == 0);
+    assign full  = (count == (ADDR_W+1)'(DEPTH));
+    assign empty = (count == '0);
 
     wire wr_valid = wr_en && !full;
     wire rd_valid = rd_en && !empty;
@@ -36,11 +37,11 @@ module fifo #(
         end else begin
             if (wr_valid) begin
                 mem[wr_ptr] <= wr_data;
-                wr_ptr      <= (wr_ptr == DEPTH-1) ? '0 : wr_ptr + 1'b1;
+                wr_ptr      <= (wr_ptr == LAST_ADDR) ? '0 : wr_ptr + 1'b1;
             end
 
             if (rd_valid) begin
-                rd_ptr <= (rd_ptr == DEPTH-1) ? '0 : rd_ptr + 1'b1;
+                rd_ptr <= (rd_ptr == LAST_ADDR) ? '0 : rd_ptr + 1'b1;
             end
 
             case ({wr_valid, rd_valid})

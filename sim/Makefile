@@ -4,13 +4,17 @@
 TOPLEVEL_LANG ?= verilog
 
 ifeq ($(TOPLEVEL_LANG),verilog)
-  VERILOG_SOURCES = $(shell pwd)/../src/top/top.v
+  VERILOG_SOURCES = $(shell pwd)/../src/synthesizer/wave_table_pkg.sv \
+                     $(shell pwd)/../src/synthesizer/wave_table.sv \
+                     $(shell pwd)/../src/misc/fifo.sv \
+                     $(shell pwd)/../src/i2s/i2s_tx.sv \
+                     $(shell pwd)/../src/top/top.v
 endif
 
 COCOTB_TEST_MODULES = test_top
 COCOTB_TOPLEVEL = top
 
 SIM ?= verilator
-EXTRA_ARGS += --trace-structs --trace 
+EXTRA_ARGS += --trace-structs --trace -sv
 COMPILE_ARGS += -GSIMULATION=1
 include $(shell cocotb-config --makefiles)/Makefile.sim

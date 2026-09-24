@@ -14,3 +14,12 @@ IO_LOC "sys_rst_n" 4;
 IO_PORT "sys_rst_n" PULL_MODE=UP;
 IO_LOC "sys_clk" 52;
 IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// UDA1334A I2S breakout - placeholder GPIO pins, verify against your actual wiring
+IO_LOC "i2s_bclk" 26;
+IO_PORT "i2s_bclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC "i2s_lrck" 27;
+IO_PORT "i2s_lrck" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC "i2s_din" 28;
+IO_PORT "i2s_din" IO_TYPE=LVCMOS33 DRIVE=8;
+
