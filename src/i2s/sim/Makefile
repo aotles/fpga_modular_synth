@@ -10,5 +10,5 @@ COCOTB_TOPLEVEL = i2s_tx
 
 SIM ?= verilator
 EXTRA_ARGS += --trace-structs --trace -sv
-COMPILE_ARGS += -GSYS_CLK_FREQ=3200 -GSAMPLE_RATE=100 -GWIDTH=4
+COMPILE_ARGS += -GSYS_CLK_FREQ=3200 -GWIDTH=16
 include $(shell cocotb-config --makefiles)/Makefile.sim

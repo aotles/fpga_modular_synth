@@ -1,8 +1,9 @@
-read_verilog -sv ../src/synthesizer/wave_table_pkg.sv
-read_verilog -sv ../src/synthesizer/wave_table.sv
+read_verilog -sv -D GOWIN_SYNTHESIS ../src/synthesizer/hdl/wavetable_pkg.sv
+read_verilog -sv -D GOWIN_SYNTHESIS ../src/synthesizer/hdl/wavetable_synth.sv
+read_verilog -sv ../src/synthesizer/hdl/wavetable_rom.sv
 read_verilog -sv ../src/misc/fifo.sv
 read_verilog -sv ../src/i2s/i2s_tx.sv
-read_verilog ../src/top/top.v
+read_verilog -sv ../src/top/top.sv
 hierarchy -top top 
 proc; opt
 techmap; opt

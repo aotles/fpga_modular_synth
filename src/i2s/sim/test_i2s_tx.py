@@ -14,7 +14,7 @@ module_name = "i2s_tx"
 
 LANGUAGE = os.getenv("TOPLEVEL_LANG", "verilog").lower().strip()
 
-WIDTH = 4
+WIDTH = 16
 TEST_SAMPLE = 0b1011
 
 
@@ -75,7 +75,7 @@ def test_i2s_tx_runner():
         hdl_toplevel=module_name,
         always=True,
         defines={"COCOTB_SIM": 1},
-        parameters={"SYS_CLK_FREQ": 3200, "SAMPLE_RATE": 100, "WIDTH": WIDTH},
+        parameters={"SYS_CLK_FREQ": 3200, "WIDTH": WIDTH},
     )
 
     runner.test(hdl_toplevel=module_name, test_module="test_i2s_tx")
