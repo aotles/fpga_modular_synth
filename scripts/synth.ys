@@ -4,6 +4,7 @@ read_verilog -sv ../src/synthesizer/hdl/wavetable_rom.sv
 read_verilog -sv ../src/misc/fifo.sv
 read_verilog -sv ../src/i2s/i2s_tx.sv
 read_verilog -sv ../src/encoder/encoder.sv
+read_verilog -sv ../src/clk_div/clk_div.sv
 read_verilog -sv ../src/top/top.sv
 hierarchy -top top 
 proc; opt

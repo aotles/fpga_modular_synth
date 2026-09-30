@@ -38,23 +38,37 @@ wire freq_enc_up;
 wire freq_enc_press;
 wire freq_enc_down;
 
-encoder encoder_inst (
+logic clk_1ms;
+
+clk_div #(
+    .CLK_FREQ_HZ (27_000_000),
+    .OUT_FREQ_HZ (1_000)
+) clk_div_inst (
     .clk    (sys_clk),
     .rst_n  (sys_rst_n),
-    .A      (freq_enc_A),
-    .B      (freq_enc_B),
-    .C      (freq_enc_C),
-    .up     (freq_enc_up),
-    .press  (freq_enc_press),
-    .down   (freq_enc_down)
+    .clk_1ms (clk_1ms)
+);
+
+encoder encoder_inst (
+    .clk     (sys_clk),
+    .rst_n   (sys_rst_n),
+    .clk_1ms (clk_1ms),
+    .A       (freq_enc_A),
+    .B       (freq_enc_B),
+    .C       (freq_enc_C),
+    .up      (freq_enc_up),
+    .press   (freq_enc_press),
+    .down    (freq_enc_down)
 );
 
 always_ff @(posedge sys_clk) begin
     if (!sys_rst_n) begin
         led_counter <= 6'b0;
     end else begin
-        if (freq_enc_press) begin
+        if (freq_enc_up) begin
             led_counter <= led_counter + 1'b1;
+        end else if (freq_enc_down) begin
+            led_counter <= led_counter - 1'b1;
         end
     end
 end
