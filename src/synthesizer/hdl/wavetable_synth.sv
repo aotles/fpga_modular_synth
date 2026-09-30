@@ -12,15 +12,20 @@ module wavetable_synth #(
 
     output logic             wr_en,
     output logic [BIT_DEPTH-1:0] wr_data,
-    input  logic             fifo_full
+    input  logic             fifo_full, 
+
+    //Freq Encoder input
+    input  logic freq_enc_up,
+    input  logic freq_enc_press,
+    input  logic freq_enc_down
 );
 
     localparam int ADDR_W = $clog2(TABLE_SIZE);
     localparam int WAVE_W = $clog2(WAVE_SIZE);
     localparam int PHASE_W = 24;
     //todo make this an iput signal but for now, lock the phase increment to make a 440Hz tone
-    localparam int PHASE_INC = 24'd157482;
-    localparam int WAVE_OFFSET = 3*WAVE_SIZE; // offset into the wave table sections
+    //localparam int PHASE_INC = 24'd157482;
+    //localparam int WAVE_OFFSET = 3*WAVE_SIZE; // offset into the wave table sections
     
 
     // phase accumulator (DDS): advances the table address by a fraction of a
@@ -28,8 +33,10 @@ module wavetable_synth #(
     // this is accomplished by having the phase accumulator be 24 bits and truncate down to the table address width (8 bits)
 
     logic [PHASE_W-1:0] phase_acc;
+    logic [PHASE_W-1:0] phase_inc;
+    logic [ADDR_W-1:0] wave_offset; // offset into the wave table sections
     //TODO hook this up so there's an offset, so that we can index into all wave sections
-    wire  [ADDR_W-1:0] addr = phase_acc[PHASE_W-1 -: WAVE_W] + WAVE_OFFSET; 
+    wire  [ADDR_W-1:0] addr = phase_acc[PHASE_W-1 -: WAVE_W] + wave_offset; 
     assign wr_en   = !fifo_full;
 
 `ifdef GOWIN_SYNTHESIS
@@ -59,8 +66,18 @@ module wavetable_synth #(
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             phase_acc <= '0;
+            phase_inc <= 24'd157482;     //Default to A 440Hz
+            wave_offset <= {ADDR_W{1'b0}}; // offset into the wave table sections
         end else if (wr_en) begin
-            phase_acc <= phase_acc + PHASE_W'(PHASE_INC);
+            phase_acc <= phase_acc + phase_inc;
+            if (freq_enc_up)
+                phase_inc <= phase_inc + 24'd1000; // example increment
+            else if (freq_enc_down)
+                phase_inc <= phase_inc - 24'd1000; // example decrement
+            else if (freq_enc_press)
+                wave_offset <= wave_offset + WAVE_SIZE;
+            else
+                phase_inc <= phase_inc;
         end
     end
 

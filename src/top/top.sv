@@ -5,6 +5,10 @@ module top # (
     input  logic sys_clk,          // clk input
     input  logic sys_rst_n,        // reset input
     output logic [5:0] led,   // 6 LEDS pin
+    // Encoder inputs
+    input  logic freq_enc_A,
+    input  logic freq_enc_B,
+    input  logic freq_enc_C,
 
     // I2S output to the UDA1334A breakout
     output logic i2s_bclk,
@@ -18,7 +22,7 @@ localparam int AUDIO_FIFO_DEPTH = 16;
 reg [5:0]  led_counter;
 
 //using this as a poor man's versioning system
-assign led = ~6'h01;
+assign led = ~led_counter;
 
 // Audio path: wave table -> FIFO -> I2S transmitter
 wire                          wt_wr_en;
@@ -29,12 +33,41 @@ wire                          audio_fifo_rd_en;
 wire [wavetable_pkg::BIT_DEPTH-1:0] audio_fifo_rd_data;
 wire                          audio_fifo_empty;
 
+//encoder signals
+wire freq_enc_up;
+wire freq_enc_press;
+wire freq_enc_down;
+
+encoder encoder_inst (
+    .clk    (sys_clk),
+    .rst_n  (sys_rst_n),
+    .A      (freq_enc_A),
+    .B      (freq_enc_B),
+    .C      (freq_enc_C),
+    .up     (freq_enc_up),
+    .press  (freq_enc_press),
+    .down   (freq_enc_down)
+);
+
+always_ff @(posedge sys_clk) begin
+    if (!sys_rst_n) begin
+        led_counter <= 6'b0;
+    end else begin
+        if (freq_enc_press) begin
+            led_counter <= led_counter + 1'b1;
+        end
+    end
+end
+
 wavetable_synth wavetable_synth_inst (
-    .clk       (sys_clk),
-    .rst_n     (sys_rst_n),
-    .wr_en     (wt_wr_en),
-    .wr_data   (wt_wr_data),
-    .fifo_full (audio_fifo_full)
+    .clk           (sys_clk),
+    .rst_n         (sys_rst_n),
+    .wr_en         (wt_wr_en),
+    .wr_data       (wt_wr_data),
+    .fifo_full     (audio_fifo_full),
+    .freq_enc_up   (freq_enc_up),
+    .freq_enc_press(freq_enc_press),
+    .freq_enc_down (freq_enc_down)
 );
 
 fifo #(
