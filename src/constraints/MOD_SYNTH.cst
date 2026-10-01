@@ -24,9 +24,9 @@ IO_LOC "i2s_din" 31;
 IO_PORT "i2s_din" IO_TYPE=LVCMOS33 DRIVE=8;
 
 // Freq encoder IO
-IO_LOC "freq_enc_A" 85;
+IO_LOC "freq_enc_A" 84;
 IO_PORT "freq_enc_A" IO_TYPE=LVCMOS18 PULL_MODE=UP;
 IO_LOC "freq_enc_B" 83;
 IO_PORT "freq_enc_B" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "freq_enc_C" 84;
+IO_LOC "freq_enc_C" 85;
 IO_PORT "freq_enc_C" IO_TYPE=LVCMOS18 PULL_MODE=UP;

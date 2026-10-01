@@ -32,6 +32,7 @@ module wavetable_synth #(
     // step each sample so the full table plays back at FREQ_HZ, not SAMPLE_RATE/DEPTH
     // this is accomplished by having the phase accumulator be 24 bits and truncate down to the table address width (8 bits)
 
+    logic freq_enc_up_latch, freq_enc_press_latch, freq_enc_down_latch;
     logic [PHASE_W-1:0] phase_acc;
     logic [PHASE_W-1:0] phase_inc;
     logic [ADDR_W-1:0] wave_offset; // offset into the wave table sections
@@ -68,16 +69,31 @@ module wavetable_synth #(
             phase_acc <= '0;
             phase_inc <= 24'd157482;     //Default to A 440Hz
             wave_offset <= {ADDR_W{1'b0}}; // offset into the wave table sections
-        end else if (wr_en) begin
-            phase_acc <= phase_acc + phase_inc;
+            freq_enc_up_latch <= 1'b0;
+            freq_enc_press_latch <= 1'b0;
+            freq_enc_down_latch <= 1'b0;
+        end else begin
             if (freq_enc_up)
-                phase_inc <= phase_inc + 24'd1000; // example increment
-            else if (freq_enc_down)
-                phase_inc <= phase_inc - 24'd1000; // example decrement
-            else if (freq_enc_press)
-                wave_offset <= wave_offset + WAVE_SIZE;
-            else
-                phase_inc <= phase_inc;
+                freq_enc_up_latch <= 1'b1;
+            if (freq_enc_press)
+                freq_enc_press_latch <= 1'b1;
+            if (freq_enc_down)
+                freq_enc_down_latch <= 1'b1;
+
+            if (wr_en) begin
+                phase_acc <= phase_acc + phase_inc;
+                if (freq_enc_up_latch) begin
+                    phase_inc <= phase_inc + 24'd100; // example increment
+                    freq_enc_up_latch <= 1'b0;
+                end else if (freq_enc_down_latch) begin
+                    phase_inc <= phase_inc - 24'd100; // example decrement
+                    freq_enc_down_latch <= 1'b0;
+                end else if (freq_enc_press_latch) begin
+                    wave_offset <= wave_offset + WAVE_SIZE;
+                    freq_enc_press_latch <= 1'b0;
+                end else
+                    phase_inc <= phase_inc;
+            end
         end
     end
 
