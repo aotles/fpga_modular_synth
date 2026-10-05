@@ -16,7 +16,7 @@ module i2s_tx #(
 
     // I2S bus
     output logic bclk,
-    output logic lrck,     // word select: 0 = left, 1 = right
+    output logic lrck,     // word select: 1 = left, 0 = right
     output logic sdata
 );
 
@@ -63,36 +63,47 @@ module i2s_tx #(
     logic [BIT_DEPTH-1:0] sample_latch;   // left sample held over for the right channel
 
     // fetch the next mono sample once per audio frame, when the right word finishes
-    assign rd_en = bclk_fall && (bit_cnt == CNT_W'(BIT_DEPTH - 1)) && ws && !fifo_empty;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             bit_cnt      <= '0;
-            ws           <= 1'b0;
-            lrck         <= 1'b0;
+            ws           <= 1'b1; //start with left channel
+            lrck         <= 1'b1;
             shift_reg    <= '0;
             sdata        <= 1'b0;
             sample_latch <= '0;
-        end else if (bclk_fall) begin
-            // present the bit that was valid during the cycle just elapsed
-            sdata <= shift_reg[BIT_DEPTH-1];
+            rd_en        <= 1'b0;
+        end else begin
+            rd_en <= 1'b0;
+            if (bclk_fall) begin
+                // present the bit that was valid during the cycle just elapsed
+                sdata <= shift_reg[BIT_DEPTH-1];
 
-            if (bit_cnt == CNT_W'(BIT_DEPTH - 1)) begin
-                bit_cnt <= '0;
-                lrck    <= ~ws;
-                ws      <= ~ws;
+                if (bit_cnt == CNT_W'(BIT_DEPTH - 1)) begin
+                    bit_cnt <= '0;
+                    lrck    <= ~ws;
+                    ws      <= ~ws;
 
-                if (ws) begin
-                    // finishing right -> next word is a new audio frame's left sample
-                    sample_latch <= fifo_empty ? '0 : rd_data;
-                    shift_reg    <= fifo_empty ? '0 : rd_data;
+                    if (~ws) begin
+                        // finishing left -> next word is a new audio frame's left sample
+                        if (~fifo_empty) begin
+                            rd_en        <= 1'b1;
+                            sample_latch <= rd_data;
+                            shift_reg    <= {rd_data[BIT_DEPTH-2:0], 1'b0};
+                            sdata        <= rd_data[BIT_DEPTH-1];
+                        end else begin
+                            sample_latch <= '0;
+                            shift_reg    <= '0;
+                        end
+                    end else begin
+                        // finishing left -> repeat the same sample on the right channel
+                        shift_reg    <= {sample_latch[BIT_DEPTH-2:0], 1'b0};
+                        sdata        <= sample_latch[BIT_DEPTH-1];
+                    end
                 end else begin
-                    // finishing left -> repeat the same sample on the right channel
-                    shift_reg <= sample_latch;
+                    bit_cnt   <= bit_cnt + 1'b1;
+                    shift_reg <= {shift_reg[BIT_DEPTH-2:0], 1'b0};
                 end
-            end else begin
-                bit_cnt   <= bit_cnt + 1'b1;
-                shift_reg <= {shift_reg[BIT_DEPTH-2:0], 1'b0};
             end
         end
     end

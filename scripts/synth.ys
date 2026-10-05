@@ -5,6 +5,7 @@ read_verilog -sv ../src/misc/fifo.sv
 read_verilog -sv ../src/vol/gain.sv
 read_verilog -sv ../src/vol/volume.sv
 read_verilog -sv ../src/i2s/i2s_tx.sv
+read_verilog -sv ../src/i2s/i2s_rx.sv
 read_verilog -sv ../src/encoder/encoder.sv
 read_verilog -sv ../src/clk_div/clk_div.sv
 read_verilog -sv ../src/top/top.sv

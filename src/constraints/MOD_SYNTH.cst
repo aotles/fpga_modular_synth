@@ -37,3 +37,19 @@ IO_LOC "vol_enc_B" 82;
 IO_PORT "vol_enc_B" IO_TYPE=LVCMOS18 PULL_MODE=UP;
 IO_LOC "vol_enc_C" 81;
 IO_PORT "vol_enc_C" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+
+IO_LOC  "audio_in_i2s_bclk" 26;
+IO_PORT "audio_in_i2s_bclk" PULL_MODE=NONE;
+IO_LOC  "audio_in_i2s_lrck" 25;
+IO_PORT "audio_in_i2s_lrck" PULL_MODE=NONE;
+IO_LOC  "audio_in_i2s_din"  39;
+IO_PORT "audio_in_i2s_din"  PULL_MODE=NONE;
+
+//Audio Jack output
+IO_LOC  "audio_out_i2s_bclk" 36;
+IO_PORT "audio_out_i2s_bclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC  "audio_out_i2s_lrck" 37;
+IO_PORT "audio_out_i2s_lrck" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC  "audio_out_i2s_dout" 38;
+IO_PORT "audio_out_i2s_dout" IO_TYPE=LVCMOS33 DRIVE=8;

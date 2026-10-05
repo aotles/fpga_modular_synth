@@ -1,3 +1,6 @@
+// Top-level module for the modular synthesizer system
+`timescale 1ns / 1ps
+
 module top # (
     parameter SIMULATION = 0
 )
@@ -13,6 +16,15 @@ module top # (
     input  logic vol_enc_A,
     input  logic vol_enc_B,
     input  logic vol_enc_C,
+
+    // I2S input from the audio jack
+    input  logic audio_in_i2s_bclk,
+    input  logic audio_in_i2s_lrck,
+    input  logic audio_in_i2s_din,
+    // I2S output to the audio jack
+    output logic audio_out_i2s_bclk,
+    output logic audio_out_i2s_lrck,
+    output logic audio_out_i2s_dout,
     // I2S output to the UDA1334A breakout
     output logic i2s_bclk,
     output logic i2s_lrck,
@@ -43,6 +55,14 @@ wire                                vol_fifo_full;
 wire [wavetable_pkg::BIT_DEPTH-1:0] vol_fifo_rd_data;
 wire                                vol_fifo_rd_en;
 wire                                vol_fifo_empty;
+
+wire [wavetable_pkg::BIT_DEPTH*2-1:0] i2s_rx_fifo_wr_data;
+wire                                  i2s_rx_fifo_wr_en;
+wire                                  i2s_rx_fifo_full;
+
+wire [wavetable_pkg::BIT_DEPTH*2-1:0] i2s_rx_fifo_rd_data;
+wire                                  i2s_rx_fifo_rd_en;
+wire                                  i2s_rx_fifo_empty;
 
 //encoder signals
 wire freq_enc_up;
@@ -167,16 +187,65 @@ fifo #(
 i2s_tx #(
     .SYS_CLK_FREQ (27_000_000),
     .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
-) i2s_tx_inst (
+) i2s_tx_audio_out_inst (
     .clk        (sys_clk),
     .rst_n      (sys_rst_n),
     .rd_en      (vol_fifo_rd_en),
     .rd_data    (vol_fifo_rd_data),
     .fifo_empty (vol_fifo_empty),
 
+    .bclk       (audio_out_i2s_bclk),
+    .lrck       (audio_out_i2s_lrck),
+    .sdata      (audio_out_i2s_dout)
+);
+
+i2s_rx #(
+    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
+) i2s_rx_inst (
+    .clk          (sys_clk),
+    .rst_n        (sys_rst_n),
+
+    .bclk         (audio_in_i2s_bclk),
+    .lrck         (audio_in_i2s_lrck),
+    .sdata        (audio_in_i2s_din),
+
+    .fifo_full    (i2s_rx_fifo_full),
+    .fifo_wr_data (i2s_rx_fifo_wr_data),
+    .fifo_wr_en   (i2s_rx_fifo_wr_en)
+);
+
+fifo #(
+    .WIDTH (wavetable_pkg::BIT_DEPTH*2),
+    .DEPTH (AUDIO_FIFO_DEPTH)
+) i2s_rx_fifo_inst (
+    .clk     (sys_clk),
+    .rst_n   (sys_rst_n),
+    //fifo IN IF
+    .wr_en   (i2s_rx_fifo_wr_en),
+    .wr_data (i2s_rx_fifo_wr_data),
+    .full    (i2s_rx_fifo_full),
+    //fifo OUT IF
+    .rd_en   (i2s_rx_fifo_rd_en),
+    .rd_data (i2s_rx_fifo_rd_data),
+    .empty   (i2s_rx_fifo_empty)
+);
+
+i2s_tx #(
+    .SYS_CLK_FREQ (27_000_000),
+    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
+) i2s_tx_inst (
+    .clk        (sys_clk),
+    .rst_n      (sys_rst_n),
+    .rd_en      (i2s_rx_fifo_rd_en),
+    .rd_data    (i2s_rx_fifo_rd_data),
+    .fifo_empty (i2s_rx_fifo_empty),
+
     .bclk       (i2s_bclk),
     .lrck       (i2s_lrck),
     .sdata      (i2s_din)
 );
+
+
+
 
 endmodule
