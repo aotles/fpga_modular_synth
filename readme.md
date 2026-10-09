@@ -8,35 +8,16 @@ streaming audio out over I2S to a UDA1334A DAC breakout board.
 ### One-shot script
 
 ```sh
-./scripts/synth_implement_write_bit.sh
+./scripts/synth_implement_write_bit.sh proto0
+./scripts/synth_implement_write_bit.sh proto1
 ```
 
-Runs synthesis, place & route, and bitstream generation (steps 1-3 below).
+   Pass `proto0` or `proto1` to select `src/top/protoboard_0.sv` or
+   `src/top/protoboard_1.sv`. Each target writes separate synthesis outputs,
+   place-and-route netlists, logs, and bitstreams (for example,
+   `build/synth_proto0.json`, `impl/pnr_netlist_proto0.v`, and `bit/proto0.fs`).
 
-### Manual steps
-
-1. **Synthesis**
-   ```sh
-   cd scripts
-   yosys synth.ys
-   ```
-
-2. **Implementation**
-   ```sh
-   nextpnr-himbaechel \
-     --json ../build/synth.json \
-     --write ../impl/pnr_netlist.v \
-     --device GW1NR-LV9QN88PC6/I5 \
-     --vopt family=GW1N-9C \
-     --vopt cst=../src/constraints/MOD_SYNTH.cst
-   ```
-
-3. **Write bit file**
-   ```sh
-   gowin_pack -d GW1N-9C -o ../bit/MOD_SYNTH.fs ../impl/pnr_netlist.v
-   ```
-
-4. **Programming**
+   ### Programming
 
    Plug in the device.
 
@@ -49,8 +30,9 @@ Runs synthesis, place & route, and bitstream generation (steps 1-3 below).
 
    Then flash the board:
    ```sh
-   openFPGALoader -b tangnano9k ../bit/MOD_SYNTH.fs
+   openFPGALoader -b tangnano9k ../bit/proto0.fs
    ```
+   Use `../bit/proto1.fs` when programming proto1.
 
 ## Simulation
 
