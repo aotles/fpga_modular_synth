@@ -32,9 +32,9 @@ IO_LOC "vol_enc_C" 84;
 IO_PORT "vol_enc_C" IO_TYPE=LVCMOS18 PULL_MODE=UP;
 
 //left to right - audio jack facing up
-IO_LOC  "audio_in_i2s_bclk" 38;
+IO_LOC  "audio_in_i2s_bclk" 37;
 IO_PORT "audio_in_i2s_bclk" PULL_MODE=NONE;
-IO_LOC  "audio_in_i2s_lrck" 37;
+IO_LOC  "audio_in_i2s_lrck" 38;
 IO_PORT "audio_in_i2s_lrck" PULL_MODE=NONE;
 IO_LOC  "audio_in_i2s_din"  36;
 IO_PORT "audio_in_i2s_din"  PULL_MODE=NONE;

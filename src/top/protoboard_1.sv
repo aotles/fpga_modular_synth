@@ -25,6 +25,10 @@ module top # (
     output logic audio_out_i2s_bclk,
     output logic audio_out_i2s_lrck,
     output logic audio_out_i2s_dout,
+
+    output logic audio_out_i2s_bclk_2,
+    output logic audio_out_i2s_lrck_2,
+    output logic audio_out_i2s_dout_2,
     // I2S output to the UDA1334A breakout
     output logic i2s_bclk,
     output logic i2s_lrck,
@@ -74,6 +78,10 @@ wire vol_enc_press;
 wire vol_enc_down;
 
 logic clk_1ms;
+
+assign audio_out_i2s_bclk_2 = i2s_bclk;
+assign audio_out_i2s_lrck_2 = i2s_lrck;
+assign audio_out_i2s_dout_2 = i2s_din;
 
 clk_div #(
     .CLK_FREQ_HZ (27_000_000),
