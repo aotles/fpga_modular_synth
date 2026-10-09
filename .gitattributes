@@ -1,0 +1,3 @@
+*.sv    text diff=cpp
+*.svh   text diff=cpp
+*.v     text diff=cpp
