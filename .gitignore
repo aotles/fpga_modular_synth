@@ -1,0 +1,9 @@
+*.vcd
+.dSYM/
+sim_build/
+*.xml
+__pycache__/
+src/synthesizer/sw/main
+src/synthesizer/sw/main.dSYM/
+src/synthesizer/sw/wavetable.hex
+src/synthesizer/sw/wavetable_prom.txt

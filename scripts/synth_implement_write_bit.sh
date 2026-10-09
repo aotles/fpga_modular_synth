@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
-  echo "Usage: $0 {proto0|proto1}" >&2
+  echo "Usage: $0 {proto0|proto1|proto2}" >&2
   exit 2
 fi
 
@@ -16,8 +16,12 @@ case "$BOARD" in
     BOARD_INDEX=1
     CONSTRAINTS="../src/constraints/protoboard_1.cst"
     ;;
+  proto2)
+    BOARD_INDEX=2
+    CONSTRAINTS="../src/constraints/protoboard_2.cst"
+    ;;
   *)
-    echo "Unknown board '$BOARD'. Expected proto0 or proto1." >&2
+    echo "Unknown board '$BOARD'. Expected proto0, proto1, or proto2." >&2
     exit 2
     ;;
 esac

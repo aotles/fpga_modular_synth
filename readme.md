@@ -10,29 +10,31 @@ streaming audio out over I2S to a UDA1334A DAC breakout board.
 ```sh
 ./scripts/synth_implement_write_bit.sh proto0
 ./scripts/synth_implement_write_bit.sh proto1
+./scripts/synth_implement_write_bit.sh proto2
 ```
 
-   Pass `proto0` or `proto1` to select `src/top/protoboard_0.sv` or
-   `src/top/protoboard_1.sv`. Each target writes separate synthesis outputs,
-   place-and-route netlists, logs, and bitstreams (for example,
-   `build/synth_proto0.json`, `impl/pnr_netlist_proto0.v`, and `bit/proto0.fs`).
+Pass `proto0`, `proto1`, or `proto2` to select the corresponding
+`src/top/protoboard_X.sv`. Each target writes separate synthesis outputs,
+place-and-route netlists, logs, and bitstreams (for example,
+`build/synth_proto0.json`, `impl/pnr_netlist_proto0.v`, and `bit/proto0.fs`).
 
-   ### Programming
+### Programming
 
-   Plug in the device.
+Plug in the device.
 
-   For WSL, first pass the USB serial converter through to WSL:
-   ```powershell
-   usbipd list                              # find BUSID for USB serial converter A
-   usbipd bind --busid [BUSID]
-   usbipd attach --wsl --busid [BUSID]
-   ```
+For WSL, first pass the USB serial converter through to WSL:
+```powershell
+usbipd list                              # find BUSID for USB serial converter A
+usbipd bind --busid [BUSID]
+usbipd attach --wsl --busid [BUSID]
+```
 
-   Then flash the board:
-   ```sh
-   openFPGALoader -b tangnano9k ../bit/proto0.fs
-   ```
-   Use `../bit/proto1.fs` when programming proto1.
+Then flash the board:
+```sh
+openFPGALoader -b tangnano9k ../bit/proto0.fs
+```
+Use `../bit/proto1.fs` when programming proto1.
+Use `../bit/proto2.fs` when programming proto2.
 
 ## Simulation
 

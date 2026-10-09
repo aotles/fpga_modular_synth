@@ -15,29 +15,22 @@ IO_PORT "sys_rst_n" PULL_MODE=UP;
 IO_LOC "sys_clk" 52;
 IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
-// UDA1334A I2S breakout 
-IO_LOC "i2s_bclk" 49;
-IO_PORT "i2s_bclk" IO_TYPE=LVCMOS33 DRIVE=8;
-IO_LOC "i2s_lrck" 32;
-IO_PORT "i2s_lrck" IO_TYPE=LVCMOS33 DRIVE=8;
-IO_LOC "i2s_din" 31;
-IO_PORT "i2s_din" IO_TYPE=LVCMOS33 DRIVE=8;
-
 // Freq encoder IO
-IO_LOC "freq_enc_A" 86;
-IO_PORT "freq_enc_A" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "freq_enc_B" 84;
-IO_PORT "freq_enc_B" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC "freq_enc_A" 63;
+IO_PORT "freq_enc_A" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "freq_enc_B" 86;
+IO_PORT "freq_enc_B" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 IO_LOC "freq_enc_C" 85;
-IO_PORT "freq_enc_C" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_PORT "freq_enc_C" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
-IO_LOC "vol_enc_A" 83;
-IO_PORT "vol_enc_A" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "vol_enc_B" 82;
-IO_PORT "vol_enc_B" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "vol_enc_C" 81;
-IO_PORT "vol_enc_C" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC "vol_enc_A" 77;
+IO_PORT "vol_enc_A" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "vol_enc_B" 76;
+IO_PORT "vol_enc_B" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "vol_enc_C" 75;
+IO_PORT "vol_enc_C" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
+//82, 81, 80 Audio Jack
 
 IO_LOC  "audio_in_i2s_bclk" 26;
 IO_PORT "audio_in_i2s_bclk" PULL_MODE=NONE;
