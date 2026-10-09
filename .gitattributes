@@ -1,3 +1,7 @@
 *.sv    text diff=cpp
 *.svh   text diff=cpp
 *.v     text diff=cpp
+# Explicitly tell GitHub these are SystemVerilog files
+*.v   linguist-language=SystemVerilog
+*.sv  linguist-language=SystemVerilog
+*.svh linguist-language=SystemVerilog
