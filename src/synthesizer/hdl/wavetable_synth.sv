@@ -5,14 +5,22 @@ module wavetable_synth #(
     parameter int BIT_DEPTH   = wavetable_pkg::BIT_DEPTH,
     parameter int TABLE_SIZE  = wavetable_pkg::TABLE_SIZE,
     parameter int WAVE_SIZE   = wavetable_pkg::WAVE_SIZE,
-    parameter int FREQ_HZ     = 440,     // output tone frequency
+    parameter int PHASE_W     = 24,
+    parameter logic [PHASE_W-1:0] DEFAULT_PHASE_INC = 24'd157482
+    //how this is calculated: DEFAULT_PHASE_INC = (FREQ_HZ * 2^PHASE_W) / SAMPLE_RATE
+    //e.g. DEFAULT_PHASE_INC = (440 * 2^24) / 46.875kHz
 ) (
     input  logic clk,
     input  logic rst_n,
 
-    output logic             wr_en,
+    output logic                 wr_en,
     output logic [BIT_DEPTH-1:0] wr_data,
-    input  logic             fifo_full, 
+    input  logic                 fifo_full, 
+
+    //FIFO input for controlling the oscillator frequency
+    input  logic                 fifo_empty,
+    input  logic [BIT_DEPTH-1:0] rd_data,
+    output logic                 rd_en,
 
     //Freq Encoder input
     input  logic freq_enc_up,
@@ -22,7 +30,6 @@ module wavetable_synth #(
 
     localparam int ADDR_W = $clog2(TABLE_SIZE);
     localparam int WAVE_W = $clog2(WAVE_SIZE);
-    localparam int PHASE_W = 24;
     //todo make this an iput signal but for now, lock the phase increment to make a 440Hz tone
     //localparam int PHASE_INC = 24'd157482;
     //localparam int WAVE_OFFSET = 3*WAVE_SIZE; // offset into the wave table sections
@@ -39,6 +46,8 @@ module wavetable_synth #(
     //TODO hook this up so there's an offset, so that we can index into all wave sections
     wire  [ADDR_W-1:0] addr = phase_acc[PHASE_W-1 -: WAVE_W] + wave_offset; 
     assign wr_en   = !fifo_full;
+
+    logic [BIT_DEPTH-1:0] rd_data_latch;
 
 `ifdef GOWIN_SYNTHESIS
     pROM #(
@@ -67,12 +76,14 @@ module wavetable_synth #(
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             phase_acc <= '0;
-            phase_inc <= 24'd157482;     //Default to A 440Hz
+            phase_inc <= DEFAULT_PHASE_INC;     //Default to A 440Hz
             wave_offset <= {ADDR_W{1'b0}}; // offset into the wave table sections
             freq_enc_up_latch <= 1'b0;
             freq_enc_press_latch <= 1'b0;
-            freq_enc_down_latch <= 1'b0;
+            freq_enc_down_latch  <= 1'b0;
+            rd_data_latch        <= '0;
         end else begin
+            //rd_data_latch        <= '0;
             if (freq_enc_up)
                 freq_enc_up_latch <= 1'b1;
             if (freq_enc_press)
@@ -81,7 +92,13 @@ module wavetable_synth #(
                 freq_enc_down_latch <= 1'b1;
 
             if (wr_en) begin
-                phase_acc <= phase_acc + phase_inc;
+                if (~fifo_empty) begin
+                    rd_en <= 1'b1;
+                    rd_data_latch <= rd_data;
+                end else begin
+                    rd_en <= 1'b0;
+                end
+                phase_acc <= phase_acc + (phase_inc + {6'h0, rd_data_latch, 2'h0});
                 if (freq_enc_up_latch) begin
                     phase_inc <= phase_inc + 24'd100; // example increment
                     freq_enc_up_latch <= 1'b0;

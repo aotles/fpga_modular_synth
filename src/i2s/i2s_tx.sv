@@ -3,7 +3,6 @@
 // targeting the UDA1334A breakout board.
 // simplifying logic to by changing sample rate to 46875 Hz
 module i2s_tx #(
-    parameter int SYS_CLK_FREQ = 27_000_000,   // input clk frequency, Hz
     parameter int BIT_DEPTH    = 16            // bits per sample per channel
 ) (
     input  logic clk,

@@ -79,6 +79,13 @@ wire vol_enc_down;
 
 logic clk_1ms;
 
+logic lfo_fifo_wr_en;
+logic [wavetable_pkg::BIT_DEPTH-1:0] lfo_fifo_wr_data;
+logic lfo_fifo_full;
+logic lfo_fifo_rd_en;
+logic [wavetable_pkg::BIT_DEPTH-1:0] lfo_fifo_rd_data;
+logic lfo_fifo_empty;
+
 assign audio_out_i2s_bclk_2 = i2s_bclk;
 assign audio_out_i2s_lrck_2 = i2s_lrck;
 assign audio_out_i2s_dout_2 = i2s_din;
@@ -137,11 +144,54 @@ wavetable_synth wavetable_synth_inst (
     .wr_en         (wt_fifo_wr_en),
     .wr_data       (wt_fifo_wr_data),
     .fifo_full     (wt_fifo_full),
+    //fifo input - currently disconnected
+    .rd_en         (),
+    .rd_data       (16'h0),
+    .fifo_empty    (1'b1),
     //Encoder IF
     .freq_enc_up   (freq_enc_up),
     .freq_enc_press(freq_enc_press),
     .freq_enc_down (freq_enc_down)
 );
+
+wavetable_synth  #(
+    .DEFAULT_PHASE_INC (24'd100) // example phase increment for LFO of 3Hz
+    ) LFO_inst (
+    .clk           (sys_clk),
+    .rst_n         (sys_rst_n),
+
+    //fifo output IF
+    .wr_en         (lfo_fifo_wr_en),
+    .wr_data       (lfo_fifo_wr_data),
+    .fifo_full     (lfo_fifo_full),
+
+    //fifo input - currently disconnected
+    .rd_en         (),
+    .rd_data       (16'd0),
+    .fifo_empty    (1'b1),
+    //Encoder IF
+    .freq_enc_up   (1'b0),
+    .freq_enc_press(1'b0),
+    .freq_enc_down (1'b0)
+);
+
+//fifo for LFO output
+fifo #(
+    .WIDTH (wavetable_pkg::BIT_DEPTH),
+    .DEPTH (AUDIO_FIFO_DEPTH)
+) lfo_fifo_inst (
+    .clk     (sys_clk),
+    .rst_n   (sys_rst_n),
+    //fifo IN IF
+    .wr_en   (lfo_fifo_wr_en),
+    .wr_data (lfo_fifo_wr_data),
+    .full    (lfo_fifo_full),
+    //fifo OUT IF
+    .rd_en   (lfo_fifo_rd_en),
+    .rd_data (lfo_fifo_rd_data),
+    .empty   (lfo_fifo_empty)
+);
+
 
 fifo #(
     .WIDTH (wavetable_pkg::BIT_DEPTH),
@@ -173,7 +223,11 @@ volume #(
 
     .fifo_out_data  (vol_fifo_wr_data),
     .fifo_out_wr_en (vol_fifo_wr_en),
-    .fifo_out_full  (vol_fifo_full)
+    .fifo_out_full  (vol_fifo_full),
+
+    .control_fifo_empty (lfo_fifo_empty),
+    .control_fifo_data  (lfo_fifo_rd_data),
+    .control_fifo_rd_en (lfo_fifo_rd_en)
 );
 
 fifo #(
@@ -193,7 +247,6 @@ fifo #(
 );
 
 i2s_tx #(
-    .SYS_CLK_FREQ (27_000_000),
     .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
 ) i2s_tx_audio_out_inst (
     .clk        (sys_clk),
@@ -202,9 +255,12 @@ i2s_tx #(
     .rd_data    (vol_fifo_rd_data),
     .fifo_empty (vol_fifo_empty),
 
-    .bclk       (audio_out_i2s_bclk),
-    .lrck       (audio_out_i2s_lrck),
-    .sdata      (audio_out_i2s_dout)
+   // .bclk       (audio_out_i2s_bclk),
+   // .lrck       (audio_out_i2s_lrck),
+   // .sdata      (audio_out_i2s_dout)
+    .bclk       (i2s_bclk),
+    .lrck       (i2s_lrck),
+    .sdata      (i2s_din)
 );
 
 i2s_rx #(
@@ -239,7 +295,6 @@ fifo #(
 );
 
 i2s_tx #(
-    .SYS_CLK_FREQ (27_000_000),
     .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
 ) i2s_tx_inst (
     .clk        (sys_clk),
@@ -248,9 +303,9 @@ i2s_tx #(
     .rd_data    (i2s_rx_fifo_rd_data),
     .fifo_empty (i2s_rx_fifo_empty),
 
-    .bclk       (i2s_bclk),
-    .lrck       (i2s_lrck),
-    .sdata      (i2s_din)
+    //.bclk       (i2s_bclk),
+    //.lrck       (i2s_lrck),
+    //.sdata      (i2s_din)
 );
 
 
