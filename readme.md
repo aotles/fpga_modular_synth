@@ -2,6 +2,8 @@
 
 FPGA-based modular synthesizer targeting the Sipeed Tang Nano 9K (Gowin GW1NR-9C),
 streaming audio out over I2S to a UDA1334A DAC breakout board.
+for more documentation about the modules see google doc below (work in progress)
+https://docs.google.com/document/d/13BydHUB-rMAYG7DWMklJPGoZyAwdrkyL1a4teEbocks/edit?tab=t.0
 
 ## Build & Program
 
