@@ -145,35 +145,35 @@ wavetable_synth wavetable_synth_inst (
     .wr_data       (wt_fifo_wr_data),
     .fifo_full     (wt_fifo_full),
     //fifo input - currently disconnected
-    .rd_en         (),
-    .rd_data       (16'h0),
-    .fifo_empty    (1'b1),
+    .rd_en         (lfo_fifo_rd_en),
+    .rd_data       (lfo_fifo_rd_data),
+    .fifo_empty    (lfo_fifo_empty),
     //Encoder IF
     .freq_enc_up   (freq_enc_up),
     .freq_enc_press(freq_enc_press),
     .freq_enc_down (freq_enc_down)
 );
 
-wavetable_synth  #(
-    .DEFAULT_PHASE_INC (24'd100) // example phase increment for LFO of 3Hz
-    ) LFO_inst (
-    .clk           (sys_clk),
-    .rst_n         (sys_rst_n),
-
-    //fifo output IF
-    .wr_en         (lfo_fifo_wr_en),
-    .wr_data       (lfo_fifo_wr_data),
-    .fifo_full     (lfo_fifo_full),
-
-    //fifo input - currently disconnected
-    .rd_en         (),
-    .rd_data       (16'd0),
-    .fifo_empty    (1'b1),
-    //Encoder IF
-    .freq_enc_up   (1'b0),
-    .freq_enc_press(1'b0),
-    .freq_enc_down (1'b0)
-);
+//wavetable_synth  #(
+//    .DEFAULT_PHASE_INC (24'd100) // example phase increment for LFO of 3Hz
+//    ) LFO_inst (
+//    .clk           (sys_clk),
+//    .rst_n         (sys_rst_n),
+//
+//    //fifo output IF
+//    .wr_en         (lfo_fifo_wr_en),
+//    .wr_data       (lfo_fifo_wr_data),
+//    .fifo_full     (lfo_fifo_full),
+//
+//    //fifo input - currently disconnected
+//    .rd_en         (),
+//    .rd_data       (16'd0),
+//    .fifo_empty    (1'b1),
+//    //Encoder IF
+//    .freq_enc_up   (1'b0),
+//    .freq_enc_press(1'b0),
+//    .freq_enc_down (1'b0)
+//);
 
 //fifo for LFO output
 fifo #(
@@ -225,9 +225,12 @@ volume #(
     .fifo_out_wr_en (vol_fifo_wr_en),
     .fifo_out_full  (vol_fifo_full),
 
-    .control_fifo_empty (lfo_fifo_empty),
-    .control_fifo_data  (lfo_fifo_rd_data),
-    .control_fifo_rd_en (lfo_fifo_rd_en)
+    .control_fifo_empty (1'b1),
+    .control_fifo_data  (16'd0),
+    .control_fifo_rd_en ()
+    //.control_fifo_empty (lfo_fifo_empty),
+    //.control_fifo_data  (lfo_fifo_rd_data),
+    //.control_fifo_rd_en (lfo_fifo_rd_en)
 );
 
 fifo #(
@@ -273,9 +276,12 @@ i2s_rx #(
     .lrck         (audio_in_i2s_lrck),
     .sdata        (audio_in_i2s_din),
 
-    .fifo_full    (i2s_rx_fifo_full),
-    .fifo_wr_data (i2s_rx_fifo_wr_data),
-    .fifo_wr_en   (i2s_rx_fifo_wr_en)
+    //.fifo_full    (i2s_rx_fifo_full),
+    //.fifo_wr_data (i2s_rx_fifo_wr_data),
+    //.fifo_wr_en   (i2s_rx_fifo_wr_en)
+    .fifo_full    (lfo_fifo_full),
+    .fifo_wr_data (lfo_fifo_wr_data),
+    .fifo_wr_en   (lfo_fifo_wr_en)
 );
 
 fifo #(
