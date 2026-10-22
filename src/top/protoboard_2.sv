@@ -9,13 +9,13 @@ module top # (
     input  logic sys_rst_n,        // reset input
     output logic [5:0] led,   // 6 LEDS pin
     // Encoder inputs
-    input  logic freq_enc_A,
-    input  logic freq_enc_B,
-    input  logic freq_enc_C,
+    input  logic enc_0_A,
+    input  logic enc_0_B,
+    input  logic enc_0_C,
 
-    input  logic vol_enc_A,
-    input  logic vol_enc_B,
-    input  logic vol_enc_C,
+    input  logic enc_1_A,
+    input  logic enc_1_B,
+    input  logic enc_1_C,
 
     // I2S input from the audio jack
     input  logic audio_in_i2s_bclk,
@@ -25,16 +25,13 @@ module top # (
     output logic audio_out_i2s_bclk,
     output logic audio_out_i2s_lrck,
     output logic audio_out_i2s_dout
-    // I2S output to the UDA1334A breakout
-    //output logic i2s_bclk,
-    //output logic i2s_lrck,
-    //output logic i2s_din
 );
 
 localparam reg [23:0] half_second_count = SIMULATION ? 24'd1000 : 24'd13_499_999;
 localparam int AUDIO_FIFO_DEPTH = 16;
 
 reg [5:0]  led_counter;
+logic      led_disp_mode;
 
 //using this as a poor man's versioning system
 assign led = ~led_counter;
@@ -65,13 +62,18 @@ wire                                  i2s_rx_fifo_rd_en;
 wire                                  i2s_rx_fifo_empty;
 
 //encoder signals
-wire freq_enc_up;
-wire freq_enc_press;
-wire freq_enc_down;
+wire enc_0_up;
+wire enc_0_press;
+wire enc_0_down;
 
-wire vol_enc_up;
-wire vol_enc_press;
-wire vol_enc_down;
+wire enc_1_up;
+wire enc_1_press;
+wire enc_1_down;
+
+wire [1:0] mux_enc_up;
+wire [1:0] mux_enc_press;
+wire [1:0] mux_enc_down;
+wire [1:0] mux_enc_select;
 
 logic clk_1ms;
 
@@ -85,38 +87,62 @@ clk_div #(
     .clk_1ms (clk_1ms)
 );
 
-encoder freq_encoder_inst (
+encoder encoder_0_inst (
     .clk     (sys_clk),
     .rst_n   (sys_rst_n),
     .clk_1ms (clk_1ms),
-    .A       (freq_enc_A),
-    .B       (freq_enc_B),
-    .C       (freq_enc_C),
-    .up      (freq_enc_up),
-    .press   (freq_enc_press),
-    .down    (freq_enc_down)
+    .A       (enc_0_A),
+    .B       (enc_0_B),
+    .C       (enc_0_C),
+    .up      (enc_0_up),
+    .press   (enc_0_press),
+    .down    (enc_0_down)
 );
 
-encoder vol_encoder_inst (
+encoder encoder_1_inst (
     .clk     (sys_clk),
     .rst_n   (sys_rst_n),
     .clk_1ms (clk_1ms),
-    .A       (vol_enc_A),
-    .B       (vol_enc_B),
-    .C       (vol_enc_C),
-    .up      (vol_enc_up),
-    .press   (vol_enc_press),
-    .down    (vol_enc_down)
+    .A       (enc_1_A),
+    .B       (enc_1_B),
+    .C       (enc_1_C),
+    .up      (enc_1_up),
+    .press   (enc_1_press),
+    .down    (enc_1_down)
+);
+
+enc_mux #(
+    .NUM_OUTPUTS (2)
+) enc_mux_inst (
+    .clk          (sys_clk),
+    .rst_n        (sys_rst_n),
+    .select_up    (enc_0_up),
+    .select_down  (enc_0_down),
+    .data_up      (enc_1_up),
+    .data_press   (enc_1_press),
+    .data_down    (enc_1_down),
+    .enc_up       (mux_enc_up),
+    .enc_press    (mux_enc_press),
+    .enc_down     (mux_enc_down),
+    .enc_select   (mux_enc_select)
 );
 
 always_ff @(posedge sys_clk) begin
     if (!sys_rst_n) begin
         led_counter <= 6'b0;
+        led_disp_mode <= 1'b0;
     end else begin
-        if (vol_enc_up) begin
-            led_counter <= led_counter + 1'b1;
-        end else if (vol_enc_down) begin
-            led_counter <= led_counter - 1'b1;
+        if (enc_0_press) begin
+            led_disp_mode <= ~led_disp_mode;
+        end
+        if (~led_disp_mode) begin
+            led_counter <= {5'h0, mux_enc_select[1]};
+        end else begin
+            if (|mux_enc_up) begin
+                led_counter <= led_counter + 1'b1;
+            end else if (|mux_enc_down) begin
+                led_counter <= led_counter - 1'b1;
+            end
         end
     end
 end
@@ -131,9 +157,9 @@ wavetable_synth  #(
     .wr_data       (wt_fifo_wr_data),
     .fifo_full     (wt_fifo_full),
     //Encoder IF
-    .freq_enc_up   (freq_enc_up),
-    .freq_enc_press(freq_enc_press),
-    .freq_enc_down (freq_enc_down)
+    .freq_enc_up   (mux_enc_up[0]),
+    .freq_enc_press(mux_enc_press[0]),
+    .freq_enc_down (mux_enc_down[0])
 );
 
 fifo #(
@@ -157,8 +183,8 @@ volume #(
 ) volume_inst (
     .clk            (sys_clk),
     .rst            (!sys_rst_n),
-    .enc_up         (vol_enc_up),
-    .enc_down       (vol_enc_down),
+    .enc_up         (mux_enc_up[1]),
+    .enc_down       (mux_enc_down[1]),
 
     .fifo_in_empty  (wt_fifo_empty),
     .fifo_in_data   (wt_fifo_rd_data),
