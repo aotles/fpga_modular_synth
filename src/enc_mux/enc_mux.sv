@@ -42,7 +42,7 @@ module enc_mux #(
         enc_up[selected_channel] = data_up;
         enc_press[selected_channel] = data_press;
         enc_down[selected_channel] = data_down;
-        enc_select[selected_channel] = 1'b1;
+        enc_select = selected_channel;
     end
 
 endmodule

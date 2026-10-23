@@ -30,7 +30,7 @@ module top # (
 localparam int AUDIO_FIFO_DEPTH = 16;
 localparam int NUM_ENCODERS = 2;
 localparam int NUM_FIFOS = 3;
-localparam int NUM_2X_FIFOS = 1; //32 bit size fifos - usually only used for audio rx
+localparam int NUM_2X_FIFOS = 2; //32 bit size fifos - usually only used for audio rx
 
 reg [5:0]  led_counter;
 logic      led_disp_mode;
@@ -129,6 +129,21 @@ for (genvar k = 0; k < NUM_2X_FIFOS; k = k + 1) begin: fifo_2x_gen
         .rd_data (fifo_2x_rd_data[k]),
         .empty   (fifo_2x_empty[k])
     );
+
+    i2s_rx #(
+    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
+    ) i2s_rx_inst (
+        .clk          (sys_clk),
+        .rst_n        (sys_rst_n),
+
+        .bclk         (jack_in_i2s_bclk[k]),
+        .lrck         (jack_in_i2s_lrck[k]),
+        .sdata        (jack_in_i2s_din[k] ),
+
+        .fifo_full    (fifo_2x_full[k]),
+        .fifo_wr_data (fifo_2x_wr_data[k]),
+        .fifo_wr_en   (fifo_2x_wr_en[k])
+    );
 end
 endgenerate
 
@@ -170,20 +185,7 @@ always_ff @(posedge sys_clk) begin
     end
 end
 
-i2s_rx #(
-    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
-) i2s_rx_inst (
-    .clk          (sys_clk),
-    .rst_n        (sys_rst_n),
 
-    .bclk         (jack_in_i2s_bclk[0]),
-    .lrck         (jack_in_i2s_lrck[0]),
-    .sdata        (jack_in_i2s_din[0] ),
-
-    .fifo_full    (fifo_2x_full[0]),
-    .fifo_wr_data (fifo_2x_wr_data[0]),
-    .fifo_wr_en   (fifo_2x_wr_en[0])
-);
 
 wavetable_synth  #(
     ) wavetable_synth_inst (
@@ -215,9 +217,9 @@ volume #(
     .fifo_in_data   (fifo_rd_data[0]),
     .fifo_in_rd_en  (fifo_rd_en[0]  ),
 
-    .control_fifo_empty (1'b1),
-    .control_fifo_data  (16'd0),
-    .control_fifo_rd_en (),
+    .control_fifo_empty (fifo_2x_empty[1]),
+    .control_fifo_data  (fifo_2x_rd_data[1][wavetable_pkg::BIT_DEPTH-1:0]),
+    .control_fifo_rd_en (fifo_2x_rd_en[1]),
 
     .fifo_out_data  (fifo_wr_data[1]),
     .fifo_out_wr_en (fifo_wr_en[1]  ),
