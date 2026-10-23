@@ -8522,7 +8522,7 @@ endmodule
 (* dynports =  1  *)
 (* top =  1  *)
 (* src = "../src/top/protoboard_2.sv:4.1-191.10" *)
-module top(sys_clk, sys_rst_n, led, enc_A, enc_B, enc_C, jack1_out_i2s_bclk, jack1_out_i2s_lrck, jack1_out_i2s_dout);
+module top(sys_clk, sys_rst_n, led, enc_A, enc_B, enc_C, jack_out_i2s_bclk, jack_out_i2s_lrck, jack_out_i2s_dout);
   (* src = "../src/top/protoboard_2.sv:8.18-8.25" *)
   input sys_clk;
   wire sys_clk;
@@ -8541,15 +8541,15 @@ module top(sys_clk, sys_rst_n, led, enc_A, enc_B, enc_C, jack1_out_i2s_bclk, jac
   (* src = "../src/top/protoboard_2.sv:14.23-14.28" *)
   input [1:0] enc_C;
   wire [1:0] enc_C;
-  (* src = "../src/top/protoboard_2.sv:21.18-21.36" *)
-  output jack1_out_i2s_bclk;
-  wire jack1_out_i2s_bclk;
-  (* src = "../src/top/protoboard_2.sv:22.18-22.36" *)
-  output jack1_out_i2s_lrck;
-  wire jack1_out_i2s_lrck;
-  (* src = "../src/top/protoboard_2.sv:23.18-23.36" *)
-  output jack1_out_i2s_dout;
-  wire jack1_out_i2s_dout;
+  (* src = "../src/top/protoboard_2.sv:21.24-21.41" *)
+  output [1:0] jack_out_i2s_bclk;
+  wire [1:0] jack_out_i2s_bclk;
+  (* src = "../src/top/protoboard_2.sv:22.24-22.41" *)
+  output [1:0] jack_out_i2s_lrck;
+  wire [1:0] jack_out_i2s_lrck;
+  (* src = "../src/top/protoboard_2.sv:23.24-23.41" *)
+  output [1:0] jack_out_i2s_dout;
+  wire [1:0] jack_out_i2s_dout;
   wire _00_;
   wire _01_;
   wire _02_;
@@ -8791,14 +8791,14 @@ module top(sys_clk, sys_rst_n, led, enc_A, enc_B, enc_C, jack1_out_i2s_bclk, jac
   );
   (* src = "../src/top/protoboard_2.sv:178.3-189.2" *)
   \$paramod\i2s_tx\BIT_DEPTH=s32'00000000000000000000000000010000  i2s_tx_audio_out_inst (
-    .bclk(jack1_out_i2s_bclk),
+    .bclk(jack_out_i2s_bclk[1]),
     .clk(sys_clk),
     .fifo_empty(fifo_empty[1]),
-    .lrck(jack1_out_i2s_lrck),
+    .lrck(jack_out_i2s_lrck[1]),
     .rd_data(fifo_rd_data[31:16]),
     .rd_en(fifo_rd_en[1]),
     .rst_n(sys_rst_n),
-    .sdata(jack1_out_i2s_dout)
+    .sdata(jack_out_i2s_dout[1])
   );
   (* src = "../src/top/protoboard_2.sv:161.3-174.2" *)
   \$paramod\volume\DWIDTH=s32'00000000000000000000000000010000  volume_inst (

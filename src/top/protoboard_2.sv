@@ -18,12 +18,11 @@ module top # (
     //input  logic audio_in_i2s_lrck,
     //input  logic audio_in_i2s_din,
     // I2S output to the audio jack
-    output logic jack1_out_i2s_bclk,
-    output logic jack1_out_i2s_lrck,
-    output logic jack1_out_i2s_dout
+    output logic [1:0] jack_out_i2s_bclk,
+    output logic [1:0] jack_out_i2s_lrck,
+    output logic [1:0] jack_out_i2s_dout
 );
 
-localparam reg [23:0] half_second_count = SIMULATION ? 24'd1000 : 24'd13_499_999;
 localparam int AUDIO_FIFO_DEPTH = 16;
 localparam int NUM_ENCODERS = 2;
 localparam int NUM_FIFOS = 3;
@@ -31,10 +30,7 @@ localparam int NUM_FIFOS = 3;
 reg [5:0]  led_counter;
 logic      led_disp_mode;
 
-//using this as a poor man's versioning system
 assign led = ~led_counter;
-
-// Audio path: wave table -> FIFO -> I2S transmitter
 
 //write signals
 logic [NUM_FIFOS-1:0][wavetable_pkg::BIT_DEPTH-1:0] fifo_wr_data;
@@ -183,9 +179,9 @@ i2s_tx #(
     .rd_data    (fifo_rd_data[1]),
     .fifo_empty (fifo_empty[1]  ),
 
-    .bclk       (jack1_out_i2s_bclk),
-    .lrck       (jack1_out_i2s_lrck),
-    .sdata      (jack1_out_i2s_dout)
+    .bclk       (jack_out_i2s_bclk[1]),
+    .lrck       (jack_out_i2s_lrck[1]),
+    .sdata      (jack_out_i2s_dout[1])
 );
 
 endmodule

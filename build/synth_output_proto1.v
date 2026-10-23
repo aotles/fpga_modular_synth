@@ -484,31 +484,31 @@ module \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo (clk, rst_n, wr_e
   wire _0450_;
   wire _0451_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [3:0] _0452_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [3:0] _0453_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [3:0] _0454_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [3:0] _0455_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [3:0] _0456_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [3:0] _0457_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [4:0] _0458_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [4:0] _0459_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [4:0] _0460_;
   (* force_downto = 32'd1 *)
   (* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
@@ -519,7 +519,7 @@ module \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo (clk, rst_n, wr_e
   (* force_downto = 32'd1 *)
   (* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [4:0] _0463_;
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _0464_;
   (* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _0465_;
@@ -1679,28 +1679,28 @@ module \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo (clk, rst_n, wr_e
   assign _0004_ = ~wr_valid;
   assign _0005_ = ~rd_valid;
   assign _0008_ = ~rd_ptr[3];
-  assign _0454_[1] = wr_ptr[1] ^(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  wr_ptr[0];
-  assign _0454_[2] = wr_ptr[2] ^(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0452_[1];
-  assign _0454_[3] = wr_ptr[3] ^(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0452_[2];
-  assign _0457_[1] = rd_ptr[1] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  rd_ptr[0];
-  assign _0457_[2] = rd_ptr[2] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0455_[1];
-  assign _0457_[3] = rd_ptr[3] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0455_[2];
-  assign _0460_[1] = count[1] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  count[0];
-  assign _0460_[2] = count[2] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0458_[1];
-  assign _0460_[3] = count[3] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0458_[2];
-  assign _0460_[4] = count[4] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0458_[3];
+  assign _0454_[1] = wr_ptr[1] ^(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  wr_ptr[0];
+  assign _0454_[2] = wr_ptr[2] ^(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0452_[1];
+  assign _0454_[3] = wr_ptr[3] ^(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0452_[2];
+  assign _0457_[1] = rd_ptr[1] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  rd_ptr[0];
+  assign _0457_[2] = rd_ptr[2] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0455_[1];
+  assign _0457_[3] = rd_ptr[3] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0455_[2];
+  assign _0460_[1] = count[1] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  count[0];
+  assign _0460_[2] = count[2] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0458_[1];
+  assign _0460_[3] = count[3] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0458_[2];
+  assign _0460_[4] = count[4] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0458_[3];
   assign _0463_[1] = _0462_[1] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  count[0];
   assign _0463_[2] = _0462_[2] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0461_[1];
   assign _0463_[3] = _0462_[3] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0461_[2];
   assign _0463_[4] = _0462_[4] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0461_[3];
-  assign _0452_[2] = wr_ptr[2] &(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0452_[1];
-  assign _0452_[1] = wr_ptr[1] &(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  wr_ptr[0];
-  assign _0455_[2] = rd_ptr[2] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0455_[1];
-  assign _0455_[1] = rd_ptr[1] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  rd_ptr[0];
-  assign _0458_[2] = count[2] &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0458_[1];
-  assign _0458_[3] = _0464_ &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _0458_[1];
-  assign _0464_ = count[3] &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  count[2];
-  assign _0458_[1] = count[1] &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  count[0];
+  assign _0452_[2] = wr_ptr[2] &(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0452_[1];
+  assign _0452_[1] = wr_ptr[1] &(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  wr_ptr[0];
+  assign _0455_[2] = rd_ptr[2] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0455_[1];
+  assign _0455_[1] = rd_ptr[1] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  rd_ptr[0];
+  assign _0458_[2] = count[2] &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0458_[1];
+  assign _0458_[3] = _0464_ &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _0458_[1];
+  assign _0464_ = count[3] &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  count[2];
+  assign _0458_[1] = count[1] &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  count[0];
   assign _0461_[2] = count[2] |(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _0469_;
   assign _0469_ = _0462_[2] &(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0461_[1];
   assign _0461_[3] = _0470_ |(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _0467_;
@@ -2355,10 +2355,10 @@ module \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo (clk, rst_n, wr_e
   assign _0415_ = _0460_[3] &(* src = "../src/misc/fifo.sv:48.48-48.48|../src/misc/fifo.sv:47.13-51.20" *)  _0436_;
   assign _0416_ = _0463_[4] &(* src = "../src/misc/fifo.sv:48.48-48.48|../src/misc/fifo.sv:47.13-51.20" *)  _0435_;
   assign _0417_ = _0460_[4] &(* src = "../src/misc/fifo.sv:48.48-48.48|../src/misc/fifo.sv:47.13-51.20" *)  _0436_;
-  assign _0456_[0] = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[0];
-  assign _0006_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[1];
-  assign _0007_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[2];
-  assign _0462_[1] = ~(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) count[1];
+  assign _0456_[0] = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[0];
+  assign _0006_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[1];
+  assign _0007_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[2];
+  assign _0462_[1] = ~(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) count[1];
   assign rd_data[0] = _0047_ ? (* src = "../src/misc/fifo.sv:55.22-55.25" *) _0051_ : 1'hx;
   assign rd_data[1] = _0047_ ? (* src = "../src/misc/fifo.sv:55.22-55.25" *) _0055_ : 1'hx;
   assign rd_data[2] = _0047_ ? (* src = "../src/misc/fifo.sv:55.22-55.25" *) _0059_ : 1'hx;
@@ -3210,31 +3210,31 @@ module \$paramod$28704d8bf4447e08602ecae7770c77318b280126\fifo (clk, rst_n, wr_e
   wire _0770_;
   wire _0771_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [3:0] _0772_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [3:0] _0773_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [3:0] _0774_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [3:0] _0775_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [3:0] _0776_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [3:0] _0777_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [4:0] _0778_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [4:0] _0779_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [4:0] _0780_;
   (* force_downto = 32'd1 *)
   (* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
@@ -3245,7 +3245,7 @@ module \$paramod$28704d8bf4447e08602ecae7770c77318b280126\fifo (clk, rst_n, wr_e
   (* force_downto = 32'd1 *)
   (* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [4:0] _0783_;
-  (* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _0784_;
   (* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _0785_;
@@ -5429,28 +5429,28 @@ module \$paramod$28704d8bf4447e08602ecae7770c77318b280126\fifo (clk, rst_n, wr_e
   assign _0004_ = ~wr_valid;
   assign _0005_ = ~rd_valid;
   assign _0008_ = ~rd_ptr[3];
-  assign _0774_[1] = wr_ptr[1] ^(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  wr_ptr[0];
-  assign _0774_[2] = wr_ptr[2] ^(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0772_[1];
-  assign _0774_[3] = wr_ptr[3] ^(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0772_[2];
-  assign _0777_[1] = rd_ptr[1] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  rd_ptr[0];
-  assign _0777_[2] = rd_ptr[2] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0775_[1];
-  assign _0777_[3] = rd_ptr[3] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0775_[2];
-  assign _0780_[1] = count[1] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  count[0];
-  assign _0780_[2] = count[2] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0778_[1];
-  assign _0780_[3] = count[3] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0778_[2];
-  assign _0780_[4] = count[4] ^(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0778_[3];
+  assign _0774_[1] = wr_ptr[1] ^(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  wr_ptr[0];
+  assign _0774_[2] = wr_ptr[2] ^(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0772_[1];
+  assign _0774_[3] = wr_ptr[3] ^(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0772_[2];
+  assign _0777_[1] = rd_ptr[1] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  rd_ptr[0];
+  assign _0777_[2] = rd_ptr[2] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0775_[1];
+  assign _0777_[3] = rd_ptr[3] ^(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0775_[2];
+  assign _0780_[1] = count[1] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  count[0];
+  assign _0780_[2] = count[2] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0778_[1];
+  assign _0780_[3] = count[3] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0778_[2];
+  assign _0780_[4] = count[4] ^(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0778_[3];
   assign _0783_[1] = _0782_[1] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  count[0];
   assign _0783_[2] = _0782_[2] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0781_[1];
   assign _0783_[3] = _0782_[3] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0781_[2];
   assign _0783_[4] = _0782_[4] ^(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _0781_[3];
-  assign _0772_[2] = wr_ptr[2] &(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0772_[1];
-  assign _0772_[1] = wr_ptr[1] &(* src = "../src/misc/fifo.sv:40.61-40.74|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  wr_ptr[0];
-  assign _0775_[2] = rd_ptr[2] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0775_[1];
-  assign _0775_[1] = rd_ptr[1] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  rd_ptr[0];
-  assign _0778_[2] = count[2] &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0778_[1];
-  assign _0778_[3] = _0784_ &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _0778_[1];
-  assign _0784_ = count[3] &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  count[2];
-  assign _0778_[1] = count[1] &(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  count[0];
+  assign _0772_[2] = wr_ptr[2] &(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0772_[1];
+  assign _0772_[1] = wr_ptr[1] &(* src = "../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  wr_ptr[0];
+  assign _0775_[2] = rd_ptr[2] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0775_[1];
+  assign _0775_[1] = rd_ptr[1] &(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  rd_ptr[0];
+  assign _0778_[2] = count[2] &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0778_[1];
+  assign _0778_[3] = _0784_ &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _0778_[1];
+  assign _0784_ = count[3] &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  count[2];
+  assign _0778_[1] = count[1] &(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  count[0];
   assign _0781_[2] = count[2] |(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _0789_;
   assign _0789_ = _0782_[2] &(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _0781_[1];
   assign _0781_[3] = _0790_ |(* src = "../src/misc/fifo.sv:49.35-49.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _0787_;
@@ -6601,10 +6601,10 @@ module \$paramod$28704d8bf4447e08602ecae7770c77318b280126\fifo (clk, rst_n, wr_e
   assign _0735_ = _0780_[3] &(* src = "../src/misc/fifo.sv:48.48-48.48|../src/misc/fifo.sv:47.13-51.20" *)  _0756_;
   assign _0736_ = _0783_[4] &(* src = "../src/misc/fifo.sv:48.48-48.48|../src/misc/fifo.sv:47.13-51.20" *)  _0755_;
   assign _0737_ = _0780_[4] &(* src = "../src/misc/fifo.sv:48.48-48.48|../src/misc/fifo.sv:47.13-51.20" *)  _0756_;
-  assign _0776_[0] = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[0];
-  assign _0006_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[1];
-  assign _0007_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[2];
-  assign _0782_[1] = ~(* src = "../src/misc/fifo.sv:48.35-48.47|../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) count[1];
+  assign _0776_[0] = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[0];
+  assign _0006_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[1];
+  assign _0007_ = ~(* src = "../src/misc/fifo.sv:44.56-44.69|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) rd_ptr[2];
+  assign _0782_[1] = ~(* src = "../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) count[1];
   assign rd_data[0] = _0047_ ? (* src = "../src/misc/fifo.sv:55.22-55.25" *) _0051_ : 1'hx;
   assign rd_data[1] = _0047_ ? (* src = "../src/misc/fifo.sv:55.22-55.25" *) _0055_ : 1'hx;
   assign rd_data[2] = _0047_ ? (* src = "../src/misc/fifo.sv:55.22-55.25" *) _0059_ : 1'hx;
@@ -6669,209 +6669,89 @@ module \$paramod$28704d8bf4447e08602ecae7770c77318b280126\fifo (clk, rst_n, wr_e
 endmodule
 
 (* dynports =  1  *)
-(* hdlname = "clk_div" *)
-(* src = "../src/clk_div/clk_div.sv:1.1-27.10" *)
-module \$paramod$5ff65cac883644189a11f33c7731774bf2d6e2d2\clk_div (clk, rst_n, clk_1ms);
-  (* src = "../src/clk_div/clk_div.sv:5.15-5.18" *)
+(* hdlname = "enc_mux" *)
+(* src = "../src/enc_mux/enc_mux.sv:1.1-48.10" *)
+module \$paramod\enc_mux\NUM_OUTPUTS=s32'00000000000000000000000000000010 (clk, rst_n, select_up, select_down, data_up, data_press, data_down, enc_up, enc_press, enc_down, enc_select);
+  (* src = "../src/enc_mux/enc_mux.sv:4.18-4.21" *)
   input clk;
   wire clk;
-  (* src = "../src/clk_div/clk_div.sv:6.15-6.20" *)
+  (* src = "../src/enc_mux/enc_mux.sv:5.18-5.23" *)
   input rst_n;
   wire rst_n;
-  (* src = "../src/clk_div/clk_div.sv:7.15-7.22" *)
-  output clk_1ms;
-  reg clk_1ms;
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  wire [13:0] _000_;
-  wire _001_;
-  wire _002_;
-  wire _003_;
-  wire _004_;
-  wire _005_;
-  wire _006_;
-  wire _007_;
-  wire _008_;
-  wire [6:0] _009_;
-  wire [2:0] _010_;
-  wire [1:0] _011_;
-  wire _012_;
-  (* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)
-  wire _013_;
-  (* src = "../src/clk_div/clk_div.sv:21.15-21.23" *)
-  wire _014_;
+  (* src = "../src/enc_mux/enc_mux.sv:7.18-7.27" *)
+  input select_up;
+  wire select_up;
+  (* src = "../src/enc_mux/enc_mux.sv:8.18-8.29" *)
+  input select_down;
+  wire select_down;
+  (* src = "../src/enc_mux/enc_mux.sv:10.18-10.25" *)
+  input data_up;
+  wire data_up;
+  (* src = "../src/enc_mux/enc_mux.sv:11.18-11.28" *)
+  input data_press;
+  wire data_press;
+  (* src = "../src/enc_mux/enc_mux.sv:12.18-12.27" *)
+  input data_down;
+  wire data_down;
+  (* src = "../src/enc_mux/enc_mux.sv:14.36-14.42" *)
+  output [1:0] enc_up;
+  wire [1:0] enc_up;
+  (* src = "../src/enc_mux/enc_mux.sv:15.36-15.45" *)
+  output [1:0] enc_press;
+  wire [1:0] enc_press;
+  (* src = "../src/enc_mux/enc_mux.sv:16.36-16.44" *)
+  output [1:0] enc_down;
+  wire [1:0] enc_down;
+  (* src = "../src/enc_mux/enc_mux.sv:18.36-18.46" *)
+  output [1:0] enc_select;
+  wire [1:0] enc_select;
+  (* src = "../src/enc_mux/enc_mux.sv:26.5-34.8" *)
+  wire _00_;
+  wire _01_;
+  (* src = "../src/enc_mux/enc_mux.sv:29.22-29.66" *)
+  wire _02_;
+  (* src = "../src/enc_mux/enc_mux.sv:31.22-31.58" *)
+  wire _03_;
+  wire _04_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
-  wire [13:0] _015_;
-  (* force_downto = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
-  wire [13:0] _016_;
-  (* force_downto = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
-  wire [13:0] _017_;
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _018_;
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _019_;
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _020_;
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _021_;
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _022_;
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _023_;
-  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _024_;
-  (* src = "../src/clk_div/clk_div.sv:13.28-13.35" *)
-  reg [13:0] counter;
+  (* src = "../src/enc_mux/enc_mux.sv:30.33-30.56|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  wire [0:0] _05_;
+  (* src = "../src/enc_mux/enc_mux.sv:42.9-42.43|/opt/homebrew/bin/../share/yosys/techmap.v:157.2-184.5" *)
+  wire [3:0] _06_;
+  (* src = "../src/enc_mux/enc_mux.sv:43.9-43.49|/opt/homebrew/bin/../share/yosys/techmap.v:157.2-184.5" *)
+  wire [3:0] _07_;
+  (* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:157.2-184.5" *)
+  wire [3:0] _08_;
+  (* src = "../src/enc_mux/enc_mux.sv:24.29-24.45" *)
+  reg [0:0] selected_channel;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  (* src = "../src/enc_mux/enc_mux.sv:26.5-34.8" *)
   always @(posedge clk, negedge rst_n)
-    if (!rst_n) clk_1ms <= 1'h0;
-    else if (_013_) clk_1ms <= _014_;
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[0] <= 1'h0;
-    else counter[0] <= _000_[0];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[1] <= 1'h0;
-    else counter[1] <= _000_[1];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[2] <= 1'h0;
-    else counter[2] <= _000_[2];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[3] <= 1'h0;
-    else counter[3] <= _000_[3];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[4] <= 1'h0;
-    else counter[4] <= _000_[4];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[5] <= 1'h0;
-    else counter[5] <= _000_[5];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[6] <= 1'h0;
-    else counter[6] <= _000_[6];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[7] <= 1'h0;
-    else counter[7] <= _000_[7];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[8] <= 1'h0;
-    else counter[8] <= _000_[8];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[9] <= 1'h0;
-    else counter[9] <= _000_[9];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[10] <= 1'h0;
-    else counter[10] <= _000_[10];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[11] <= 1'h0;
-    else counter[11] <= _000_[11];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[12] <= 1'h0;
-    else counter[12] <= _000_[12];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) counter[13] <= 1'h0;
-    else counter[13] <= _000_[13];
-  assign _016_[0] = ~counter[0];
-  assign _002_ = ~counter[13];
-  assign _017_[1] = counter[1] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  counter[0];
-  assign _017_[2] = counter[2] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[1];
-  assign _017_[3] = counter[3] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[2];
-  assign _017_[4] = counter[4] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[3];
-  assign _017_[5] = counter[5] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[4];
-  assign _017_[6] = counter[6] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[5];
-  assign _017_[7] = counter[7] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[6];
-  assign _017_[8] = counter[8] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[7];
-  assign _017_[9] = counter[9] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[8];
-  assign _017_[10] = counter[10] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[9];
-  assign _017_[11] = counter[11] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[10];
-  assign _017_[12] = counter[12] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[11];
-  assign _017_[13] = counter[13] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[12];
-  assign _015_[4] = counter[4] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[3];
-  assign _015_[2] = counter[2] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[1];
-  assign _015_[10] = counter[10] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[9];
-  assign _015_[9] = _021_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
-  assign _015_[5] = _019_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[3];
-  assign _015_[6] = counter[6] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[5];
-  assign _015_[11] = _024_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
-  assign _015_[12] = counter[12] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[11];
-  assign _015_[7] = _023_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _015_[3];
-  assign _024_ = _022_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _021_;
-  assign _023_ = _020_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_;
-  assign _015_[3] = _018_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _015_[1];
-  assign _022_ = counter[11] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[10];
-  assign _021_ = counter[9] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[8];
-  assign _020_ = counter[7] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[6];
-  assign _019_ = counter[5] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[4];
-  assign _018_ = counter[3] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[2];
-  assign _015_[8] = counter[8] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
-  assign _015_[1] = counter[1] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  counter[0];
-  assign _009_[0] = _016_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _008_;
-  assign _009_[1] = counter[2] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _007_;
-  assign _009_[2] = _006_ |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _005_;
-  assign _009_[3] = counter[6] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _004_;
-  assign _009_[4] = counter[8] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  counter[9];
-  assign _009_[5] = _001_ |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  counter[11];
-  assign _009_[6] = _003_ |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _002_;
-  assign _010_[0] = _009_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[1];
-  assign _010_[1] = _009_[2] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[3];
-  assign _010_[2] = _009_[4] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[5];
-  assign _011_[0] = _010_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _010_[1];
-  assign _011_[1] = _010_[2] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[6];
-  assign _012_ = _011_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _011_[1];
-  assign _013_ = ~(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *) _012_;
-  assign _000_[0] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _016_[0] : 1'h0;
-  assign _000_[1] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[1] : 1'h0;
-  assign _000_[2] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[2] : 1'h0;
-  assign _000_[3] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[3] : 1'h0;
-  assign _000_[4] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[4] : 1'h0;
-  assign _000_[5] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[5] : 1'h0;
-  assign _000_[6] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[6] : 1'h0;
-  assign _000_[7] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[7] : 1'h0;
-  assign _000_[8] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[8] : 1'h0;
-  assign _000_[9] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[9] : 1'h0;
-  assign _000_[10] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[10] : 1'h0;
-  assign _000_[11] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[11] : 1'h0;
-  assign _000_[12] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[12] : 1'h0;
-  assign _000_[13] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[13] : 1'h0;
-  assign _014_ = ~(* src = "../src/clk_div/clk_div.sv:21.15-21.23" *) clk_1ms;
-  assign _008_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[1];
-  assign _007_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[3];
-  assign _006_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[4];
-  assign _005_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[5];
-  assign _004_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[7];
-  assign _001_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[10];
-  assign _003_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[12];
-  assign _016_[13:1] = counter[13:1];
-  assign _017_[0] = _016_[0];
-  assign _015_[0] = counter[0];
+    if (!rst_n) selected_channel <= 1'h0;
+    else if (_01_) selected_channel <= _00_;
+  assign _01_ = _02_ | _03_;
+  assign _02_ = select_up &(* src = "../src/enc_mux/enc_mux.sv:29.22-29.66" *)  _05_;
+  assign _03_ = select_down &(* src = "../src/enc_mux/enc_mux.sv:31.22-31.58" *)  selected_channel;
+  assign _04_ = _03_ ? (* src = "../src/enc_mux/enc_mux.sv:31.22-31.58|../src/enc_mux/enc_mux.sv:31.18-33.12" *) _05_ : 1'hx;
+  assign _00_ = _02_ ? (* src = "../src/enc_mux/enc_mux.sv:29.22-29.66|../src/enc_mux/enc_mux.sv:29.18-33.12" *) _05_ : _04_;
+  assign enc_up[0] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:42.9-42.43|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) 1'h0 : _06_[0];
+  assign enc_up[1] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:42.9-42.43|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) _06_[2] : 1'h0;
+  assign _06_[0] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:42.9-42.43|/opt/homebrew/bin/../share/yosys/techmap.v:174.3-175.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.7-174.32" *) 1'h0 : data_up;
+  assign _06_[2] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:42.9-42.43|/opt/homebrew/bin/../share/yosys/techmap.v:174.3-175.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.7-174.32" *) data_up : 1'h0;
+  assign enc_press[0] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:43.9-43.49|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) 1'h0 : _07_[0];
+  assign enc_press[1] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:43.9-43.49|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) _07_[2] : 1'h0;
+  assign _07_[0] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:43.9-43.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.3-175.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.7-174.32" *) 1'h0 : data_press;
+  assign _07_[2] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:43.9-43.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.3-175.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.7-174.32" *) data_press : 1'h0;
+  assign enc_select[0] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) 1'h0 : _05_;
+  assign enc_select[1] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) selected_channel : 1'h0;
+  assign _05_ = ~(* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:174.3-175.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.7-174.32" *) selected_channel;
+  assign enc_down[0] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) 1'h0 : _08_[0];
+  assign enc_down[1] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:178.4-183.7|/opt/homebrew/bin/../share/yosys/techmap.v:178.8-178.12" *) _08_[2] : 1'h0;
+  assign _08_[0] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:174.3-175.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.7-174.32" *) 1'h0 : data_down;
+  assign _08_[2] = selected_channel ? (* src = "../src/enc_mux/enc_mux.sv:44.9-44.47|/opt/homebrew/bin/../share/yosys/techmap.v:174.3-175.49|/opt/homebrew/bin/../share/yosys/techmap.v:174.7-174.32" *) data_down : 1'h0;
+  assign { _07_[3], _07_[1] } = 2'h0;
+  assign { _06_[3], _06_[1] } = 2'h0;
+  assign { _08_[3], _08_[1] } = 2'h0;
 endmodule
 
 (* dynports =  1  *)
@@ -10011,24 +9891,24 @@ module \$paramod\i2s_tx\BIT_DEPTH=s32'00000000000000000000000000010000 (clk, rst
   wire _026_;
   wire _027_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [3:0] _028_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [3:0] _029_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [3:0] _030_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [4:0] _031_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [4:0] _032_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [4:0] _033_;
-  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _034_;
   (* src = "../src/i2s/i2s_tx.sv:31.17-31.25" *)
   reg [4:0] bclk_cnt;
@@ -10305,19 +10185,19 @@ module \$paramod\i2s_tx\BIT_DEPTH=s32'00000000000000000000000000010000 (clk, rst
   assign _032_[0] = ~bclk_cnt[0];
   assign _004_ = ~bit_cnt[3];
   assign bclk_fall = bclk_r_d &(* src = "../src/i2s/i2s_tx.sv:55.22-55.40" *)  _017_;
-  assign _033_[1] = bclk_cnt[1] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  bclk_cnt[0];
-  assign _033_[2] = bclk_cnt[2] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _031_[1];
-  assign _033_[3] = bclk_cnt[3] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _031_[2];
-  assign _033_[4] = bclk_cnt[4] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _031_[3];
-  assign _030_[1] = bit_cnt[1] ^(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  bit_cnt[0];
-  assign _030_[2] = bit_cnt[2] ^(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _028_[1];
-  assign _030_[3] = bit_cnt[3] ^(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _028_[2];
-  assign _031_[2] = bclk_cnt[2] &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _031_[1];
-  assign _031_[3] = _034_ &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _031_[1];
-  assign _034_ = bclk_cnt[3] &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  bclk_cnt[2];
-  assign _031_[1] = bclk_cnt[1] &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  bclk_cnt[0];
-  assign _028_[2] = bit_cnt[2] &(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _028_[1];
-  assign _028_[1] = bit_cnt[1] &(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  bit_cnt[0];
+  assign _033_[1] = bclk_cnt[1] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  bclk_cnt[0];
+  assign _033_[2] = bclk_cnt[2] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _031_[1];
+  assign _033_[3] = bclk_cnt[3] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _031_[2];
+  assign _033_[4] = bclk_cnt[4] ^(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _031_[3];
+  assign _030_[1] = bit_cnt[1] ^(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  bit_cnt[0];
+  assign _030_[2] = bit_cnt[2] ^(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _028_[1];
+  assign _030_[3] = bit_cnt[3] ^(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _028_[2];
+  assign _031_[2] = bclk_cnt[2] &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _031_[1];
+  assign _031_[3] = _034_ &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _031_[1];
+  assign _034_ = bclk_cnt[3] &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  bclk_cnt[2];
+  assign _031_[1] = bclk_cnt[1] &(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  bclk_cnt[0];
+  assign _028_[2] = bit_cnt[2] &(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _028_[1];
+  assign _028_[1] = bit_cnt[1] &(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  bit_cnt[0];
   assign _007_ = bclk_fall & _016_;
   assign _009_ = _002_ & bclk_fall;
   assign _008_ = _009_ & _016_;
@@ -10394,9 +10274,9 @@ module \$paramod\i2s_tx\BIT_DEPTH=s32'00000000000000000000000000010000 (clk, rst
   assign _000_[4] = _013_ ? (* src = "../src/i2s/i2s_tx.sv:37.22-37.42|../src/i2s/i2s_tx.sv:37.18-42.12" *) _033_[4] : 1'h0;
   assign _002_ = ~lrck;
   assign _017_ = ~(* src = "../src/i2s/i2s_tx.sv:55.33-55.40" *) bclk_r;
-  assign _003_ = ~(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) bclk_cnt[3];
-  assign _006_ = ~(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) bit_cnt[1];
-  assign _005_ = ~(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) bit_cnt[2];
+  assign _003_ = ~(* src = "../src/i2s/i2s_tx.sv:41.25-41.40|../src/misc/fifo.sv:48.35-48.47|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) bclk_cnt[3];
+  assign _006_ = ~(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) bit_cnt[1];
+  assign _005_ = ~(* src = "../src/i2s/i2s_tx.sv:103.34-103.48|../src/misc/fifo.sv:40.61-40.74|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) bit_cnt[2];
   assign _033_[0] = _032_[0];
   assign _030_[0] = _029_[0];
   assign _032_[4:1] = bclk_cnt[4:1];
@@ -10678,98 +10558,98 @@ module \$paramod\volume\DWIDTH=s32'00000000000000000000000000010000 (clk, rst, e
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[2]  <= 1'h0;
-    else if (_004_) \gain_center_reg[2]  <= _001_[2];
+    else if (_005_) \gain_center_reg[2]  <= _001_[2];
   assign gain_center[2] = \gain_center_reg[2] ;
   reg \gain_center_reg[3] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[3]  <= 1'h0;
-    else if (_004_) \gain_center_reg[3]  <= _001_[3];
+    else if (_005_) \gain_center_reg[3]  <= _001_[3];
   assign gain_center[3] = \gain_center_reg[3] ;
   reg \gain_center_reg[4] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[4]  <= 1'h0;
-    else if (_004_) \gain_center_reg[4]  <= _001_[4];
+    else if (_005_) \gain_center_reg[4]  <= _001_[4];
   assign gain_center[4] = \gain_center_reg[4] ;
   reg \gain_center_reg[5] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[5]  <= 1'h0;
-    else if (_004_) \gain_center_reg[5]  <= _001_[5];
+    else if (_005_) \gain_center_reg[5]  <= _001_[5];
   assign gain_center[5] = \gain_center_reg[5] ;
   reg \gain_center_reg[6] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[6]  <= 1'h0;
-    else if (_004_) \gain_center_reg[6]  <= _001_[6];
+    else if (_005_) \gain_center_reg[6]  <= _001_[6];
   assign gain_center[6] = \gain_center_reg[6] ;
   reg \gain_center_reg[7] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[7]  <= 1'h0;
-    else if (_004_) \gain_center_reg[7]  <= _001_[7];
+    else if (_005_) \gain_center_reg[7]  <= _001_[7];
   assign gain_center[7] = \gain_center_reg[7] ;
   reg \gain_center_reg[8] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[8]  <= 1'h0;
-    else if (_004_) \gain_center_reg[8]  <= _001_[8];
+    else if (_005_) \gain_center_reg[8]  <= _001_[8];
   assign gain_center[8] = \gain_center_reg[8] ;
   reg \gain_center_reg[9] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[9]  <= 1'h1;
-    else if (_004_) \gain_center_reg[9]  <= _001_[9];
+    else if (_005_) \gain_center_reg[9]  <= _001_[9];
   assign gain_center[9] = \gain_center_reg[9] ;
   reg \gain_center_reg[10] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[10]  <= 1'h0;
-    else if (_004_) \gain_center_reg[10]  <= _001_[10];
+    else if (_005_) \gain_center_reg[10]  <= _001_[10];
   assign gain_center[10] = \gain_center_reg[10] ;
   reg \gain_center_reg[11] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[11]  <= 1'h0;
-    else if (_004_) \gain_center_reg[11]  <= _001_[11];
+    else if (_005_) \gain_center_reg[11]  <= _001_[11];
   assign gain_center[11] = \gain_center_reg[11] ;
   reg \gain_center_reg[12] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[12]  <= 1'h0;
-    else if (_004_) \gain_center_reg[12]  <= _001_[12];
+    else if (_005_) \gain_center_reg[12]  <= _001_[12];
   assign gain_center[12] = \gain_center_reg[12] ;
   reg \gain_center_reg[13] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[13]  <= 1'h0;
-    else if (_004_) \gain_center_reg[13]  <= _001_[13];
+    else if (_005_) \gain_center_reg[13]  <= _001_[13];
   assign gain_center[13] = \gain_center_reg[13] ;
   reg \gain_center_reg[14] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[14]  <= 1'h0;
-    else if (_004_) \gain_center_reg[14]  <= _001_[14];
+    else if (_005_) \gain_center_reg[14]  <= _001_[14];
   assign gain_center[14] = \gain_center_reg[14] ;
   reg \gain_center_reg[15] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
   always @(posedge clk, posedge rst)
     if (rst) \gain_center_reg[15]  <= 1'h0;
-    else if (_004_) \gain_center_reg[15]  <= _001_[15];
+    else if (_005_) \gain_center_reg[15]  <= _001_[15];
   assign gain_center[15] = \gain_center_reg[15] ;
   (* \always_ff  = 32'd1 *)
   (* src = "../src/vol/volume.sv:53.1-80.4" *)
@@ -10953,34 +10833,6 @@ module \$paramod\volume\DWIDTH=s32'00000000000000000000000000010000 (clk, rst, e
   assign _017_[2] = ~gain_center[2];
   assign _002_ = ~enc_down;
   assign _003_ = ~enc_up;
-  assign _025_[3] = _024_[3] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  gain_center[2];
-  assign _025_[6] = gain_center[6] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[5];
-  assign _025_[7] = _024_[7] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[6];
-  assign _025_[8] = _024_[8] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[7];
-  assign _025_[9] = _024_[9] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[8];
-  assign _025_[10] = _024_[10] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[9];
-  assign _025_[4] = _024_[4] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[3];
-  assign _025_[5] = gain_center[5] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[4];
-  assign _025_[11] = _024_[11] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[10];
-  assign _025_[12] = _024_[12] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[11];
-  assign _025_[13] = _024_[13] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[12];
-  assign _025_[14] = _024_[14] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[13];
-  assign _025_[15] = _024_[15] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[14];
-  assign _021_[1] = _020_[1] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[0];
-  assign _021_[2] = _020_[2] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[1];
-  assign _021_[3] = _020_[3] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[2];
-  assign _021_[4] = _020_[4] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[3];
-  assign _021_[5] = _020_[5] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[4];
-  assign _021_[6] = _020_[6] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[5];
-  assign _021_[7] = _020_[7] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[6];
-  assign _021_[8] = _020_[8] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[7];
-  assign _021_[9] = _020_[9] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[8];
-  assign _021_[10] = _020_[10] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[9];
-  assign _021_[11] = _020_[11] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[10];
-  assign _021_[12] = _020_[12] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[11];
-  assign _021_[13] = _020_[13] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[12];
-  assign _021_[14] = _020_[14] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[13];
-  assign _021_[15] = _020_[15] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[14];
   assign _016_[10] = gain_center[10] &(* src = "../src/vol/volume.sv:60.28-60.45|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _016_[9];
   assign _016_[8] = gain_center[8] &(* src = "../src/vol/volume.sv:60.28-60.45|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _016_[7];
   assign _016_[6] = gain_center[6] |(* src = "../src/vol/volume.sv:60.28-60.45|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _037_;
@@ -11155,10 +11007,38 @@ module \$paramod\volume\DWIDTH=s32'00000000000000000000000000010000 (clk, rst, e
   assign _018_[13] = gain_center[13] ^(* src = "../src/vol/volume.sv:60.28-60.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _016_[12];
   assign _018_[14] = gain_center[14] ^(* src = "../src/vol/volume.sv:60.28-60.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _016_[13];
   assign _018_[15] = gain_center[15] ^(* src = "../src/vol/volume.sv:60.28-60.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _016_[14];
-  assign _006_ = _007_ & _004_;
-  assign _005_ = _002_ | _012_[1];
-  assign _007_ = _003_ & _005_;
-  assign _004_ = enc_up | enc_down;
+  assign _025_[3] = _024_[3] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  gain_center[2];
+  assign _025_[6] = gain_center[6] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[5];
+  assign _025_[7] = _024_[7] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[6];
+  assign _025_[8] = _024_[8] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[7];
+  assign _025_[9] = _024_[9] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[8];
+  assign _025_[10] = _024_[10] ^(* src = "../src/vol/volume.sv:62.17-62.45|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[9];
+  assign _025_[4] = _024_[4] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[3];
+  assign _025_[5] = gain_center[5] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[4];
+  assign _025_[11] = _024_[11] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[10];
+  assign _025_[12] = _024_[12] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[11];
+  assign _025_[13] = _024_[13] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[12];
+  assign _025_[14] = _024_[14] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[13];
+  assign _025_[15] = _024_[15] ^(* src = "../src/vol/volume.sv:63.32-63.49|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[14];
+  assign _021_[1] = _020_[1] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[0];
+  assign _021_[2] = _020_[2] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[1];
+  assign _021_[3] = _020_[3] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[2];
+  assign _021_[4] = _020_[4] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[3];
+  assign _021_[5] = _020_[5] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[4];
+  assign _021_[6] = _020_[6] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[5];
+  assign _021_[7] = _020_[7] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[6];
+  assign _021_[8] = _020_[8] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[7];
+  assign _021_[9] = _020_[9] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[8];
+  assign _021_[10] = _020_[10] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[9];
+  assign _021_[11] = _020_[11] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[10];
+  assign _021_[12] = _020_[12] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[11];
+  assign _021_[13] = _020_[13] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[12];
+  assign _021_[14] = _020_[14] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[13];
+  assign _021_[15] = _020_[15] ^(* src = "../src/vol/volume.sv:78.17-78.42|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[14];
+  assign _006_ = _007_ & _005_;
+  assign _004_ = _002_ | _012_[1];
+  assign _007_ = _003_ & _004_;
+  assign _005_ = enc_up | enc_down;
   assign _009_[0] = _024_[0] &(* src = "../src/vol/volume.sv:62.17-62.45" *)  _008_[1];
   assign _010_[0] = _009_[0] &(* src = "../src/vol/volume.sv:62.17-62.45" *)  _009_[1];
   assign _011_[0] = _010_[0] &(* src = "../src/vol/volume.sv:62.17-62.45" *)  _010_[1];
@@ -11238,6 +11118,211 @@ module \$paramod\volume\DWIDTH=s32'00000000000000000000000000010000 (clk, rst, e
   assign _015_[1] = _015_[0];
   assign _001_[1] = _001_[0];
   assign gain_center[0] = gain_center[1];
+endmodule
+
+(* dynports =  1  *)
+(* src = "../src/clk_div/clk_div.sv:1.1-27.10" *)
+module clk_div(clk, rst_n, clk_1ms);
+  (* src = "../src/clk_div/clk_div.sv:5.15-5.18" *)
+  input clk;
+  wire clk;
+  (* src = "../src/clk_div/clk_div.sv:6.15-6.20" *)
+  input rst_n;
+  wire rst_n;
+  (* src = "../src/clk_div/clk_div.sv:7.15-7.22" *)
+  output clk_1ms;
+  reg clk_1ms;
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  wire [13:0] _000_;
+  wire _001_;
+  wire _002_;
+  wire _003_;
+  wire _004_;
+  wire _005_;
+  wire _006_;
+  wire _007_;
+  wire _008_;
+  wire [6:0] _009_;
+  wire [2:0] _010_;
+  wire [1:0] _011_;
+  wire _012_;
+  (* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)
+  wire _013_;
+  (* src = "../src/clk_div/clk_div.sv:21.15-21.23" *)
+  wire _014_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  wire [13:0] _015_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  wire [13:0] _016_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  wire [13:0] _017_;
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _018_;
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _019_;
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _020_;
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _021_;
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _022_;
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _023_;
+  (* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _024_;
+  (* src = "../src/clk_div/clk_div.sv:13.28-13.35" *)
+  reg [13:0] counter;
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) clk_1ms <= 1'h0;
+    else if (_013_) clk_1ms <= _014_;
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[0] <= 1'h0;
+    else counter[0] <= _000_[0];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[1] <= 1'h0;
+    else counter[1] <= _000_[1];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[2] <= 1'h0;
+    else counter[2] <= _000_[2];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[3] <= 1'h0;
+    else counter[3] <= _000_[3];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[4] <= 1'h0;
+    else counter[4] <= _000_[4];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[5] <= 1'h0;
+    else counter[5] <= _000_[5];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[6] <= 1'h0;
+    else counter[6] <= _000_[6];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[7] <= 1'h0;
+    else counter[7] <= _000_[7];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[8] <= 1'h0;
+    else counter[8] <= _000_[8];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[9] <= 1'h0;
+    else counter[9] <= _000_[9];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[10] <= 1'h0;
+    else counter[10] <= _000_[10];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[11] <= 1'h0;
+    else counter[11] <= _000_[11];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[12] <= 1'h0;
+    else counter[12] <= _000_[12];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/clk_div/clk_div.sv:15.2-25.5" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) counter[13] <= 1'h0;
+    else counter[13] <= _000_[13];
+  assign _016_[0] = ~counter[0];
+  assign _002_ = ~counter[13];
+  assign _017_[1] = counter[1] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  counter[0];
+  assign _017_[2] = counter[2] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[1];
+  assign _017_[3] = counter[3] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[2];
+  assign _017_[4] = counter[4] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[3];
+  assign _017_[5] = counter[5] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[4];
+  assign _017_[6] = counter[6] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[5];
+  assign _017_[7] = counter[7] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[6];
+  assign _017_[8] = counter[8] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[7];
+  assign _017_[9] = counter[9] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[8];
+  assign _017_[10] = counter[10] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[9];
+  assign _017_[11] = counter[11] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[10];
+  assign _017_[12] = counter[12] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[11];
+  assign _017_[13] = counter[13] ^(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[12];
+  assign _015_[4] = counter[4] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[3];
+  assign _015_[2] = counter[2] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[1];
+  assign _015_[10] = counter[10] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[9];
+  assign _015_[9] = _021_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
+  assign _015_[5] = _019_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[3];
+  assign _015_[6] = counter[6] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[5];
+  assign _015_[11] = _024_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
+  assign _015_[12] = counter[12] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[11];
+  assign _015_[7] = _023_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _015_[3];
+  assign _024_ = _022_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _021_;
+  assign _023_ = _020_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_;
+  assign _015_[3] = _018_ &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _015_[1];
+  assign _022_ = counter[11] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[10];
+  assign _021_ = counter[9] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[8];
+  assign _020_ = counter[7] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[6];
+  assign _019_ = counter[5] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[4];
+  assign _018_ = counter[3] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  counter[2];
+  assign _015_[8] = counter[8] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
+  assign _015_[1] = counter[1] &(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  counter[0];
+  assign _009_[0] = _016_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _008_;
+  assign _009_[1] = counter[2] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _007_;
+  assign _009_[2] = _006_ |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _005_;
+  assign _009_[3] = counter[6] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _004_;
+  assign _009_[4] = counter[8] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  counter[9];
+  assign _009_[5] = _001_ |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  counter[11];
+  assign _009_[6] = _003_ |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _002_;
+  assign _010_[0] = _009_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[1];
+  assign _010_[1] = _009_[2] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[3];
+  assign _010_[2] = _009_[4] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[5];
+  assign _011_[0] = _010_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _010_[1];
+  assign _011_[1] = _010_[2] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _009_[6];
+  assign _012_ = _011_[0] |(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *)  _011_[1];
+  assign _013_ = ~(* src = "../src/clk_div/clk_div.sv:19.16-19.65" *) _012_;
+  assign _000_[0] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _016_[0] : 1'h0;
+  assign _000_[1] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[1] : 1'h0;
+  assign _000_[2] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[2] : 1'h0;
+  assign _000_[3] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[3] : 1'h0;
+  assign _000_[4] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[4] : 1'h0;
+  assign _000_[5] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[5] : 1'h0;
+  assign _000_[6] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[6] : 1'h0;
+  assign _000_[7] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[7] : 1'h0;
+  assign _000_[8] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[8] : 1'h0;
+  assign _000_[9] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[9] : 1'h0;
+  assign _000_[10] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[10] : 1'h0;
+  assign _000_[11] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[11] : 1'h0;
+  assign _000_[12] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[12] : 1'h0;
+  assign _000_[13] = _012_ ? (* src = "../src/clk_div/clk_div.sv:19.16-19.65|../src/clk_div/clk_div.sv:19.12-24.6" *) _017_[13] : 1'h0;
+  assign _014_ = ~(* src = "../src/clk_div/clk_div.sv:21.15-21.23" *) clk_1ms;
+  assign _008_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[1];
+  assign _007_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[3];
+  assign _006_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[4];
+  assign _005_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[5];
+  assign _004_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[7];
+  assign _001_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[10];
+  assign _003_ = ~(* src = "../src/clk_div/clk_div.sv:23.15-23.29|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) counter[12];
+  assign _016_[13:1] = counter[13:1];
+  assign _017_[0] = _016_[0];
+  assign _015_[0] = counter[0];
 endmodule
 
 (* src = "../src/encoder/encoder.sv:10.1-114.10" *)
@@ -11685,9 +11770,8 @@ endmodule
 
 (* dynports =  1  *)
 (* top =  1  *)
-(* src = "../src/top/protoboard_1.sv:4.1-324.10" *)
-module top(sys_clk, sys_rst_n, led, freq_enc_A, freq_enc_B, freq_enc_C, vol_enc_A, vol_enc_B, vol_enc_C, jack0_in_i2s_bclk, jack0_in_i2s_lrck, jack0_in_i2s_din, jack1_in_i2s_bclk, jack1_in_i2s_lrck, jack1_in_i2s_din, audio_out_i2s_bclk, audio_out_i2s_lrck, audio_out_i2s_dout, i2s_bclk, i2s_lrck, i2s_din
-);
+(* src = "../src/top/protoboard_1.sv:4.1-243.10" *)
+module top(sys_clk, sys_rst_n, led, enc_A, enc_B, enc_C, jack_in_i2s_bclk, jack_in_i2s_lrck, jack_in_i2s_din, i2s_bclk, i2s_lrck, i2s_din);
   (* src = "../src/top/protoboard_1.sv:8.18-8.25" *)
   input sys_clk;
   wire sys_clk;
@@ -11697,343 +11781,341 @@ module top(sys_clk, sys_rst_n, led, freq_enc_A, freq_enc_B, freq_enc_C, vol_enc_
   (* src = "../src/top/protoboard_1.sv:10.24-10.27" *)
   output [5:0] led;
   wire [5:0] led;
-  (* src = "../src/top/protoboard_1.sv:12.18-12.28" *)
-  input freq_enc_A;
-  wire freq_enc_A;
-  (* src = "../src/top/protoboard_1.sv:13.18-13.28" *)
-  input freq_enc_B;
-  wire freq_enc_B;
-  (* src = "../src/top/protoboard_1.sv:14.18-14.28" *)
-  input freq_enc_C;
-  wire freq_enc_C;
-  (* src = "../src/top/protoboard_1.sv:16.18-16.27" *)
-  input vol_enc_A;
-  wire vol_enc_A;
-  (* src = "../src/top/protoboard_1.sv:17.18-17.27" *)
-  input vol_enc_B;
-  wire vol_enc_B;
-  (* src = "../src/top/protoboard_1.sv:18.18-18.27" *)
-  input vol_enc_C;
-  wire vol_enc_C;
-  (* src = "../src/top/protoboard_1.sv:21.18-21.35" *)
-  input jack0_in_i2s_bclk;
-  wire jack0_in_i2s_bclk;
-  (* src = "../src/top/protoboard_1.sv:22.18-22.35" *)
-  input jack0_in_i2s_lrck;
-  wire jack0_in_i2s_lrck;
-  (* src = "../src/top/protoboard_1.sv:23.18-23.34" *)
-  input jack0_in_i2s_din;
-  wire jack0_in_i2s_din;
-  (* src = "../src/top/protoboard_1.sv:25.18-25.35" *)
-  input jack1_in_i2s_bclk;
-  wire jack1_in_i2s_bclk;
-  (* src = "../src/top/protoboard_1.sv:26.18-26.35" *)
-  input jack1_in_i2s_lrck;
-  wire jack1_in_i2s_lrck;
-  (* src = "../src/top/protoboard_1.sv:27.18-27.34" *)
-  input jack1_in_i2s_din;
-  wire jack1_in_i2s_din;
-  (* src = "../src/top/protoboard_1.sv:29.18-29.36" *)
-  output audio_out_i2s_bclk;
-  wire audio_out_i2s_bclk;
-  (* src = "../src/top/protoboard_1.sv:30.18-30.36" *)
-  output audio_out_i2s_lrck;
-  wire audio_out_i2s_lrck;
-  (* src = "../src/top/protoboard_1.sv:31.18-31.36" *)
-  output audio_out_i2s_dout;
-  wire audio_out_i2s_dout;
-  (* src = "../src/top/protoboard_1.sv:37.18-37.26" *)
+  (* src = "../src/top/protoboard_1.sv:12.23-12.28" *)
+  input [1:0] enc_A;
+  wire [1:0] enc_A;
+  (* src = "../src/top/protoboard_1.sv:13.23-13.28" *)
+  input [1:0] enc_B;
+  wire [1:0] enc_B;
+  (* src = "../src/top/protoboard_1.sv:14.23-14.28" *)
+  input [1:0] enc_C;
+  wire [1:0] enc_C;
+  (* src = "../src/top/protoboard_1.sv:21.23-21.39" *)
+  input [1:0] jack_in_i2s_bclk;
+  wire [1:0] jack_in_i2s_bclk;
+  (* src = "../src/top/protoboard_1.sv:22.23-22.39" *)
+  input [1:0] jack_in_i2s_lrck;
+  wire [1:0] jack_in_i2s_lrck;
+  (* src = "../src/top/protoboard_1.sv:23.23-23.38" *)
+  input [1:0] jack_in_i2s_din;
+  wire [1:0] jack_in_i2s_din;
+  (* src = "../src/top/protoboard_1.sv:25.18-25.26" *)
   output i2s_bclk;
   wire i2s_bclk;
-  (* src = "../src/top/protoboard_1.sv:38.18-38.26" *)
+  (* src = "../src/top/protoboard_1.sv:26.18-26.26" *)
   output i2s_lrck;
   wire i2s_lrck;
-  (* src = "../src/top/protoboard_1.sv:39.18-39.25" *)
+  (* src = "../src/top/protoboard_1.sv:27.18-27.25" *)
   output i2s_din;
   wire i2s_din;
-  wire [15:0] _00_;
+  wire _00_;
   wire _01_;
-  (* src = "../src/top/protoboard_1.sv:133.9-133.19" *)
   wire _02_;
-  wire [5:0] _03_;
-  wire [5:0] _04_;
-  (* force_downto = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
-  wire [5:0] _05_;
-  (* force_downto = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
-  wire [5:0] _06_;
-  (* force_downto = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  wire _03_;
+  wire _04_;
+  wire [2:0] _05_;
+  (* src = "../src/top/protoboard_1.sv:154.9-154.19" *)
+  wire _06_;
   wire [5:0] _07_;
-  (* force_downto = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [5:0] _08_;
-  (* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _09_;
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
-  wire _10_;
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
-  wire _11_;
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
-  wire _12_;
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
-  wire _13_;
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  wire [5:0] _09_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  wire [5:0] _10_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  wire [5:0] _11_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  wire [5:0] _12_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  wire [5:0] _13_;
+  (* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _14_;
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _15_;
-  (* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _16_;
-  (* src = "../src/top/protoboard_1.sv:84.7-84.14" *)
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  wire _17_;
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  wire _18_;
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  wire _19_;
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  wire _20_;
+  (* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  wire _21_;
+  (* src = "../src/top/protoboard_1.sv:67.7-67.14" *)
   wire clk_1ms;
-  (* src = "../src/top/protoboard_1.sv:78.6-78.19" *)
-  wire freq_enc_down;
-  (* src = "../src/top/protoboard_1.sv:77.6-77.20" *)
-  wire freq_enc_press;
-  (* src = "../src/top/protoboard_1.sv:76.6-76.17" *)
-  wire freq_enc_up;
-  (* src = "../src/top/protoboard_1.sv:45.12-45.23" *)
+  (* src = "../src/top/protoboard_1.sv:60.13-60.21" *)
+  wire [1:0] enc_down;
+  (* src = "../src/top/protoboard_1.sv:59.13-59.22" *)
+  wire [1:0] enc_press;
+  (* src = "../src/top/protoboard_1.sv:58.13-58.19" *)
+  wire [1:0] enc_up;
+  (* src = "../src/top/protoboard_1.sv:54.26-54.39" *)
+  wire [0:0] fifo_2x_empty;
+  (* src = "../src/top/protoboard_1.sv:46.26-46.38" *)
+  wire [0:0] fifo_2x_full;
+  (* src = "../src/top/protoboard_1.sv:52.69-52.84" *)
+  wire [31:0] fifo_2x_rd_data;
+  (* src = "../src/top/protoboard_1.sv:53.26-53.39" *)
+  wire [0:0] fifo_2x_rd_en;
+  (* src = "../src/top/protoboard_1.sv:44.69-44.84" *)
+  wire [31:0] fifo_2x_wr_data;
+  (* src = "../src/top/protoboard_1.sv:45.26-45.39" *)
+  wire [0:0] fifo_2x_wr_en;
+  (* src = "../src/top/protoboard_1.sv:51.23-51.33" *)
+  wire [2:0] fifo_empty;
+  (* src = "../src/top/protoboard_1.sv:43.23-43.32" *)
+  wire [2:0] fifo_full;
+  (* src = "../src/top/protoboard_1.sv:49.64-49.76" *)
+  wire [47:0] fifo_rd_data;
+  (* src = "../src/top/protoboard_1.sv:50.23-50.33" *)
+  wire [2:0] fifo_rd_en;
+  (* src = "../src/top/protoboard_1.sv:41.64-41.76" *)
+  wire [47:0] fifo_wr_data;
+  (* src = "../src/top/protoboard_1.sv:42.23-42.33" *)
+  wire [2:0] fifo_wr_en;
+  (* src = "../src/top/protoboard_1.sv:35.12-35.23" *)
   reg [5:0] led_counter;
-  (* src = "../src/top/protoboard_1.sv:91.7-91.21" *)
-  wire lfo_fifo_empty;
-  (* src = "../src/top/protoboard_1.sv:88.7-88.20" *)
-  wire lfo_fifo_full;
-  (* src = "../src/top/protoboard_1.sv:90.49-90.65" *)
-  wire [15:0] lfo_fifo_rd_data;
-  (* src = "../src/top/protoboard_1.sv:89.7-89.21" *)
-  wire lfo_fifo_rd_en;
-  (* src = "../src/top/protoboard_1.sv:87.49-87.65" *)
-  wire [15:0] lfo_fifo_wr_data;
-  (* src = "../src/top/protoboard_1.sv:86.7-86.21" *)
-  wire lfo_fifo_wr_en;
-  (* src = "../src/top/protoboard_1.sv:82.6-82.18" *)
-  wire vol_enc_down;
-  (* src = "../src/top/protoboard_1.sv:81.6-81.19" *)
-  wire vol_enc_press;
-  (* src = "../src/top/protoboard_1.sv:80.6-80.16" *)
-  wire vol_enc_up;
-  (* src = "../src/top/protoboard_1.sv:65.37-65.51" *)
-  wire vol_fifo_empty;
-  (* src = "../src/top/protoboard_1.sv:61.37-61.50" *)
-  wire vol_fifo_full;
-  (* src = "../src/top/protoboard_1.sv:63.48-63.64" *)
-  wire [15:0] vol_fifo_rd_data;
-  (* src = "../src/top/protoboard_1.sv:64.37-64.51" *)
-  wire vol_fifo_rd_en;
-  (* src = "../src/top/protoboard_1.sv:59.48-59.64" *)
-  wire [15:0] vol_fifo_wr_data;
-  (* src = "../src/top/protoboard_1.sv:60.37-60.51" *)
-  wire vol_fifo_wr_en;
-  (* src = "../src/top/protoboard_1.sv:57.37-57.50" *)
-  wire wt_fifo_empty;
-  (* src = "../src/top/protoboard_1.sv:53.37-53.49" *)
-  wire wt_fifo_full;
-  (* src = "../src/top/protoboard_1.sv:55.48-55.63" *)
-  wire [15:0] wt_fifo_rd_data;
-  (* src = "../src/top/protoboard_1.sv:56.37-56.50" *)
-  wire wt_fifo_rd_en;
-  (* src = "../src/top/protoboard_1.sv:51.48-51.63" *)
-  wire [15:0] wt_fifo_wr_data;
-  (* src = "../src/top/protoboard_1.sv:52.37-52.50" *)
-  wire wt_fifo_wr_en;
+  (* src = "../src/top/protoboard_1.sv:36.12-36.25" *)
+  reg led_disp_mode;
+  (* src = "../src/top/protoboard_1.sv:64.13-64.25" *)
+  wire [1:0] mux_enc_down;
+  (* src = "../src/top/protoboard_1.sv:63.13-63.26" *)
+  wire [1:0] mux_enc_press;
+  (* src = "../src/top/protoboard_1.sv:65.13-65.27" *)
+  wire [1:0] mux_enc_select;
+  (* src = "../src/top/protoboard_1.sv:62.13-62.23" *)
+  wire [1:0] mux_enc_up;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:132.1-142.4" *)
+  (* src = "../src/top/protoboard_1.sv:153.1-171.4" *)
+  always @(posedge sys_clk)
+    if (!sys_rst_n) led_disp_mode <= 1'h0;
+    else if (enc_press[0]) led_disp_mode <= _00_;
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/top/protoboard_1.sv:153.1-171.4" *)
   always @(posedge sys_clk)
     if (!sys_rst_n) led_counter[0] <= 1'h0;
-    else if (_01_) led_counter[0] <= _04_[0];
+    else if (_02_) led_counter[0] <= _09_[0];
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:132.1-142.4" *)
+  (* src = "../src/top/protoboard_1.sv:153.1-171.4" *)
   always @(posedge sys_clk)
-    if (!sys_rst_n) led_counter[1] <= 1'h0;
-    else if (_01_) led_counter[1] <= _04_[1];
+    if (!_03_) led_counter[1] <= 1'h0;
+    else if (_01_) led_counter[1] <= _08_[1];
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:132.1-142.4" *)
+  (* src = "../src/top/protoboard_1.sv:153.1-171.4" *)
   always @(posedge sys_clk)
-    if (!sys_rst_n) led_counter[2] <= 1'h0;
-    else if (_01_) led_counter[2] <= _04_[2];
+    if (!_03_) led_counter[2] <= 1'h0;
+    else if (_01_) led_counter[2] <= _08_[2];
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:132.1-142.4" *)
+  (* src = "../src/top/protoboard_1.sv:153.1-171.4" *)
   always @(posedge sys_clk)
-    if (!sys_rst_n) led_counter[3] <= 1'h0;
-    else if (_01_) led_counter[3] <= _04_[3];
+    if (!_03_) led_counter[3] <= 1'h0;
+    else if (_01_) led_counter[3] <= _08_[3];
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:132.1-142.4" *)
+  (* src = "../src/top/protoboard_1.sv:153.1-171.4" *)
   always @(posedge sys_clk)
-    if (!sys_rst_n) led_counter[4] <= 1'h0;
-    else if (_01_) led_counter[4] <= _04_[4];
+    if (!_03_) led_counter[4] <= 1'h0;
+    else if (_01_) led_counter[4] <= _08_[4];
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:132.1-142.4" *)
+  (* src = "../src/top/protoboard_1.sv:153.1-171.4" *)
   always @(posedge sys_clk)
-    if (!sys_rst_n) led_counter[5] <= 1'h0;
-    else if (_01_) led_counter[5] <= _04_[5];
+    if (!_03_) led_counter[5] <= 1'h0;
+    else if (_01_) led_counter[5] <= _08_[5];
+  assign led[1] = ~led_counter[1];
   assign led[3] = ~led_counter[3];
   assign led[5] = ~led_counter[5];
-  assign _06_[1] = led_counter[1] ^(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  led_counter[0];
-  assign _06_[2] = led_counter[2] ^(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _05_[1];
-  assign _06_[3] = led_counter[3] ^(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _05_[2];
-  assign _06_[4] = led_counter[4] ^(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _05_[3];
-  assign _06_[5] = led_counter[5] ^(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _05_[4];
-  assign _08_[1] = led[1] ^(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  led_counter[0];
-  assign _08_[2] = led[2] ^(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _07_[1];
-  assign _08_[3] = led[3] ^(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _07_[2];
-  assign _08_[4] = led[4] ^(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _07_[3];
-  assign _08_[5] = led[5] ^(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _07_[4];
-  assign _05_[2] = led_counter[2] &(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _05_[1];
-  assign _05_[4] = led_counter[4] &(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _05_[3];
-  assign _05_[3] = _09_ &(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _05_[1];
-  assign _09_ = led_counter[3] &(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  led_counter[2];
-  assign _05_[1] = led_counter[1] &(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  led_counter[0];
-  assign _14_ = led[2] &(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _07_[1];
-  assign _15_ = led[4] &(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _07_[3];
-  assign _07_[4] = led_counter[4] |(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _15_;
-  assign _07_[3] = _16_ |(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _12_;
-  assign _12_ = _13_ &(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _07_[1];
-  assign _13_ = led[3] &(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  led[2];
-  assign _16_ = led_counter[3] |(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _11_;
-  assign _11_ = led[3] &(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  led_counter[2];
-  assign _07_[2] = led_counter[2] |(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _14_;
-  assign _07_[1] = led_counter[1] |(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _10_;
-  assign _10_ = led[1] &(* src = "../src/top/protoboard_1.sv:139.28-139.46|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  led_counter[0];
-  assign _01_ = vol_enc_up | vol_enc_down;
-  assign _02_ = ~(* src = "../src/top/protoboard_1.sv:220.22-220.32" *) sys_rst_n;
-  assign _03_[0] = vol_enc_down ? (* src = "../src/top/protoboard_1.sv:138.22-138.34|../src/top/protoboard_1.sv:138.18-140.12" *) led[0] : 1'hx;
-  assign _03_[1] = vol_enc_down ? (* src = "../src/top/protoboard_1.sv:138.22-138.34|../src/top/protoboard_1.sv:138.18-140.12" *) _08_[1] : 1'hx;
-  assign _03_[2] = vol_enc_down ? (* src = "../src/top/protoboard_1.sv:138.22-138.34|../src/top/protoboard_1.sv:138.18-140.12" *) _08_[2] : 1'hx;
-  assign _03_[3] = vol_enc_down ? (* src = "../src/top/protoboard_1.sv:138.22-138.34|../src/top/protoboard_1.sv:138.18-140.12" *) _08_[3] : 1'hx;
-  assign _03_[4] = vol_enc_down ? (* src = "../src/top/protoboard_1.sv:138.22-138.34|../src/top/protoboard_1.sv:138.18-140.12" *) _08_[4] : 1'hx;
-  assign _03_[5] = vol_enc_down ? (* src = "../src/top/protoboard_1.sv:138.22-138.34|../src/top/protoboard_1.sv:138.18-140.12" *) _08_[5] : 1'hx;
-  assign _04_[0] = vol_enc_up ? (* src = "../src/top/protoboard_1.sv:136.13-136.23|../src/top/protoboard_1.sv:136.9-140.12" *) led[0] : _03_[0];
-  assign _04_[1] = vol_enc_up ? (* src = "../src/top/protoboard_1.sv:136.13-136.23|../src/top/protoboard_1.sv:136.9-140.12" *) _06_[1] : _03_[1];
-  assign _04_[2] = vol_enc_up ? (* src = "../src/top/protoboard_1.sv:136.13-136.23|../src/top/protoboard_1.sv:136.9-140.12" *) _06_[2] : _03_[2];
-  assign _04_[3] = vol_enc_up ? (* src = "../src/top/protoboard_1.sv:136.13-136.23|../src/top/protoboard_1.sv:136.9-140.12" *) _06_[3] : _03_[3];
-  assign _04_[4] = vol_enc_up ? (* src = "../src/top/protoboard_1.sv:136.13-136.23|../src/top/protoboard_1.sv:136.9-140.12" *) _06_[4] : _03_[4];
-  assign _04_[5] = vol_enc_up ? (* src = "../src/top/protoboard_1.sv:136.13-136.23|../src/top/protoboard_1.sv:136.9-140.12" *) _06_[5] : _03_[5];
-  assign led[0] = ~(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) led_counter[0];
-  assign led[1] = ~(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) led_counter[1];
-  assign led[2] = ~(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) led_counter[2];
-  assign led[4] = ~(* src = "../src/top/protoboard_1.sv:137.28-137.46|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) led_counter[4];
-  (* src = "../src/top/protoboard_1.sv:203.3-214.2" *)
-  \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo  audio_fifo_inst (
-    .clk(sys_clk),
-    .empty(wt_fifo_empty),
-    .full(wt_fifo_full),
-    .rd_data(wt_fifo_rd_data),
-    .rd_en(wt_fifo_rd_en),
-    .rst_n(sys_rst_n),
-    .wr_data(wt_fifo_wr_data),
-    .wr_en(wt_fifo_wr_en)
-  );
-  (* src = "../src/top/protoboard_1.sv:100.3-104.2" *)
-  \$paramod$5ff65cac883644189a11f33c7731774bf2d6e2d2\clk_div  clk_div_inst (
+  assign led[0] = ~led_counter[0];
+  assign _00_ = ~led_disp_mode;
+  assign _11_[1] = led_counter[1] ^(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  led_counter[0];
+  assign _11_[2] = led_counter[2] ^(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _10_[1];
+  assign _11_[3] = led_counter[3] ^(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _10_[2];
+  assign _11_[4] = led_counter[4] ^(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _10_[3];
+  assign _11_[5] = led_counter[5] ^(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _10_[4];
+  assign _13_[1] = led[1] ^(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  led_counter[0];
+  assign _13_[2] = led[2] ^(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _12_[1];
+  assign _13_[3] = led[3] ^(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _12_[2];
+  assign _13_[4] = led[4] ^(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _12_[3];
+  assign _13_[5] = led[5] ^(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _12_[4];
+  assign _10_[2] = led_counter[2] &(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _10_[1];
+  assign _10_[4] = led_counter[4] &(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _10_[3];
+  assign _10_[3] = _14_ &(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _10_[1];
+  assign _14_ = led_counter[3] &(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  led_counter[2];
+  assign _10_[1] = led_counter[1] &(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  led_counter[0];
+  assign _19_ = led[2] &(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _12_[1];
+  assign _20_ = led[4] &(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _12_[3];
+  assign _12_[4] = led_counter[4] |(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _20_;
+  assign _12_[3] = _21_ |(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _17_;
+  assign _17_ = _18_ &(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _12_[1];
+  assign _18_ = led[3] &(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  led[2];
+  assign _21_ = led_counter[3] |(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _16_;
+  assign _16_ = led[3] &(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  led_counter[2];
+  assign _12_[2] = led_counter[2] |(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _19_;
+  assign _12_[1] = led_counter[1] |(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _15_;
+  assign _15_ = led[1] &(* src = "../src/top/protoboard_1.sv:167.32-167.50|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  led_counter[0];
+  assign _04_ = _00_ | _05_[1];
+  assign _02_ = _04_ | _05_[2];
+  assign _01_ = _05_[1] | _05_[2];
+  assign _03_ = sys_rst_n & led_disp_mode;
+  assign _05_[1] = mux_enc_up[0] |(* src = "../src/top/protoboard_1.sv:164.17-164.28" *)  mux_enc_up[1];
+  assign _05_[2] = mux_enc_down[0] |(* src = "../src/top/protoboard_1.sv:166.26-166.39" *)  mux_enc_down[1];
+  assign _06_ = ~(* src = "../src/top/protoboard_1.sv:210.22-210.32" *) sys_rst_n;
+  assign _07_[0] = _05_[2] ? (* src = "../src/top/protoboard_1.sv:166.26-166.39|../src/top/protoboard_1.sv:166.22-168.16" *) led[0] : 1'hx;
+  assign _07_[1] = _05_[2] ? (* src = "../src/top/protoboard_1.sv:166.26-166.39|../src/top/protoboard_1.sv:166.22-168.16" *) _13_[1] : 1'hx;
+  assign _07_[2] = _05_[2] ? (* src = "../src/top/protoboard_1.sv:166.26-166.39|../src/top/protoboard_1.sv:166.22-168.16" *) _13_[2] : 1'hx;
+  assign _07_[3] = _05_[2] ? (* src = "../src/top/protoboard_1.sv:166.26-166.39|../src/top/protoboard_1.sv:166.22-168.16" *) _13_[3] : 1'hx;
+  assign _07_[4] = _05_[2] ? (* src = "../src/top/protoboard_1.sv:166.26-166.39|../src/top/protoboard_1.sv:166.22-168.16" *) _13_[4] : 1'hx;
+  assign _07_[5] = _05_[2] ? (* src = "../src/top/protoboard_1.sv:166.26-166.39|../src/top/protoboard_1.sv:166.22-168.16" *) _13_[5] : 1'hx;
+  assign _08_[0] = _05_[1] ? (* src = "../src/top/protoboard_1.sv:164.17-164.28|../src/top/protoboard_1.sv:164.13-168.16" *) led[0] : _07_[0];
+  assign _08_[1] = _05_[1] ? (* src = "../src/top/protoboard_1.sv:164.17-164.28|../src/top/protoboard_1.sv:164.13-168.16" *) _11_[1] : _07_[1];
+  assign _08_[2] = _05_[1] ? (* src = "../src/top/protoboard_1.sv:164.17-164.28|../src/top/protoboard_1.sv:164.13-168.16" *) _11_[2] : _07_[2];
+  assign _08_[3] = _05_[1] ? (* src = "../src/top/protoboard_1.sv:164.17-164.28|../src/top/protoboard_1.sv:164.13-168.16" *) _11_[3] : _07_[3];
+  assign _08_[4] = _05_[1] ? (* src = "../src/top/protoboard_1.sv:164.17-164.28|../src/top/protoboard_1.sv:164.13-168.16" *) _11_[4] : _07_[4];
+  assign _08_[5] = _05_[1] ? (* src = "../src/top/protoboard_1.sv:164.17-164.28|../src/top/protoboard_1.sv:164.13-168.16" *) _11_[5] : _07_[5];
+  assign _09_[0] = led_disp_mode ? (* src = "../src/top/protoboard_1.sv:161.13-161.27|../src/top/protoboard_1.sv:161.9-169.12" *) _08_[0] : mux_enc_select[1];
+  assign led[2] = ~(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) led_counter[2];
+  assign led[4] = ~(* src = "../src/top/protoboard_1.sv:165.32-165.50|/opt/homebrew/bin/../share/yosys/techmap.v:279.31-279.37" *) led_counter[4];
+  (* module_not_derived = 32'd1 *)
+  (* src = "../src/top/protoboard_1.sv:70.3-74.2" *)
+  clk_div clk_div_inst (
     .clk(sys_clk),
     .clk_1ms(clk_1ms),
     .rst_n(sys_rst_n)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:106.9-116.2" *)
-  encoder freq_encoder_inst (
-    .A(freq_enc_A),
-    .B(freq_enc_B),
-    .C(freq_enc_C),
+  (* src = "../src/top/protoboard_1.sv:79.13-89.6" *)
+  encoder \enc_mux_gen[0].encoder_inst  (
+    .A(enc_A[0]),
+    .B(enc_B[0]),
+    .C(enc_C[0]),
     .clk(sys_clk),
     .clk_1ms(clk_1ms),
-    .down(freq_enc_down),
-    .press(freq_enc_press),
+    .down(enc_down[0]),
+    .press(enc_press[0]),
     .rst_n(sys_rst_n),
-    .up(freq_enc_up)
+    .up(enc_up[0])
   );
-  (* src = "../src/top/protoboard_1.sv:275.3-289.2" *)
-  \$paramod\i2s_rx\BIT_DEPTH=s32'00000000000000000000000000010000  i2s_rx_inst (
-    .bclk(jack1_in_i2s_bclk),
+  (* module_not_derived = 32'd1 *)
+  (* src = "../src/top/protoboard_1.sv:79.13-89.6" *)
+  encoder \enc_mux_gen[1].encoder_inst  (
+    .A(enc_A[1]),
+    .B(enc_B[1]),
+    .C(enc_C[1]),
     .clk(sys_clk),
-    .fifo_full(lfo_fifo_full),
-    .fifo_wr_data({ _00_, lfo_fifo_wr_data }),
-    .fifo_wr_en(lfo_fifo_wr_en),
-    .lrck(jack1_in_i2s_lrck),
+    .clk_1ms(clk_1ms),
+    .down(enc_down[1]),
+    .press(enc_press[1]),
     .rst_n(sys_rst_n),
-    .sdata(jack1_in_i2s_din)
+    .up(enc_up[1])
   );
-  (* src = "../src/top/protoboard_1.sv:258.3-271.2" *)
+  (* src = "../src/top/protoboard_1.sv:137.3-149.2" *)
+  \$paramod\enc_mux\NUM_OUTPUTS=s32'00000000000000000000000000000010  enc_mux_inst (
+    .clk(sys_clk),
+    .data_down(enc_down[1]),
+    .data_press(enc_press[1]),
+    .data_up(enc_up[1]),
+    .enc_down(mux_enc_down),
+    .enc_press(mux_enc_press),
+    .enc_select(mux_enc_select),
+    .enc_up(mux_enc_up),
+    .rst_n(sys_rst_n),
+    .select_down(enc_down[0]),
+    .select_up(enc_up[0])
+  );
+  (* src = "../src/top/protoboard_1.sv:120.7-131.6" *)
+  \$paramod$28704d8bf4447e08602ecae7770c77318b280126\fifo  \fifo_2x_gen[0].fifo_2x_inst  (
+    .clk(sys_clk),
+    .empty(fifo_2x_empty),
+    .full(fifo_2x_full),
+    .rd_data(fifo_2x_rd_data),
+    .rd_en(fifo_2x_rd_en),
+    .rst_n(sys_rst_n),
+    .wr_data(fifo_2x_wr_data),
+    .wr_en(fifo_2x_wr_en)
+  );
+  (* src = "../src/top/protoboard_1.sv:99.7-110.6" *)
+  \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo  \fifo_gen[0].fifo_inst  (
+    .clk(sys_clk),
+    .empty(fifo_empty[0]),
+    .full(fifo_full[0]),
+    .rd_data(fifo_rd_data[15:0]),
+    .rd_en(fifo_rd_en[0]),
+    .rst_n(sys_rst_n),
+    .wr_data(fifo_wr_data[15:0]),
+    .wr_en(fifo_wr_en[0])
+  );
+  (* src = "../src/top/protoboard_1.sv:99.7-110.6" *)
+  \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo  \fifo_gen[1].fifo_inst  (
+    .clk(sys_clk),
+    .empty(fifo_empty[1]),
+    .full(fifo_full[1]),
+    .rd_data(fifo_rd_data[31:16]),
+    .rd_en(fifo_rd_en[1]),
+    .rst_n(sys_rst_n),
+    .wr_data(fifo_wr_data[31:16]),
+    .wr_en(fifo_wr_en[1])
+  );
+  (* src = "../src/top/protoboard_1.sv:175.3-186.2" *)
+  \$paramod\i2s_rx\BIT_DEPTH=s32'00000000000000000000000000010000  i2s_rx_inst (
+    .bclk(jack_in_i2s_bclk[0]),
+    .clk(sys_clk),
+    .fifo_full(fifo_2x_full),
+    .fifo_wr_data(fifo_2x_wr_data),
+    .fifo_wr_en(fifo_2x_wr_en),
+    .lrck(jack_in_i2s_lrck[0]),
+    .rst_n(sys_rst_n),
+    .sdata(jack_in_i2s_din[0])
+  );
+  (* src = "../src/top/protoboard_1.sv:229.3-240.2" *)
   \$paramod\i2s_tx\BIT_DEPTH=s32'00000000000000000000000000010000  i2s_tx_audio_out_inst (
     .bclk(i2s_bclk),
     .clk(sys_clk),
-    .fifo_empty(vol_fifo_empty),
+    .fifo_empty(fifo_empty[1]),
     .lrck(i2s_lrck),
-    .rd_data(vol_fifo_rd_data),
-    .rd_en(vol_fifo_rd_en),
+    .rd_data(fifo_rd_data[31:16]),
+    .rd_en(fifo_rd_en[1]),
     .rst_n(sys_rst_n),
     .sdata(i2s_din)
   );
-  (* src = "../src/top/protoboard_1.sv:186.3-197.2" *)
-  \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo  lfo_fifo_inst (
-    .clk(sys_clk),
-    .empty(lfo_fifo_empty),
-    .full(lfo_fifo_full),
-    .rd_data(lfo_fifo_rd_data),
-    .rd_en(lfo_fifo_rd_en),
-    .rst_n(sys_rst_n),
-    .wr_data(lfo_fifo_wr_data),
-    .wr_en(lfo_fifo_wr_en)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:118.9-128.2" *)
-  encoder vol_encoder_inst (
-    .A(vol_enc_A),
-    .B(vol_enc_B),
-    .C(vol_enc_C),
-    .clk(sys_clk),
-    .clk_1ms(clk_1ms),
-    .down(vol_enc_down),
-    .press(vol_enc_press),
-    .rst_n(sys_rst_n),
-    .up(vol_enc_up)
-  );
-  (* src = "../src/top/protoboard_1.sv:243.3-254.2" *)
-  \$paramod$1719986e2d5dc43517b18f4e324b0f602a4474e9\fifo  vol_fifo_inst (
-    .clk(sys_clk),
-    .empty(vol_fifo_empty),
-    .full(vol_fifo_full),
-    .rd_data(vol_fifo_rd_data),
-    .rd_en(vol_fifo_rd_en),
-    .rst_n(sys_rst_n),
-    .wr_data(vol_fifo_wr_data),
-    .wr_en(vol_fifo_wr_en)
-  );
-  (* src = "../src/top/protoboard_1.sv:218.3-238.2" *)
+  (* src = "../src/top/protoboard_1.sv:208.3-225.2" *)
   \$paramod\volume\DWIDTH=s32'00000000000000000000000000010000  volume_inst (
     .clk(sys_clk),
     .control_fifo_data(16'h0000),
     .control_fifo_empty(1'h1),
-    .enc_down(vol_enc_down),
-    .enc_up(vol_enc_up),
-    .fifo_in_data(wt_fifo_rd_data),
-    .fifo_in_empty(wt_fifo_empty),
-    .fifo_in_rd_en(wt_fifo_rd_en),
-    .fifo_out_data(vol_fifo_wr_data),
-    .fifo_out_full(vol_fifo_full),
-    .fifo_out_wr_en(vol_fifo_wr_en),
-    .rst(_02_)
+    .enc_down(mux_enc_down[1]),
+    .enc_up(mux_enc_up[1]),
+    .fifo_in_data(fifo_rd_data[15:0]),
+    .fifo_in_empty(fifo_empty[0]),
+    .fifo_in_rd_en(fifo_rd_en[0]),
+    .fifo_out_data(fifo_wr_data[31:16]),
+    .fifo_out_full(fifo_full[1]),
+    .fifo_out_wr_en(fifo_wr_en[1]),
+    .rst(_06_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/top/protoboard_1.sv:144.17-159.2" *)
+  (* src = "../src/top/protoboard_1.sv:189.7-204.2" *)
   wavetable_synth wavetable_synth_inst (
     .clk(sys_clk),
-    .fifo_empty(lfo_fifo_empty),
-    .fifo_full(wt_fifo_full),
-    .freq_enc_down(freq_enc_down),
-    .freq_enc_press(freq_enc_press),
-    .freq_enc_up(freq_enc_up),
-    .rd_data(lfo_fifo_rd_data),
-    .rd_en(lfo_fifo_rd_en),
+    .fifo_empty(fifo_2x_empty),
+    .fifo_full(fifo_full[0]),
+    .freq_enc_down(mux_enc_down[0]),
+    .freq_enc_press(mux_enc_press[0]),
+    .freq_enc_up(mux_enc_up[0]),
+    .rd_data(fifo_2x_rd_data[15:0]),
+    .rd_en(fifo_2x_rd_en),
     .rst_n(sys_rst_n),
-    .wr_data(wt_fifo_wr_data),
-    .wr_en(wt_fifo_wr_en)
+    .wr_data(fifo_wr_data[15:0]),
+    .wr_en(fifo_wr_en[0])
   );
-  assign _05_[0] = led_counter[0];
-  assign _08_[0] = led[0];
-  assign _06_[0] = led[0];
-  assign _07_[0] = led_counter[0];
+  assign _12_[0] = led_counter[0];
+  assign _10_[0] = led_counter[0];
+  assign _11_[0] = led[0];
+  assign _05_[0] = _00_;
+  assign _13_[0] = led[0];
 endmodule
 
 (* dynports =  1  *)
@@ -13095,6 +13177,11 @@ module wavetable_synth(clk, rst_n, wr_en, wr_data, fifo_full, fifo_empty, rd_dat
   assign _040_[22] = _039_[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:106.34-106.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _038_[21];
   assign _040_[23] = _039_[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:106.34-106.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _038_[22];
   assign _037_[9] = wave_offset[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:109.36-109.59|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  wave_offset[8];
+  assign _029_[22] = _032_[22] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _144_;
+  assign _136_ = _030_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _029_[5];
+  assign _029_[6] = _032_[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _136_;
+  assign _142_ = _030_[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _029_[17];
+  assign _137_ = _030_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _029_[7];
   assign _030_[2] = phase_acc[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _026_[2];
   assign _030_[3] = phase_acc[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _027_[3];
   assign _030_[4] = phase_acc[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _027_[4];
@@ -13138,11 +13225,6 @@ module wavetable_synth(clk, rst_n, wr_en, wr_data, fifo_full, fifo_empty, rd_dat
   assign _032_[20] = phase_acc[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _027_[20];
   assign _032_[21] = phase_acc[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _027_[21];
   assign _032_[22] = phase_acc[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _027_[22];
-  assign _137_ = _030_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _029_[7];
-  assign _142_ = _030_[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _029_[17];
-  assign _029_[6] = _032_[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _136_;
-  assign _136_ = _030_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _029_[5];
-  assign _029_[22] = _032_[22] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _144_;
   assign _029_[4] = _032_[4] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _135_;
   assign _135_ = _030_[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _029_[3];
   assign _029_[16] = _032_[16] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:101.30-101.83|../src/synthesizer/hdl/wavetable_synth.sv:101.43-101.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _141_;

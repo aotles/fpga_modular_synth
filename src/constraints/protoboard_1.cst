@@ -24,34 +24,34 @@ IO_LOC "i2s_din" 31;
 IO_PORT "i2s_din" IO_TYPE=LVCMOS33 DRIVE=8;
 
 // Freq encoder IO
-IO_LOC "freq_enc_A" 86;
-IO_PORT "freq_enc_A" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "freq_enc_B" 84;
-IO_PORT "freq_enc_B" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "freq_enc_C" 85;
-IO_PORT "freq_enc_C" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC  "enc_A[0]" 86;
+IO_PORT "enc_A[0]" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC  "enc_B[0]" 84;
+IO_PORT "enc_B[0]" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC  "enc_C[0]" 85;
+IO_PORT "enc_C[0]" IO_TYPE=LVCMOS18 PULL_MODE=UP;
 
-IO_LOC "vol_enc_A" 83;
-IO_PORT "vol_enc_A" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "vol_enc_B" 82;
-IO_PORT "vol_enc_B" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "vol_enc_C" 81;
-IO_PORT "vol_enc_C" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC  "enc_A[1]" 83;
+IO_PORT "enc_A[1]" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC  "enc_B[1]" 82;
+IO_PORT "enc_B[1]" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC  "enc_C[1]" 81;
+IO_PORT "enc_C[1]" IO_TYPE=LVCMOS18 PULL_MODE=UP;
 
 //Audio input
-IO_LOC  "jack0_in_i2s_bclk" 26;
-IO_PORT "jack0_in_i2s_bclk" PULL_MODE=NONE;
-IO_LOC  "jack0_in_i2s_lrck" 25;
-IO_PORT "jack0_in_i2s_lrck" PULL_MODE=NONE;
-IO_LOC  "jack0_in_i2s_din"  39;
-IO_PORT "jack0_in_i2s_din"  PULL_MODE=NONE;
+IO_LOC  "jack_in_i2s_bclk[0]" 26;
+IO_PORT "jack_in_i2s_bclk[0]" PULL_MODE=NONE;
+IO_LOC  "jack_in_i2s_lrck[0]" 25;
+IO_PORT "jack_in_i2s_lrck[0]" PULL_MODE=NONE;
+IO_LOC  "jack_in_i2s_din[0]"  39;
+IO_PORT "jack_in_i2s_din[0]"  PULL_MODE=NONE;
 
-IO_LOC  "jack1_in_i2s_bclk" 29;
-IO_PORT "jack1_in_i2s_bclk" PULL_MODE=NONE;
-IO_LOC  "jack1_in_i2s_lrck" 28;
-IO_PORT "jack1_in_i2s_lrck" PULL_MODE=NONE;
-IO_LOC  "jack1_in_i2s_din"  27;
-IO_PORT "jack1_in_i2s_din"  PULL_MODE=NONE;
+IO_LOC  "jack_in_i2s_bclk[1]" 29;
+IO_PORT "jack_in_i2s_bclk[1]" PULL_MODE=NONE;
+IO_LOC  "jack_in_i2s_lrck[1]" 28;
+IO_PORT "jack_in_i2s_lrck[1]" PULL_MODE=NONE;
+IO_LOC  "jack_in_i2s_din[1]"  27;
+IO_PORT "jack_in_i2s_din[1]"  PULL_MODE=NONE;
 //IO_LOC  "jack1_out_i2s_bclk_2" 29;
 //IO_PORT "jack1_out_i2s_bclk_2" IO_TYPE=LVCMOS33 DRIVE=8;
 //IO_LOC  "jack1_out_i2s_lrck_2" 28;
