@@ -16,33 +16,40 @@ IO_LOC "sys_clk" 52;
 IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
 // Freq encoder IO
-IO_LOC  "enc_0_A" 63;
-IO_PORT "enc_0_A" IO_TYPE=LVCMOS33 PULL_MODE=UP;
-IO_LOC  "enc_0_B" 86;
-IO_PORT "enc_0_B" IO_TYPE=LVCMOS33 PULL_MODE=UP;
-IO_LOC  "enc_0_C" 85;
-IO_PORT "enc_0_C" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC  "enc_A[0]" 63;
+IO_PORT "enc_A[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC  "enc_B[0]" 86;
+IO_PORT "enc_B[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC  "enc_C[0]" 85;
+IO_PORT "enc_C[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
-IO_LOC  "enc_1_A" 77;
-IO_PORT "enc_1_A" IO_TYPE=LVCMOS33 PULL_MODE=UP;
-IO_LOC  "enc_1_B" 76;
-IO_PORT "enc_1_B" IO_TYPE=LVCMOS33 PULL_MODE=UP;
-IO_LOC  "enc_1_C" 75;
-IO_PORT "enc_1_C" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC  "enc_A[1]" 77;
+IO_PORT "enc_A[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC  "enc_B[1]" 76;
+IO_PORT "enc_B[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC  "enc_C[1]" 75;
+IO_PORT "enc_C[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
 //82, 81, 80 Audio Jack
 
-IO_LOC  "audio_in_i2s_bclk" 26;
-IO_PORT "audio_in_i2s_bclk" PULL_MODE=NONE;
-IO_LOC  "audio_in_i2s_lrck" 25;
-IO_PORT "audio_in_i2s_lrck" PULL_MODE=NONE;
-IO_LOC  "audio_in_i2s_din"  39;
-IO_PORT "audio_in_i2s_din"  PULL_MODE=NONE;
+//IO_LOC  "audio_in_i2s_bclk" 26;
+//IO_PORT "audio_in_i2s_bclk" PULL_MODE=NONE;
+//IO_LOC  "audio_in_i2s_lrck" 25;
+//IO_PORT "audio_in_i2s_lrck" PULL_MODE=NONE;
+//IO_LOC  "audio_in_i2s_din"  39;
+//IO_PORT "audio_in_i2s_din"  PULL_MODE=NONE;
 
 //Audio Jack output
-IO_LOC  "audio_out_i2s_bclk" 36;
-IO_PORT "audio_out_i2s_bclk" IO_TYPE=LVCMOS33 DRIVE=8;
-IO_LOC  "audio_out_i2s_lrck" 37;
-IO_PORT "audio_out_i2s_lrck" IO_TYPE=LVCMOS33 DRIVE=8;
-IO_LOC  "audio_out_i2s_dout" 38;
-IO_PORT "audio_out_i2s_dout" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC  "jack0_out_i2s_bclk" 36;
+IO_PORT "jack0_out_i2s_bclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC  "jack0_out_i2s_lrck" 37;
+IO_PORT "jack0_out_i2s_lrck" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC  "jack0_out_i2s_dout" 38;
+IO_PORT "jack0_out_i2s_dout" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC  "jack1_out_i2s_bclk" 26;
+IO_PORT "jack1_out_i2s_bclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC  "jack1_out_i2s_lrck" 25;
+IO_PORT "jack1_out_i2s_lrck" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC  "jack1_out_i2s_dout" 39;
+IO_PORT "jack1_out_i2s_dout" IO_TYPE=LVCMOS33 DRIVE=8;

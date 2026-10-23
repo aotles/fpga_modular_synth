@@ -18,17 +18,21 @@ module top # (
     input  logic vol_enc_C,
 
     // I2S input from the audio jack
-    input  logic audio_in_i2s_bclk,
-    input  logic audio_in_i2s_lrck,
-    input  logic audio_in_i2s_din,
+    input  logic jack0_in_i2s_bclk,
+    input  logic jack0_in_i2s_lrck,
+    input  logic jack0_in_i2s_din,
+
+    input  logic jack1_in_i2s_bclk,
+    input  logic jack1_in_i2s_lrck,
+    input  logic jack1_in_i2s_din,
     // I2S output to the audio jack
     output logic audio_out_i2s_bclk,
     output logic audio_out_i2s_lrck,
     output logic audio_out_i2s_dout,
 
-    output logic audio_out_i2s_bclk_2,
-    output logic audio_out_i2s_lrck_2,
-    output logic audio_out_i2s_dout_2,
+    //output logic jack1_out_i2s_bclk_2,
+    //output logic jack1_out_i2s_lrck_2,
+    //output logic jack1_out_i2s_dout_2,
     // I2S output to the UDA1334A breakout
     output logic i2s_bclk,
     output logic i2s_lrck,
@@ -86,9 +90,9 @@ logic lfo_fifo_rd_en;
 logic [wavetable_pkg::BIT_DEPTH-1:0] lfo_fifo_rd_data;
 logic lfo_fifo_empty;
 
-assign audio_out_i2s_bclk_2 = i2s_bclk;
-assign audio_out_i2s_lrck_2 = i2s_lrck;
-assign audio_out_i2s_dout_2 = i2s_din;
+//assign jack1_out_i2s_bclk_2 = i2s_bclk;
+//assign jack1_out_i2s_lrck_2 = i2s_lrck;
+//assign jack1_out_i2s_dout_2 = i2s_din;
 
 clk_div #(
     .CLK_FREQ_HZ (27_000_000),
@@ -144,7 +148,7 @@ wavetable_synth wavetable_synth_inst (
     .wr_en         (wt_fifo_wr_en),
     .wr_data       (wt_fifo_wr_data),
     .fifo_full     (wt_fifo_full),
-    //fifo input - currently disconnected
+    //frequency control fifo input 
     .rd_en         (lfo_fifo_rd_en),
     .rd_data       (lfo_fifo_rd_data),
     .fifo_empty    (lfo_fifo_empty),
@@ -272,9 +276,9 @@ i2s_rx #(
     .clk          (sys_clk),
     .rst_n        (sys_rst_n),
 
-    .bclk         (audio_in_i2s_bclk),
-    .lrck         (audio_in_i2s_lrck),
-    .sdata        (audio_in_i2s_din),
+    .bclk         (jack1_in_i2s_bclk),
+    .lrck         (jack1_in_i2s_lrck),
+    .sdata        (jack1_in_i2s_din),
 
     //.fifo_full    (i2s_rx_fifo_full),
     //.fifo_wr_data (i2s_rx_fifo_wr_data),

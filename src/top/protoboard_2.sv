@@ -9,26 +9,24 @@ module top # (
     input  logic sys_rst_n,        // reset input
     output logic [5:0] led,   // 6 LEDS pin
     // Encoder inputs
-    input  logic enc_0_A,
-    input  logic enc_0_B,
-    input  logic enc_0_C,
-
-    input  logic enc_1_A,
-    input  logic enc_1_B,
-    input  logic enc_1_C,
+    input logic [1:0] enc_A,
+    input logic [1:0] enc_B,
+    input logic [1:0] enc_C,
 
     // I2S input from the audio jack
-    input  logic audio_in_i2s_bclk,
-    input  logic audio_in_i2s_lrck,
-    input  logic audio_in_i2s_din,
+    //input  logic audio_in_i2s_bclk,
+    //input  logic audio_in_i2s_lrck,
+    //input  logic audio_in_i2s_din,
     // I2S output to the audio jack
-    output logic audio_out_i2s_bclk,
-    output logic audio_out_i2s_lrck,
-    output logic audio_out_i2s_dout
+    output logic jack1_out_i2s_bclk,
+    output logic jack1_out_i2s_lrck,
+    output logic jack1_out_i2s_dout
 );
 
 localparam reg [23:0] half_second_count = SIMULATION ? 24'd1000 : 24'd13_499_999;
 localparam int AUDIO_FIFO_DEPTH = 16;
+localparam int NUM_ENCODERS = 2;
+localparam int NUM_FIFOS = 3;
 
 reg [5:0]  led_counter;
 logic      led_disp_mode;
@@ -37,102 +35,98 @@ logic      led_disp_mode;
 assign led = ~led_counter;
 
 // Audio path: wave table -> FIFO -> I2S transmitter
-wire [wavetable_pkg::BIT_DEPTH-1:0] wt_fifo_wr_data;
-wire                                wt_fifo_wr_en;
-wire                                wt_fifo_full;
 
-wire [wavetable_pkg::BIT_DEPTH-1:0] wt_fifo_rd_data;
-wire                                wt_fifo_rd_en;
-wire                                wt_fifo_empty;
+//write signals
+logic [NUM_FIFOS-1:0][wavetable_pkg::BIT_DEPTH-1:0] fifo_wr_data;
+logic [NUM_FIFOS-1:0] fifo_wr_en;
+logic [NUM_FIFOS-1:0] fifo_full;
+//read signals
+logic [NUM_FIFOS-1:0][wavetable_pkg::BIT_DEPTH-1:0] fifo_rd_data;
+logic [NUM_FIFOS-1:0] fifo_rd_en;
+logic [NUM_FIFOS-1:0] fifo_empty;
 
-wire [wavetable_pkg::BIT_DEPTH-1:0] vol_fifo_wr_data;
-wire                                vol_fifo_wr_en;
-wire                                vol_fifo_full;
 
-wire [wavetable_pkg::BIT_DEPTH-1:0] vol_fifo_rd_data;
-wire                                vol_fifo_rd_en;
-wire                                vol_fifo_empty;
+//internal encoder signals 2 encoders to be used with the mux
+logic [1:0] enc_up;
+logic [1:0] enc_press;
+logic [1:0] enc_down;
 
-wire [wavetable_pkg::BIT_DEPTH*2-1:0] i2s_rx_fifo_wr_data;
-wire                                  i2s_rx_fifo_wr_en;
-wire                                  i2s_rx_fifo_full;
-
-wire [wavetable_pkg::BIT_DEPTH*2-1:0] i2s_rx_fifo_rd_data;
-wire                                  i2s_rx_fifo_rd_en;
-wire                                  i2s_rx_fifo_empty;
-
-//encoder signals
-wire enc_0_up;
-wire enc_0_press;
-wire enc_0_down;
-
-wire enc_1_up;
-wire enc_1_press;
-wire enc_1_down;
-
-wire [1:0] mux_enc_up;
-wire [1:0] mux_enc_press;
-wire [1:0] mux_enc_down;
-wire [1:0] mux_enc_select;
+logic [1:0] mux_enc_up;
+logic [1:0] mux_enc_press;
+logic [1:0] mux_enc_down;
+logic [1:0] mux_enc_select;
 
 logic clk_1ms;
 
-
 clk_div #(
-    .CLK_FREQ_HZ (27_000_000),
-    .OUT_FREQ_HZ (1_000)
 ) clk_div_inst (
-    .clk    (sys_clk),
-    .rst_n  (sys_rst_n),
+    .clk     (sys_clk),
+    .rst_n   (sys_rst_n),
     .clk_1ms (clk_1ms)
 );
 
-encoder encoder_0_inst (
-    .clk     (sys_clk),
-    .rst_n   (sys_rst_n),
-    .clk_1ms (clk_1ms),
-    .A       (enc_0_A),
-    .B       (enc_0_B),
-    .C       (enc_0_C),
-    .up      (enc_0_up),
-    .press   (enc_0_press),
-    .down    (enc_0_down)
-);
+genvar i;
+generate
+for (genvar i = 0; i < NUM_ENCODERS; i = i + 1) begin: enc_mux_gen
+    encoder encoder_inst (
+        .clk     (sys_clk),
+        .rst_n   (sys_rst_n),
+        .clk_1ms (clk_1ms),
+        .A       (enc_A[i]),
+        .B       (enc_B[i]),
+        .C       (enc_C[i]),
+        .up      (enc_up[i]),
+        .press   (enc_press[i]),
+        .down    (enc_down[i])
+    );
+end
+endgenerate
 
-encoder encoder_1_inst (
-    .clk     (sys_clk),
-    .rst_n   (sys_rst_n),
-    .clk_1ms (clk_1ms),
-    .A       (enc_1_A),
-    .B       (enc_1_B),
-    .C       (enc_1_C),
-    .up      (enc_1_up),
-    .press   (enc_1_press),
-    .down    (enc_1_down)
-);
+genvar j;
+generate
+for (genvar j = 0; j < NUM_FIFOS; j = j + 1) begin: fifo_gen
+    fifo #(
+        .WIDTH (wavetable_pkg::BIT_DEPTH),
+        .DEPTH (AUDIO_FIFO_DEPTH)
+    ) fifo_inst (
+        .clk     (sys_clk),
+        .rst_n   (sys_rst_n),
+        //fifo IN IF
+        .wr_en   (fifo_wr_en[j]),
+        .wr_data (fifo_wr_data[j]),
+        .full    (fifo_full[j]),
+        //fifo OUT IF
+        .rd_en   (fifo_rd_en[j]),
+        .rd_data (fifo_rd_data[j]),
+        .empty   (fifo_empty[j])
+    );
+end
+endgenerate
 
 enc_mux #(
     .NUM_OUTPUTS (2)
 ) enc_mux_inst (
     .clk          (sys_clk),
     .rst_n        (sys_rst_n),
-    .select_up    (enc_0_up),
-    .select_down  (enc_0_down),
-    .data_up      (enc_1_up),
-    .data_press   (enc_1_press),
-    .data_down    (enc_1_down),
+    .select_up    (enc_up[0]),
+    .select_down  (enc_down[0]),
+    .data_up      (enc_up[1]),
+    .data_press   (enc_press[1]),
+    .data_down    (enc_down[1]),
     .enc_up       (mux_enc_up),
     .enc_press    (mux_enc_press),
     .enc_down     (mux_enc_down),
     .enc_select   (mux_enc_select)
 );
 
+// Process for displaying current encoder state on LEDs
+// Mostly for debug purposes
 always_ff @(posedge sys_clk) begin
     if (!sys_rst_n) begin
         led_counter <= 6'b0;
         led_disp_mode <= 1'b0;
     end else begin
-        if (enc_0_press) begin
+        if (enc_press[0]) begin
             led_disp_mode <= ~led_disp_mode;
         end
         if (~led_disp_mode) begin
@@ -153,29 +147,13 @@ wavetable_synth  #(
     .clk           (sys_clk),
     .rst_n         (sys_rst_n),
     //fifo IF
-    .wr_en         (wt_fifo_wr_en),
-    .wr_data       (wt_fifo_wr_data),
-    .fifo_full     (wt_fifo_full),
+    .wr_en         (fifo_wr_en[0]  ),
+    .wr_data       (fifo_wr_data[0]),
+    .fifo_full     (fifo_full[0]   ),
     //Encoder IF
     .freq_enc_up   (mux_enc_up[0]),
     .freq_enc_press(mux_enc_press[0]),
     .freq_enc_down (mux_enc_down[0])
-);
-
-fifo #(
-    .WIDTH (wavetable_pkg::BIT_DEPTH),
-    .DEPTH (AUDIO_FIFO_DEPTH)
-) audio_fifo_inst (
-    .clk     (sys_clk),
-    .rst_n   (sys_rst_n),
-    //fifo IN IF
-    .wr_en   (wt_fifo_wr_en),
-    .wr_data (wt_fifo_wr_data),
-    .full    (wt_fifo_full),
-    //fifo OUT IF
-    .rd_en   (wt_fifo_rd_en),
-    .rd_data (wt_fifo_rd_data),
-    .empty   (wt_fifo_empty)
 );
 
 volume #(
@@ -186,29 +164,13 @@ volume #(
     .enc_up         (mux_enc_up[1]),
     .enc_down       (mux_enc_down[1]),
 
-    .fifo_in_empty  (wt_fifo_empty),
-    .fifo_in_data   (wt_fifo_rd_data),
-    .fifo_in_rd_en  (wt_fifo_rd_en),
+    .fifo_in_empty  (fifo_empty[0]  ),
+    .fifo_in_data   (fifo_rd_data[0]),
+    .fifo_in_rd_en  (fifo_rd_en[0]  ),
 
-    .fifo_out_data  (vol_fifo_wr_data),
-    .fifo_out_wr_en (vol_fifo_wr_en),
-    .fifo_out_full  (vol_fifo_full)
-);
-
-fifo #(
-    .WIDTH (wavetable_pkg::BIT_DEPTH),
-    .DEPTH (AUDIO_FIFO_DEPTH)
-) vol_fifo_inst (
-    .clk     (sys_clk),
-    .rst_n   (sys_rst_n),
-    //fifo IN IF
-    .wr_en   (vol_fifo_wr_en),
-    .wr_data (vol_fifo_wr_data),
-    .full    (vol_fifo_full),
-    //fifo OUT IF
-    .rd_en   (vol_fifo_rd_en),
-    .rd_data (vol_fifo_rd_data),
-    .empty   (vol_fifo_empty)
+    .fifo_out_data  (fifo_wr_data[1]),
+    .fifo_out_wr_en (fifo_wr_en[1]  ),
+    .fifo_out_full  (fifo_full[1]   )
 );
 
 i2s_tx #(
@@ -216,44 +178,14 @@ i2s_tx #(
 ) i2s_tx_audio_out_inst (
     .clk        (sys_clk),
     .rst_n      (sys_rst_n),
-    .rd_en      (vol_fifo_rd_en),
-    .rd_data    (vol_fifo_rd_data),
-    .fifo_empty (vol_fifo_empty),
 
-    .bclk       (audio_out_i2s_bclk),
-    .lrck       (audio_out_i2s_lrck),
-    .sdata      (audio_out_i2s_dout)
+    .rd_en      (fifo_rd_en[1]  ),
+    .rd_data    (fifo_rd_data[1]),
+    .fifo_empty (fifo_empty[1]  ),
+
+    .bclk       (jack1_out_i2s_bclk),
+    .lrck       (jack1_out_i2s_lrck),
+    .sdata      (jack1_out_i2s_dout)
 );
 
-//i2s_rx #(
-//    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
-//) i2s_rx_inst (
-//    .clk          (sys_clk),
-//    .rst_n        (sys_rst_n),
-//
-//    .bclk         (audio_in_i2s_bclk),
-//    .lrck         (audio_in_i2s_lrck),
-//    .sdata        (audio_in_i2s_din),
-//
-//    .fifo_full    (i2s_rx_fifo_full),
-//    .fifo_wr_data (i2s_rx_fifo_wr_data),
-//    .fifo_wr_en   (i2s_rx_fifo_wr_en)
-//);
-
-//fifo #(
-//    .WIDTH (wavetable_pkg::BIT_DEPTH*2),
-//    .DEPTH (AUDIO_FIFO_DEPTH)
-//) i2s_rx_fifo_inst (
-//    .clk     (sys_clk),
-//    .rst_n   (sys_rst_n),
-//    //fifo IN IF
-//    .wr_en   (i2s_rx_fifo_wr_en),
-//    .wr_data (i2s_rx_fifo_wr_data),
-//    .full    (i2s_rx_fifo_full),
-//    //fifo OUT IF
-//    .rd_en   (i2s_rx_fifo_rd_en),
-//    .rd_data (i2s_rx_fifo_rd_data),
-//    .empty   (i2s_rx_fifo_empty)
-//);
-//
 endmodule
