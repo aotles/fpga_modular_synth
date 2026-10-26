@@ -36,7 +36,6 @@ module fifo #(
             count  <= '0;
         end else begin
             if (wr_valid) begin
-                mem[wr_ptr] <= wr_data;
                 wr_ptr      <= (wr_ptr == LAST_ADDR) ? '0 : wr_ptr + 1'b1;
             end
 
@@ -49,6 +48,13 @@ module fifo #(
                 2'b01:   count <= count - 1'b1;
                 default: count <= count;
             endcase
+        end
+    end
+
+    // memory kept free of reset so synthesis can infer RAM instead of registers
+    always_ff @(posedge clk) begin
+        if (wr_valid) begin
+            mem[wr_ptr] <= wr_data;
         end
     end
 

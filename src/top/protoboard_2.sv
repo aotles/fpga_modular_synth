@@ -23,10 +23,10 @@ module top # (
     output logic [1:0] jack_out_i2s_dout
 );
 
-localparam int AUDIO_FIFO_DEPTH = 16;
+localparam int AUDIO_FIFO_DEPTH = 8;
 localparam int NUM_ENCODERS = 2;
-localparam int NUM_FIFOS = 4;
-localparam int NUM_MUX_OUTPUTS = 4;
+localparam int NUM_FIFOS = 5;
+localparam int NUM_ENC_MUX_OUTPUTS = 10;
 
 reg [5:0]  led_counter;
 logic      led_disp_mode;
@@ -49,12 +49,16 @@ logic [1:0] enc_up;
 logic [1:0] enc_press;
 logic [1:0] enc_down;
 
-logic [NUM_MUX_OUTPUTS-1:0] mux_enc_up;
-logic [NUM_MUX_OUTPUTS-1:0] mux_enc_press;
-logic [NUM_MUX_OUTPUTS-1:0] mux_enc_down;
-logic [NUM_MUX_OUTPUTS-1:0] mux_enc_select;
+logic [NUM_ENC_MUX_OUTPUTS-1:0] mux_enc_up;
+logic [NUM_ENC_MUX_OUTPUTS-1:0] mux_enc_press;
+logic [NUM_ENC_MUX_OUTPUTS-1:0] mux_enc_down;
+logic [NUM_ENC_MUX_OUTPUTS-1:0] mux_enc_select;
 
 logic clk_1ms;
+logic [1:0] clk_1ms_dff;
+logic ms_pulse;
+logic [16:0] ms_counter;
+logic trig_o;
 
 clk_div #(
 ) clk_div_inst (
@@ -102,7 +106,7 @@ end
 endgenerate
 
 enc_mux #(
-    .NUM_OUTPUTS (NUM_MUX_OUTPUTS)
+    .NUM_OUTPUTS (NUM_ENC_MUX_OUTPUTS)
 ) enc_mux_inst (
     .clk          (sys_clk),
     .rst_n        (sys_rst_n),
@@ -187,22 +191,77 @@ i2s_tx #(
     .sdata      (jack_out_i2s_dout[0])
 );
 
-//LFO for envelope control
+//LFO for generating clk to envelope control
+/*
 wavetable_synth  #(
     .DEFAULT_PHASE_INC (24'd100) // example phase increment for LFO of 1Hz
     ) LFO_wavetable_synth_inst_1 (
     .clk           (sys_clk),
     .rst_n         (sys_rst_n),
     //fifo IF
-    .wr_en         (fifo_wr_en[2]  ),
-    .wr_data       (fifo_wr_data[2]),
-    .fifo_full     (fifo_full[2]   ),
+    .wr_en         (fifo_wr_en[4]  ),
+    .wr_data       (fifo_wr_data[4]),
+    .fifo_full     (fifo_full[4]   ),
     //Encoder IF
     .freq_enc_up   (mux_enc_up[2]),
     .freq_enc_press(mux_enc_press[2]),
     .freq_enc_down (mux_enc_down[2])
 );
+*/
+//
+//trig #(
+//    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
+//) trig_inst (
+//    .sys_clk    (sys_clk),
+//    .sys_rst_n  (sys_rst_n),
+//    .rd_en      (fifo_rd_en[2]),
+//    .rd_data    (fifo_rd_data[2]),
+//    .fifo_empty (fifo_empty[2]),
+//    .trig_o     (trig_o)
+//);
 
+// 1 ms tick (one sys_clk wide) from the divided clock, plus a test trigger every 5 s
+always_ff @(posedge sys_clk or negedge sys_rst_n) begin
+    if (!sys_rst_n) begin
+        clk_1ms_dff <= 2'b00;
+        ms_pulse    <= 1'b0;
+        ms_counter  <= 17'd1998;
+        trig_o      <= 1'b0;
+    end else begin
+        clk_1ms_dff <= {clk_1ms_dff[0], clk_1ms};
+        ms_pulse    <= 1'b0;
+        trig_o      <= 1'b0;
+        if (clk_1ms_dff == 2'b01) begin
+            ms_pulse <= 1'b1;
+            if (ms_counter == 17'd2000) begin
+                ms_counter <= 17'd0;
+                trig_o     <= 1'b1;
+            end else begin
+                ms_counter <= ms_counter + 17'd1;
+            end
+        end
+    end
+end
+
+envelope_gen #(
+    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
+) envelope_gen_inst (
+    .sys_clk    (sys_clk),
+    .sys_rst_n  (sys_rst_n),
+
+    .trig       (trig_o),
+    .ms_pulse   (ms_pulse),
+    
+    .enc_up     (mux_enc_up[9:4]),
+    .enc_down   (mux_enc_down[9:4]),
+    .enc_press  (mux_enc_press[9:4]),
+
+    .wr_en         (fifo_wr_en[4]),
+    .wr_data       (fifo_wr_data[4]),
+    .fifo_full     (fifo_full[4])
+);
+
+/*
 volume #(
     .DWIDTH (wavetable_pkg::BIT_DEPTH)
 ) volume_inst_1 (
@@ -211,14 +270,15 @@ volume #(
     .enc_up         (mux_enc_up[3]),
     .enc_down       (mux_enc_down[3]),
 
-    .fifo_in_empty  (fifo_empty[2]  ),
-    .fifo_in_data   (fifo_rd_data[2]),
-    .fifo_in_rd_en  (fifo_rd_en[2]  ),
+    .fifo_in_empty  (fifo_empty[4]  ),
+    .fifo_in_data   (fifo_rd_data[4]),
+    .fifo_in_rd_en  (fifo_rd_en[4]  ),
 
     .fifo_out_data  (fifo_wr_data[3]),
     .fifo_out_wr_en (fifo_wr_en[3]  ),
     .fifo_out_full  (fifo_full[3]   )
 );
+*/
 
 i2s_tx #(
     .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
@@ -226,9 +286,9 @@ i2s_tx #(
     .clk        (sys_clk),
     .rst_n      (sys_rst_n),
 
-    .rd_en      (fifo_rd_en[3]  ),
-    .rd_data    (fifo_rd_data[3]),
-    .fifo_empty (fifo_empty[3]  ),
+    .rd_en      (fifo_rd_en[4]  ),
+    .rd_data    (fifo_rd_data[4]),
+    .fifo_empty (fifo_empty[4]  ),
 
     .bclk       (jack_out_i2s_bclk[1]),
     .lrck       (jack_out_i2s_lrck[1]),

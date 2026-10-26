@@ -2,6 +2,9 @@ read_verilog -sv -D GOWIN_SYNTHESIS ../src/synthesizer/hdl/wavetable_pkg.sv
 read_verilog -sv -D GOWIN_SYNTHESIS ../src/synthesizer/hdl/wavetable_synth.sv
 read_verilog -sv ../src/synthesizer/hdl/wavetable_rom.sv
 read_verilog -sv ../src/misc/fifo.sv
+read_verilog -sv ../src/misc/divide.sv
+read_verilog -sv ../src/misc/trig.sv
+read_verilog -sv ../src/envelope_gen/envelope_gen.sv
 read_verilog -sv ../src/vol/gain.sv
 read_verilog -sv ../src/vol/volume.sv
 read_verilog -sv ../src/i2s/i2s_tx.sv

@@ -174,7 +174,7 @@ always_ff @(posedge sys_clk) begin
             led_disp_mode <= ~led_disp_mode;
         end
         if (~led_disp_mode) begin
-            led_counter <= {5'h0, mux_enc_select[1]};
+            led_counter <= mux_enc_select;
         end else begin
             if (|mux_enc_up) begin
                 led_counter <= led_counter + 1'b1;
