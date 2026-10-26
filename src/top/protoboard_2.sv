@@ -144,6 +144,7 @@ always_ff @(posedge sys_clk) begin
 end
 
 // LFO for frequency control
+/*
 wavetable_synth  #(
     .DEFAULT_PHASE_INC (24'd100) // example phase increment for LFO of 1Hz
     ) LFO_wavetable_synth_inst (
@@ -174,6 +175,19 @@ volume #(
     .fifo_out_data  (fifo_wr_data[1]),
     .fifo_out_wr_en (fifo_wr_en[1]  ),
     .fifo_out_full  (fifo_full[1]   )
+);
+*/
+//instantiate sequencer instead of above LFO
+sequencer #(
+    .BIT_DEPTH (wavetable_pkg::BIT_DEPTH)
+) sequencer_inst (
+    .clk        (sys_clk),
+    .reset      (!sys_rst_n),
+    .trig       (trig_o),
+    //fifo write interface
+    .fifo_wr_en (fifo_wr_en[1]),
+    .fifo_wr_data (fifo_wr_data[1]),
+    .fifo_full  (fifo_full[1])
 );
 
 i2s_tx #(
@@ -233,7 +247,7 @@ always_ff @(posedge sys_clk or negedge sys_rst_n) begin
         trig_o      <= 1'b0;
         if (clk_1ms_dff == 2'b01) begin
             ms_pulse <= 1'b1;
-            if (ms_counter == 17'd2000) begin
+            if (ms_counter >= 17'd500) begin
                 ms_counter <= 17'd0;
                 trig_o     <= 1'b1;
             end else begin

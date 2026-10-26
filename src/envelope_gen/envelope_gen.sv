@@ -39,9 +39,9 @@ module envelope_gen # (
 
 //default values
 localparam [BIT_DEPTH-1:0] DEFAULT_ATTACK_TIME  = 16'd10;  // 10 ms 
-localparam [BIT_DEPTH-1:0] DEFAULT_DECAY_TIME   = 16'd100; // 100 ms
-localparam [BIT_DEPTH-1:0] DEFAULT_SUSTAIN_TIME = 16'd500; // 500 ms
-localparam [BIT_DEPTH-1:0] DEFAULT_RELEASE_TIME = 16'd100; // 100 ms 
+localparam [BIT_DEPTH-1:0] DEFAULT_DECAY_TIME   = 16'd50; // 100 ms
+localparam [BIT_DEPTH-1:0] DEFAULT_SUSTAIN_TIME = 16'd200; // 500 ms
+localparam [BIT_DEPTH-1:0] DEFAULT_RELEASE_TIME = 16'd50; // 100 ms 
 
 localparam [BIT_DEPTH-1:0] DEFAULT_ATTACK_AMP  = 16'h0FFF; // max amplitude
 localparam [BIT_DEPTH-1:0] DEFAULT_SUSTAIN_AMP = 16'h00FF; // half amplitude
