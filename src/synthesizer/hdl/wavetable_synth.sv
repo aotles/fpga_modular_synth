@@ -71,15 +71,16 @@ module wavetable_synth #(
     pROM #(
         .BIT_WIDTH(16),
         .RESET_MODE("SYNC"),
-`include "wavetable_prom_init.svh"
+`include "sine.svh"
     ) u_wavetable_rom (
         .CLK(clk),
         .CE(wr_en),
         .OCE(1'b1),
         .RESET(!rst_n),
-        .AD({4'b0, addr}),
-        .DO(wr_data)
+        .AD({addr, 4'b0}), //14 bit address
+        .DO(wr_data) //32 bit DO
     );
+
 `else
     wavetable_rom u_wavetable_rom (
         .clk(clk),
@@ -124,7 +125,7 @@ module wavetable_synth #(
                     phase_inc <= phase_inc - ENC_INC; // example decrement
                     freq_enc_down_latch <= 1'b0;
                 end else if (freq_enc_press_latch) begin
-                    wave_offset <= wave_offset + WAVE_SIZE;
+                    //wave_offset <= wave_offset + WAVE_SIZE;
                     freq_enc_press_latch <= 1'b0;
                 end else
                     phase_inc <= phase_inc;
