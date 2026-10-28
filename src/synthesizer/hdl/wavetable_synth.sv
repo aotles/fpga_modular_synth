@@ -32,7 +32,7 @@ module wavetable_synth #(
 
     localparam int ADDR_W = $clog2(TABLE_SIZE);
     localparam int WAVE_W = $clog2(WAVE_SIZE);
-    localparam logic [PHASE_W-1:0] ENC_INC = LFO ? 24'd100 : 24'd10;
+    localparam logic [PHASE_W-1:0] ENC_INC = LFO ? 24'd10 : 24'd100;
     //todo make this an iput signal but for now, lock the phase increment to make a 440Hz tone
     //localparam int PHASE_INC = 24'd157482;
     //localparam int WAVE_OFFSET = 3*WAVE_SIZE; // offset into the wave table sections
@@ -45,6 +45,7 @@ module wavetable_synth #(
     logic freq_enc_up_latch, freq_enc_press_latch, freq_enc_down_latch;
     logic [PHASE_W-1:0] phase_acc;
     logic [PHASE_W-1:0] phase_inc;
+    logic [PHASE_W-1:0] phase_inc_enc;
     logic [ADDR_W-1:0] wave_offset; // offset into the wave table sections
     //TODO hook this up so there's an offset, so that we can index into all wave sections
     wire  [ADDR_W-1:0] addr = phase_acc[PHASE_W-1 -: WAVE_W] + wave_offset; 
@@ -96,6 +97,7 @@ module wavetable_synth #(
         if (!rst_n) begin
             phase_acc <= '0;
             phase_inc <= DEFAULT_PHASE_INC;     //Default to A 440Hz
+            phase_inc_enc <= '0;
             wave_offset <= {ADDR_W{1'b0}}; // offset into the wave table sections
             freq_enc_up_latch <= 1'b0;
             freq_enc_press_latch <= 1'b0;
@@ -110,12 +112,13 @@ module wavetable_synth #(
             if (freq_enc_down)
                 freq_enc_down_latch <= 1'b1;
 
+            rd_en <= 1'b0;
             if (wr_en) begin
                 if (~fifo_empty) begin
                     rd_en <= 1'b1;
                     rd_data_latch <= rd_data;
                 end else begin
-                    rd_en <= 1'b0;
+                    rd_data_latch <= '0;
                 end
                 phase_acc <= phase_acc + (phase_inc + {6'h0, rd_data_latch, 2'h0});
                 if (freq_enc_up_latch) begin

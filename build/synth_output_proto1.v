@@ -6290,7 +6290,7 @@ module top(sys_clk, sys_rst_n, led, enc_A, enc_B, enc_C, jack_in_i2s_bclk, jack_
 endmodule
 
 (* dynports =  1  *)
-(* src = "../src/synthesizer/hdl/wavetable_synth.sv:4.1-144.10" *)
+(* src = "../src/synthesizer/hdl/wavetable_synth.sv:4.1-147.10" *)
 module wavetable_synth(clk, clk_fs, rst_n, wr_en, wr_data, fifo_full, fifo_empty, rd_data, rd_en, freq_enc_up, freq_enc_press, freq_enc_down);
   (* src = "../src/synthesizer/hdl/wavetable_synth.sv:14.18-14.21" *)
   input clk;
@@ -6328,463 +6328,456 @@ module wavetable_synth(clk, clk_fs, rst_n, wr_en, wr_data, fifo_full, fifo_empty
   (* src = "../src/synthesizer/hdl/wavetable_synth.sv:30.18-30.31" *)
   input freq_enc_down;
   wire freq_enc_down;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   wire _000_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   wire _001_;
   wire _002_;
   wire _003_;
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:59.13-59.19" *)
   wire _004_;
-  wire _005_;
-  wire _006_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:58.13-58.19" *)
-  wire _007_;
-  wire [23:0] _008_;
-  wire [23:0] _009_;
+  wire [15:0] _005_;
+  wire [23:0] _006_;
+  wire [23:0] _007_;
+  wire _008_;
+  wire _009_;
   wire _010_;
   wire _011_;
   wire _012_;
   wire _013_;
-  wire _014_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  wire [23:0] _014_;
+  (* force_downto = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [23:0] _015_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [23:0] _016_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:200.21-200.22" *)
   wire [23:0] _017_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:200.21-200.22" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [23:0] _018_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [23:0] _019_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [23:0] _020_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:200.21-200.22" *)
   wire [23:0] _021_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:200.21-200.22" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [23:0] _022_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [23:0] _023_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [23:0] _024_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
   wire [23:0] _025_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:274.23-274.25" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
   wire [23:0] _026_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:287.21-287.22" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
   wire [23:0] _027_;
-  (* force_downto = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:270.26-270.27" *)
-  wire [23:0] _028_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  wire _028_;
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _029_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _030_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _031_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _032_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _033_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _034_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _035_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _036_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _037_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _038_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _039_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _040_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _041_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _042_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _043_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _044_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _045_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _046_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _047_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _048_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _049_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _050_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _051_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _052_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _053_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _054_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _055_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _056_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _057_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _058_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _059_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _060_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _061_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _062_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _063_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _064_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _065_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _066_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _067_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _068_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _069_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _070_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _071_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _072_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _073_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _074_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _075_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _076_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _077_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _078_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _079_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _080_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _081_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _082_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _083_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _084_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _085_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _086_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _087_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _088_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _089_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _090_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _091_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _092_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _093_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _094_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _095_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _096_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _097_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _098_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _099_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _100_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _101_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _102_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _103_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _104_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _105_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _106_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _107_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _108_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _109_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _110_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _111_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _112_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _113_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _114_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _115_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _116_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _117_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _118_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _119_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _120_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _121_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _122_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _123_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _124_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _125_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _126_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _127_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _128_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _129_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _130_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _131_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _132_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _133_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _134_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _135_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _136_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _137_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _138_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _139_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _140_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _141_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _142_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _143_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _144_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _145_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _146_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _147_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _148_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _149_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _150_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _151_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _152_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _153_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _154_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _155_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _156_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _157_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _158_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _159_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _160_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _161_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _162_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _163_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _164_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _165_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _166_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _167_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _168_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _169_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _170_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _171_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _172_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _173_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _174_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _175_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _176_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _177_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _178_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _179_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)
   wire _180_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _181_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _182_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _183_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _184_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _185_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _186_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _187_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _188_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _189_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _190_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _191_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _192_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _193_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)
   wire _194_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _195_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _196_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _197_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _198_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _199_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _200_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _201_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _202_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _203_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _204_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _205_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _206_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _207_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _208_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _209_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
   wire _210_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _211_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _212_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _213_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _214_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _215_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _216_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _217_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _218_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _219_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _220_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _221_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
   wire _222_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
-  wire _223_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
-  wire _224_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
-  wire _225_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)
-  wire _226_;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:50.24-50.28" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:51.24-51.28" *)
   wire [9:0] addr;
   (* src = "../src/synthesizer/hdl/wavetable_synth.sv:45.52-45.71" *)
   reg freq_enc_down_latch;
@@ -6794,956 +6787,956 @@ module wavetable_synth(clk, clk_fs, rst_n, wr_en, wr_data, fifo_full, fifo_empty
   wire [23:0] phase_acc;
   (* src = "../src/synthesizer/hdl/wavetable_synth.sv:47.25-47.34" *)
   wire [23:0] phase_inc;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:67.27-67.40" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:48.25-48.38" *)
+  wire [23:0] phase_inc_enc;
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:68.27-68.40" *)
   reg [15:0] rd_data_latch;
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:48.24-48.35" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:49.24-49.35" *)
   wire [9:0] wave_offset;
   reg \phase_acc_reg[1] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[1]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[1]  <= _020_[1];
+    else if (!fifo_full) \phase_acc_reg[1]  <= _019_[1];
   assign phase_acc[1] = \phase_acc_reg[1] ;
   reg \phase_acc_reg[2] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[2]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[2]  <= _021_[2];
+    else if (!fifo_full) \phase_acc_reg[2]  <= _020_[2];
   assign phase_acc[2] = \phase_acc_reg[2] ;
   reg \phase_acc_reg[3] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[3]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[3]  <= _021_[3];
+    else if (!fifo_full) \phase_acc_reg[3]  <= _020_[3];
   assign phase_acc[3] = \phase_acc_reg[3] ;
   reg \phase_acc_reg[4] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[4]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[4]  <= _021_[4];
+    else if (!fifo_full) \phase_acc_reg[4]  <= _020_[4];
   assign phase_acc[4] = \phase_acc_reg[4] ;
   reg \phase_acc_reg[5] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[5]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[5]  <= _021_[5];
+    else if (!fifo_full) \phase_acc_reg[5]  <= _020_[5];
   assign phase_acc[5] = \phase_acc_reg[5] ;
   reg \phase_acc_reg[6] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[6]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[6]  <= _021_[6];
+    else if (!fifo_full) \phase_acc_reg[6]  <= _020_[6];
   assign phase_acc[6] = \phase_acc_reg[6] ;
   reg \phase_acc_reg[7] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[7]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[7]  <= _021_[7];
+    else if (!fifo_full) \phase_acc_reg[7]  <= _020_[7];
   assign phase_acc[7] = \phase_acc_reg[7] ;
   reg \phase_acc_reg[8] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[8]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[8]  <= _021_[8];
+    else if (!fifo_full) \phase_acc_reg[8]  <= _020_[8];
   assign phase_acc[8] = \phase_acc_reg[8] ;
   reg \phase_acc_reg[9] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[9]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[9]  <= _021_[9];
+    else if (!fifo_full) \phase_acc_reg[9]  <= _020_[9];
   assign phase_acc[9] = \phase_acc_reg[9] ;
   reg \phase_acc_reg[10] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[10]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[10]  <= _021_[10];
+    else if (!fifo_full) \phase_acc_reg[10]  <= _020_[10];
   assign phase_acc[10] = \phase_acc_reg[10] ;
   reg \phase_acc_reg[11] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[11]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[11]  <= _021_[11];
+    else if (!fifo_full) \phase_acc_reg[11]  <= _020_[11];
   assign phase_acc[11] = \phase_acc_reg[11] ;
   reg \phase_acc_reg[12] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[12]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[12]  <= _021_[12];
+    else if (!fifo_full) \phase_acc_reg[12]  <= _020_[12];
   assign phase_acc[12] = \phase_acc_reg[12] ;
   reg \phase_acc_reg[13] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[13]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[13]  <= _021_[13];
+    else if (!fifo_full) \phase_acc_reg[13]  <= _020_[13];
   assign phase_acc[13] = \phase_acc_reg[13] ;
   reg \phase_acc_reg[14] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[14]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[14]  <= _021_[14];
+    else if (!fifo_full) \phase_acc_reg[14]  <= _020_[14];
   assign phase_acc[14] = \phase_acc_reg[14] ;
   reg \phase_acc_reg[15] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[15]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[15]  <= _021_[15];
+    else if (!fifo_full) \phase_acc_reg[15]  <= _020_[15];
   assign phase_acc[15] = \phase_acc_reg[15] ;
   reg \phase_acc_reg[16] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[16]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[16]  <= _021_[16];
+    else if (!fifo_full) \phase_acc_reg[16]  <= _020_[16];
   assign phase_acc[16] = \phase_acc_reg[16] ;
   reg \phase_acc_reg[17] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[17]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[17]  <= _021_[17];
+    else if (!fifo_full) \phase_acc_reg[17]  <= _020_[17];
   assign phase_acc[17] = \phase_acc_reg[17] ;
   reg \phase_acc_reg[18] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[18]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[18]  <= _021_[18];
+    else if (!fifo_full) \phase_acc_reg[18]  <= _020_[18];
   assign phase_acc[18] = \phase_acc_reg[18] ;
   reg \phase_acc_reg[19] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[19]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[19]  <= _021_[19];
+    else if (!fifo_full) \phase_acc_reg[19]  <= _020_[19];
   assign phase_acc[19] = \phase_acc_reg[19] ;
   reg \phase_acc_reg[20] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[20]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[20]  <= _021_[20];
+    else if (!fifo_full) \phase_acc_reg[20]  <= _020_[20];
   assign phase_acc[20] = \phase_acc_reg[20] ;
   reg \phase_acc_reg[21] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[21]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[21]  <= _021_[21];
+    else if (!fifo_full) \phase_acc_reg[21]  <= _020_[21];
   assign phase_acc[21] = \phase_acc_reg[21] ;
   reg \phase_acc_reg[22] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[22]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[22]  <= _021_[22];
+    else if (!fifo_full) \phase_acc_reg[22]  <= _020_[22];
   assign phase_acc[22] = \phase_acc_reg[22] ;
   reg \phase_acc_reg[23] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_acc_reg[23]  <= 1'h0;
-    else if (!fifo_full) \phase_acc_reg[23]  <= _021_[23];
+    else if (!fifo_full) \phase_acc_reg[23]  <= _020_[23];
   assign phase_acc[23] = \phase_acc_reg[23] ;
-  reg \phase_inc_reg[1] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
-    if (!rst_n) \phase_inc_reg[1]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[1]  <= _009_[1];
-  assign phase_inc[1] = \phase_inc_reg[1] ;
+    if (!rst_n) rd_data_latch[0] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[0] <= _005_[0];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[1] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[1] <= _005_[1];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[2] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[2] <= _005_[2];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[3] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[3] <= _005_[3];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[4] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[4] <= _005_[4];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[5] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[5] <= _005_[5];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[6] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[6] <= _005_[6];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[7] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[7] <= _005_[7];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[8] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[8] <= _005_[8];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[9] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[9] <= _005_[9];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[10] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[10] <= _005_[10];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[11] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[11] <= _005_[11];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[12] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[12] <= _005_[12];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[13] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[13] <= _005_[13];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[14] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[14] <= _005_[14];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk, negedge rst_n)
+    if (!rst_n) rd_data_latch[15] <= 1'h0;
+    else if (!fifo_full) rd_data_latch[15] <= _005_[15];
+  (* \always_ff  = 32'd1 *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
+  always @(posedge clk)
+    if (rst_n)
+      if (fifo_full) rd_en <= 1'h0;
+      else rd_en <= _013_;
   reg \phase_inc_reg[2] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[2]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[2]  <= _009_[2];
+    else if (_003_) \phase_inc_reg[2]  <= _007_[2];
   assign phase_inc[2] = \phase_inc_reg[2] ;
   reg \phase_inc_reg[3] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[3]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[3]  <= _009_[3];
+    else if (_003_) \phase_inc_reg[3]  <= _007_[3];
   assign phase_inc[3] = \phase_inc_reg[3] ;
   reg \phase_inc_reg[4] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[4]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[4]  <= _009_[4];
+    else if (_003_) \phase_inc_reg[4]  <= _007_[4];
   assign phase_inc[4] = \phase_inc_reg[4] ;
   reg \phase_inc_reg[5] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[5]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[5]  <= _009_[5];
+    else if (_003_) \phase_inc_reg[5]  <= _007_[5];
   assign phase_inc[5] = \phase_inc_reg[5] ;
   reg \phase_inc_reg[6] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[6]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[6]  <= _009_[6];
+    else if (_003_) \phase_inc_reg[6]  <= _007_[6];
   assign phase_inc[6] = \phase_inc_reg[6] ;
   reg \phase_inc_reg[7] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[7]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[7]  <= _009_[7];
+    else if (_003_) \phase_inc_reg[7]  <= _007_[7];
   assign phase_inc[7] = \phase_inc_reg[7] ;
   reg \phase_inc_reg[8] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[8]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[8]  <= _009_[8];
+    else if (_003_) \phase_inc_reg[8]  <= _007_[8];
   assign phase_inc[8] = \phase_inc_reg[8] ;
   reg \phase_inc_reg[9] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[9]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[9]  <= _009_[9];
+    else if (_003_) \phase_inc_reg[9]  <= _007_[9];
   assign phase_inc[9] = \phase_inc_reg[9] ;
   reg \phase_inc_reg[10] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[10]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[10]  <= _009_[10];
+    else if (_003_) \phase_inc_reg[10]  <= _007_[10];
   assign phase_inc[10] = \phase_inc_reg[10] ;
   reg \phase_inc_reg[11] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[11]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[11]  <= _009_[11];
+    else if (_003_) \phase_inc_reg[11]  <= _007_[11];
   assign phase_inc[11] = \phase_inc_reg[11] ;
   reg \phase_inc_reg[12] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[12]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[12]  <= _009_[12];
+    else if (_003_) \phase_inc_reg[12]  <= _007_[12];
   assign phase_inc[12] = \phase_inc_reg[12] ;
   reg \phase_inc_reg[13] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[13]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[13]  <= _009_[13];
+    else if (_003_) \phase_inc_reg[13]  <= _007_[13];
   assign phase_inc[13] = \phase_inc_reg[13] ;
   reg \phase_inc_reg[14] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[14]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[14]  <= _009_[14];
+    else if (_003_) \phase_inc_reg[14]  <= _007_[14];
   assign phase_inc[14] = \phase_inc_reg[14] ;
   reg \phase_inc_reg[15] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[15]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[15]  <= _009_[15];
+    else if (_003_) \phase_inc_reg[15]  <= _007_[15];
   assign phase_inc[15] = \phase_inc_reg[15] ;
   reg \phase_inc_reg[16] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[16]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[16]  <= _009_[16];
+    else if (_003_) \phase_inc_reg[16]  <= _007_[16];
   assign phase_inc[16] = \phase_inc_reg[16] ;
   reg \phase_inc_reg[17] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[17]  <= 1'h1;
-    else if (_006_) \phase_inc_reg[17]  <= _009_[17];
+    else if (_003_) \phase_inc_reg[17]  <= _007_[17];
   assign phase_inc[17] = \phase_inc_reg[17] ;
   reg \phase_inc_reg[18] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[18]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[18]  <= _009_[18];
+    else if (_003_) \phase_inc_reg[18]  <= _007_[18];
   assign phase_inc[18] = \phase_inc_reg[18] ;
   reg \phase_inc_reg[19] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[19]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[19]  <= _009_[19];
+    else if (_003_) \phase_inc_reg[19]  <= _007_[19];
   assign phase_inc[19] = \phase_inc_reg[19] ;
   reg \phase_inc_reg[20] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[20]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[20]  <= _009_[20];
+    else if (_003_) \phase_inc_reg[20]  <= _007_[20];
   assign phase_inc[20] = \phase_inc_reg[20] ;
   reg \phase_inc_reg[21] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[21]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[21]  <= _009_[21];
+    else if (_003_) \phase_inc_reg[21]  <= _007_[21];
   assign phase_inc[21] = \phase_inc_reg[21] ;
   reg \phase_inc_reg[22] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[22]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[22]  <= _009_[22];
+    else if (_003_) \phase_inc_reg[22]  <= _007_[22];
   assign phase_inc[22] = \phase_inc_reg[22] ;
   reg \phase_inc_reg[23] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) \phase_inc_reg[23]  <= 1'h0;
-    else if (_006_) \phase_inc_reg[23]  <= _009_[23];
+    else if (_003_) \phase_inc_reg[23]  <= _007_[23];
   assign phase_inc[23] = \phase_inc_reg[23] ;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk)
-    if (_005_) rd_en <= _002_;
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[0] <= 1'h0;
-    else if (_004_) rd_data_latch[0] <= rd_data[0];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[1] <= 1'h0;
-    else if (_004_) rd_data_latch[1] <= rd_data[1];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[2] <= 1'h0;
-    else if (_004_) rd_data_latch[2] <= rd_data[2];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[3] <= 1'h0;
-    else if (_004_) rd_data_latch[3] <= rd_data[3];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[4] <= 1'h0;
-    else if (_004_) rd_data_latch[4] <= rd_data[4];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[5] <= 1'h0;
-    else if (_004_) rd_data_latch[5] <= rd_data[5];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[6] <= 1'h0;
-    else if (_004_) rd_data_latch[6] <= rd_data[6];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[7] <= 1'h0;
-    else if (_004_) rd_data_latch[7] <= rd_data[7];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[8] <= 1'h0;
-    else if (_004_) rd_data_latch[8] <= rd_data[8];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[9] <= 1'h0;
-    else if (_004_) rd_data_latch[9] <= rd_data[9];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[10] <= 1'h0;
-    else if (_004_) rd_data_latch[10] <= rd_data[10];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[11] <= 1'h0;
-    else if (_004_) rd_data_latch[11] <= rd_data[11];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[12] <= 1'h0;
-    else if (_004_) rd_data_latch[12] <= rd_data[12];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[13] <= 1'h0;
-    else if (_004_) rd_data_latch[13] <= rd_data[13];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[14] <= 1'h0;
-    else if (_004_) rd_data_latch[14] <= rd_data[14];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
-  always @(posedge clk, negedge rst_n)
-    if (!rst_n) rd_data_latch[15] <= 1'h0;
-    else if (_004_) rd_data_latch[15] <= rd_data[15];
-  (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) freq_enc_up_latch <= 1'h0;
     else freq_enc_up_latch <= _001_;
   (* \always_ff  = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:95.5-134.8" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.5-137.8" *)
   always @(posedge clk, negedge rst_n)
     if (!rst_n) freq_enc_down_latch <= 1'h0;
     else freq_enc_down_latch <= _000_;
-  assign _027_[7] = ~phase_inc[7];
-  assign _027_[6] = ~phase_inc[6];
-  assign _027_[5] = ~phase_inc[5];
-  assign _027_[4] = ~phase_inc[4];
-  assign _027_[2] = ~phase_inc[2];
-  assign _027_[8] = ~phase_inc[8];
-  assign _027_[9] = ~phase_inc[9];
-  assign _027_[11] = ~phase_inc[11];
-  assign _027_[10] = ~phase_inc[10];
-  assign _027_[13] = ~phase_inc[13];
-  assign _027_[12] = ~phase_inc[12];
-  assign _027_[15] = ~phase_inc[15];
-  assign _027_[14] = ~phase_inc[14];
-  assign _027_[17] = ~phase_inc[17];
-  assign _027_[16] = ~phase_inc[16];
-  assign _027_[19] = ~phase_inc[19];
-  assign _027_[18] = ~phase_inc[18];
-  assign _027_[21] = ~phase_inc[21];
-  assign _027_[20] = ~phase_inc[20];
-  assign _027_[23] = ~phase_inc[23];
-  assign _027_[22] = ~phase_inc[22];
-  assign _024_[1] = ~phase_inc[1];
-  assign _024_[3] = ~phase_inc[3];
-  assign _021_[2] = _020_[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[1];
-  assign _021_[3] = _020_[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[2];
-  assign _021_[4] = _020_[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[3];
-  assign _021_[5] = _020_[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[4];
-  assign _021_[6] = _020_[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[5];
-  assign _021_[7] = _020_[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[6];
-  assign _021_[8] = _020_[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[7];
-  assign _021_[9] = _020_[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[8];
-  assign _021_[10] = _020_[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[9];
-  assign _021_[11] = _020_[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[10];
-  assign _021_[12] = _020_[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[11];
-  assign _021_[13] = _020_[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[12];
-  assign _021_[14] = _020_[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[13];
-  assign _021_[15] = _020_[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[14];
-  assign _021_[16] = _020_[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[15];
-  assign _021_[17] = _020_[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[16];
-  assign _021_[18] = _020_[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[17];
-  assign _021_[19] = _020_[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[18];
-  assign _021_[20] = _020_[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[19];
-  assign _021_[21] = _020_[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[20];
-  assign _021_[22] = _020_[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[21];
-  assign _021_[23] = _020_[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _019_[22];
-  assign _017_[3] = _016_[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[2];
-  assign _017_[4] = _016_[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[3];
-  assign _017_[5] = _016_[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[4];
-  assign _017_[6] = _016_[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[5];
-  assign _017_[7] = _016_[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[6];
-  assign _017_[8] = _016_[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[7];
-  assign _017_[9] = _016_[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[8];
-  assign _017_[10] = _016_[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[9];
-  assign _017_[11] = _016_[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[10];
-  assign _017_[12] = _016_[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[11];
-  assign _017_[13] = _016_[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[12];
-  assign _017_[14] = _016_[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[13];
-  assign _017_[15] = _016_[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[14];
-  assign _017_[16] = _016_[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[15];
-  assign _017_[17] = _016_[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[16];
-  assign _017_[18] = phase_inc[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[17];
-  assign _017_[19] = phase_inc[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[18];
-  assign _017_[20] = phase_inc[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[19];
-  assign _017_[21] = phase_inc[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[20];
-  assign _017_[22] = phase_inc[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[21];
-  assign _017_[23] = phase_inc[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _015_[22];
-  assign _025_[2] = phase_inc[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  phase_inc[1];
-  assign _025_[3] = _024_[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[2];
-  assign _025_[4] = phase_inc[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[3];
-  assign _025_[5] = phase_inc[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[4];
-  assign _025_[6] = phase_inc[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[5];
-  assign _025_[7] = phase_inc[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[6];
-  assign _025_[8] = phase_inc[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[7];
-  assign _025_[9] = phase_inc[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[8];
-  assign _025_[10] = phase_inc[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[9];
-  assign _025_[11] = phase_inc[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[10];
-  assign _025_[12] = phase_inc[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[11];
-  assign _025_[13] = phase_inc[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[12];
-  assign _025_[14] = phase_inc[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[13];
-  assign _025_[15] = phase_inc[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[14];
-  assign _025_[16] = phase_inc[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[15];
-  assign _025_[17] = phase_inc[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[16];
-  assign _025_[18] = phase_inc[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[17];
-  assign _025_[19] = phase_inc[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[18];
-  assign _025_[20] = phase_inc[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[19];
-  assign _025_[21] = phase_inc[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[20];
-  assign _025_[22] = phase_inc[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[21];
-  assign _025_[23] = phase_inc[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _023_[22];
-  assign _028_[2] = _027_[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  phase_inc[1];
-  assign _028_[3] = phase_inc[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[2];
-  assign _028_[4] = _027_[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[3];
-  assign _028_[5] = _027_[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[4];
-  assign _028_[6] = _027_[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[5];
-  assign _028_[7] = _027_[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[6];
-  assign _028_[8] = _027_[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[7];
-  assign _028_[9] = _027_[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[8];
-  assign _028_[10] = _027_[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[9];
-  assign _028_[11] = _027_[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[10];
-  assign _028_[12] = _027_[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[11];
-  assign _028_[13] = _027_[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[12];
-  assign _028_[14] = _027_[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[13];
-  assign _028_[15] = _027_[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[14];
-  assign _028_[16] = _027_[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[15];
-  assign _028_[17] = _027_[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[16];
-  assign _028_[18] = _027_[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[17];
-  assign _028_[19] = _027_[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[18];
-  assign _028_[20] = _027_[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[19];
-  assign _028_[21] = _027_[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[20];
-  assign _028_[22] = _027_[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[21];
-  assign _028_[23] = _027_[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _026_[22];
-  assign _015_[8] = _018_[8] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _066_;
-  assign _029_ = _016_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _015_[2];
-  assign _015_[3] = _018_[3] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _029_;
-  assign _030_ = _016_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[4];
-  assign _071_ = _018_[5] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _030_;
-  assign _044_ = _016_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _016_[4];
-  assign _031_ = _016_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[6];
-  assign _072_ = _018_[7] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _031_;
-  assign _045_ = _016_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _016_[6];
-  assign _032_ = _016_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[8];
-  assign _073_ = _018_[9] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _032_;
-  assign _046_ = _016_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _016_[8];
-  assign _033_ = _016_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[10];
-  assign _074_ = _018_[11] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _033_;
-  assign _047_ = _016_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _016_[10];
-  assign _034_ = _016_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[12];
-  assign _075_ = _018_[13] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _034_;
-  assign _048_ = _016_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _016_[12];
-  assign _035_ = _016_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[14];
-  assign _076_ = _018_[15] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _035_;
-  assign _049_ = _016_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _016_[14];
-  assign _036_ = _016_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[16];
-  assign _077_ = _018_[17] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _036_;
-  assign _050_ = _016_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _016_[16];
-  assign _037_ = _045_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _071_;
-  assign _078_ = _072_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _037_;
-  assign _053_ = _045_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _044_;
-  assign _038_ = _047_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _073_;
-  assign _079_ = _074_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _038_;
-  assign _054_ = _047_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _046_;
-  assign _039_ = _049_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _075_;
-  assign _080_ = _076_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _039_;
-  assign _055_ = _049_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _048_;
-  assign _040_ = _051_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _077_;
-  assign _056_ = _051_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _050_;
-  assign _041_ = _053_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _015_[3];
-  assign _015_[7] = _078_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _041_;
-  assign _067_ = _016_[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[9];
-  assign _042_ = _055_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _079_;
-  assign _081_ = _080_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _042_;
-  assign _057_ = _055_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _054_;
-  assign _043_ = _057_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _015_[7];
-  assign _015_[15] = _081_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _043_;
-  assign _015_[10] = _018_[10] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _067_;
-  assign _015_[22] = phase_inc[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[21];
-  assign _058_ = _054_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
-  assign _015_[11] = _079_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _058_;
-  assign _068_ = _016_[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[11];
-  assign _059_ = _056_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[15];
-  assign _015_[19] = _040_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _059_;
-  assign _015_[12] = _018_[12] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _068_;
-  assign _060_ = _044_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[3];
-  assign _015_[5] = _071_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _060_;
-  assign _015_[20] = phase_inc[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[19];
-  assign _061_ = _046_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
-  assign _015_[9] = _073_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _061_;
-  assign _069_ = _016_[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[13];
-  assign _062_ = _048_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[11];
-  assign _015_[13] = _075_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _062_;
-  assign _015_[14] = _018_[14] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _069_;
-  assign _063_ = _050_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[15];
-  assign _015_[17] = _077_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _063_;
-  assign _015_[21] = _052_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[19];
-  assign _070_ = _016_[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[15];
-  assign _015_[16] = _018_[16] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _070_;
-  assign _064_ = _016_[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[3];
-  assign _015_[4] = _018_[4] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _064_;
-  assign _065_ = _016_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[5];
-  assign _015_[6] = _018_[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _065_;
-  assign _015_[18] = phase_inc[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[17];
-  assign _066_ = _016_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _015_[7];
-  assign _016_[2] = phase_inc[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[0];
-  assign _016_[3] = phase_inc[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[1];
-  assign _016_[4] = phase_inc[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[2];
-  assign _016_[5] = phase_inc[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[3];
-  assign _016_[6] = phase_inc[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[4];
-  assign _016_[7] = phase_inc[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[5];
-  assign _016_[8] = phase_inc[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[6];
-  assign _016_[9] = phase_inc[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[7];
-  assign _016_[10] = phase_inc[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[8];
-  assign _016_[11] = phase_inc[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[9];
-  assign _016_[12] = phase_inc[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[10];
-  assign _016_[13] = phase_inc[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[11];
-  assign _016_[14] = phase_inc[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[12];
-  assign _016_[15] = phase_inc[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[13];
-  assign _016_[16] = phase_inc[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[14];
-  assign _016_[17] = phase_inc[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[15];
-  assign _015_[2] = phase_inc[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[0];
-  assign _018_[3] = phase_inc[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[1];
-  assign _018_[4] = phase_inc[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[2];
-  assign _018_[5] = phase_inc[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[3];
-  assign _018_[6] = phase_inc[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[4];
-  assign _018_[7] = phase_inc[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[5];
-  assign _018_[8] = phase_inc[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[6];
-  assign _018_[9] = phase_inc[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[7];
-  assign _018_[10] = phase_inc[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[8];
-  assign _018_[11] = phase_inc[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[9];
-  assign _018_[12] = phase_inc[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[10];
-  assign _018_[13] = phase_inc[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[11];
-  assign _018_[14] = phase_inc[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[12];
-  assign _018_[15] = phase_inc[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[13];
-  assign _018_[16] = phase_inc[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[14];
-  assign _018_[17] = phase_inc[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[15];
-  assign _019_[8] = _022_[8] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _125_;
-  assign _082_ = _020_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[2];
-  assign _133_ = _022_[3] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _082_;
-  assign _100_ = _020_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[2];
-  assign _083_ = _020_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[4];
-  assign _134_ = _022_[5] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _083_;
-  assign _101_ = _020_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[4];
-  assign _084_ = _020_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[6];
-  assign _135_ = _022_[7] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _084_;
-  assign _102_ = _020_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[6];
-  assign _085_ = _020_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[8];
-  assign _136_ = _022_[9] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _085_;
-  assign _103_ = _020_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[8];
-  assign _086_ = _020_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[10];
-  assign _137_ = _022_[11] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _086_;
-  assign _104_ = _020_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[10];
-  assign _087_ = _020_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[12];
-  assign _138_ = _022_[13] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _087_;
-  assign _105_ = _020_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[12];
-  assign _088_ = _020_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[14];
-  assign _139_ = _022_[15] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _088_;
-  assign _106_ = _020_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[14];
-  assign _089_ = _020_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[16];
-  assign _140_ = _022_[17] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _089_;
-  assign _107_ = _020_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[16];
-  assign _090_ = _020_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[18];
-  assign _141_ = _022_[19] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _090_;
-  assign _108_ = _020_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[18];
-  assign _091_ = _020_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[20];
-  assign _142_ = _022_[21] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _091_;
-  assign _109_ = _020_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _020_[20];
-  assign _092_ = _100_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _019_[1];
-  assign _019_[3] = _133_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _092_;
-  assign _019_[18] = _022_[18] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _130_;
-  assign _093_ = _102_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _134_;
-  assign _143_ = _135_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _093_;
-  assign _110_ = _102_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _101_;
-  assign _094_ = _104_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _136_;
-  assign _144_ = _137_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _094_;
-  assign _111_ = _104_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _103_;
-  assign _095_ = _106_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _138_;
-  assign _145_ = _139_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _095_;
-  assign _112_ = _106_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _105_;
-  assign _096_ = _108_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _140_;
-  assign _146_ = _141_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _096_;
-  assign _113_ = _108_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _107_;
-  assign _097_ = _110_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _019_[3];
-  assign _019_[7] = _143_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _097_;
-  assign _126_ = _020_[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[9];
-  assign _098_ = _112_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _144_;
-  assign _147_ = _145_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _098_;
-  assign _114_ = _112_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _111_;
-  assign _099_ = _114_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _019_[7];
-  assign _019_[15] = _147_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _099_;
-  assign _019_[10] = _022_[10] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _126_;
-  assign _132_ = _020_[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[21];
-  assign _115_ = _111_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[7];
-  assign _019_[11] = _144_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _115_;
-  assign _127_ = _020_[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[11];
-  assign _116_ = _113_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[15];
-  assign _019_[19] = _146_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _116_;
-  assign _019_[12] = _022_[12] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _127_;
-  assign _117_ = _101_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[3];
-  assign _019_[5] = _134_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _117_;
-  assign _131_ = _020_[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[19];
-  assign _118_ = _103_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[7];
-  assign _019_[9] = _136_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _118_;
-  assign _128_ = _020_[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[13];
-  assign _119_ = _105_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[11];
-  assign _019_[13] = _138_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _119_;
-  assign _019_[14] = _022_[14] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _128_;
-  assign _120_ = _107_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[15];
-  assign _019_[17] = _140_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _120_;
-  assign _019_[20] = _022_[20] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _131_;
-  assign _121_ = _109_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[19];
-  assign _019_[21] = _142_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _121_;
-  assign _129_ = _020_[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[15];
-  assign _122_ = _020_[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[1];
-  assign _019_[2] = _022_[2] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _122_;
-  assign _019_[16] = _022_[16] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _129_;
-  assign _123_ = _020_[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[3];
-  assign _019_[4] = _022_[4] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _123_;
-  assign _019_[22] = _022_[22] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _132_;
-  assign _124_ = _020_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[5];
-  assign _019_[6] = _022_[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _124_;
-  assign _130_ = _020_[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[17];
-  assign _125_ = _020_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _019_[7];
-  assign _020_[1] = phase_acc[1] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  phase_inc[1];
-  assign _020_[2] = phase_acc[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[2];
-  assign _020_[3] = phase_acc[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[3];
-  assign _020_[4] = phase_acc[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[4];
-  assign _020_[5] = phase_acc[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[5];
-  assign _020_[6] = phase_acc[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[6];
-  assign _020_[7] = phase_acc[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[7];
-  assign _020_[8] = phase_acc[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[8];
-  assign _020_[9] = phase_acc[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[9];
-  assign _020_[10] = phase_acc[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[10];
-  assign _020_[11] = phase_acc[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[11];
-  assign _020_[12] = phase_acc[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[12];
-  assign _020_[13] = phase_acc[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[13];
-  assign _020_[14] = phase_acc[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[14];
-  assign _020_[15] = phase_acc[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[15];
-  assign _020_[16] = phase_acc[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[16];
-  assign _020_[17] = phase_acc[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[17];
-  assign _020_[18] = phase_acc[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[18];
-  assign _020_[19] = phase_acc[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[19];
-  assign _020_[20] = phase_acc[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[20];
-  assign _020_[21] = phase_acc[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[21];
-  assign _020_[22] = phase_acc[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[22];
-  assign _020_[23] = phase_acc[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _017_[23];
-  assign _019_[1] = phase_acc[1] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  phase_inc[1];
-  assign _022_[2] = phase_acc[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[2];
-  assign _022_[3] = phase_acc[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[3];
-  assign _022_[4] = phase_acc[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[4];
-  assign _022_[5] = phase_acc[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[5];
-  assign _022_[6] = phase_acc[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[6];
-  assign _022_[7] = phase_acc[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[7];
-  assign _022_[8] = phase_acc[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[8];
-  assign _022_[9] = phase_acc[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[9];
-  assign _022_[10] = phase_acc[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[10];
-  assign _022_[11] = phase_acc[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[11];
-  assign _022_[12] = phase_acc[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[12];
-  assign _022_[13] = phase_acc[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[13];
-  assign _022_[14] = phase_acc[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[14];
-  assign _022_[15] = phase_acc[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[15];
-  assign _022_[16] = phase_acc[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[16];
-  assign _022_[17] = phase_acc[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[17];
-  assign _022_[18] = phase_acc[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[18];
-  assign _022_[19] = phase_acc[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[19];
-  assign _022_[20] = phase_acc[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[20];
-  assign _022_[21] = phase_acc[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[21];
-  assign _022_[22] = phase_acc[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:120.30-120.83|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _017_[22];
-  assign _023_[8] = phase_inc[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[7];
-  assign _023_[18] = phase_inc[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[17];
-  assign _023_[6] = phase_inc[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[5];
-  assign _023_[4] = phase_inc[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[3];
-  assign _023_[2] = phase_inc[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  phase_inc[1];
-  assign _023_[16] = phase_inc[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[15];
-  assign _023_[21] = _052_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[19];
-  assign _023_[17] = _156_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[15];
-  assign _023_[13] = _154_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[11];
-  assign _023_[14] = phase_inc[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[13];
-  assign _023_[9] = _152_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[7];
-  assign _023_[20] = phase_inc[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[19];
-  assign _023_[5] = _150_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[3];
-  assign _023_[19] = _160_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[15];
-  assign _023_[12] = phase_inc[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[11];
-  assign _023_[11] = _158_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[7];
-  assign _023_[22] = phase_inc[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[21];
-  assign _023_[15] = _161_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _023_[7];
-  assign _161_ = _159_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _158_;
-  assign _023_[10] = phase_inc[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _023_[9];
-  assign _023_[7] = _157_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _023_[3];
-  assign _160_ = _051_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _156_;
-  assign _159_ = _155_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _154_;
-  assign _158_ = _153_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _152_;
-  assign _157_ = _151_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _150_;
-  assign _023_[3] = phase_inc[3] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _148_;
-  assign _148_ = _149_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[1];
-  assign _052_ = phase_inc[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[20];
-  assign _051_ = phase_inc[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[18];
-  assign _156_ = phase_inc[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[16];
-  assign _155_ = phase_inc[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[14];
-  assign _154_ = phase_inc[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[12];
-  assign _153_ = phase_inc[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[10];
-  assign _152_ = phase_inc[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[8];
-  assign _151_ = phase_inc[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[6];
-  assign _150_ = phase_inc[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[4];
-  assign _149_ = _024_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:122.34-122.53|../src/synthesizer/hdl/wavetable_synth.sv:120.43-120.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[2];
-  assign _205_ = _027_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[7];
-  assign _210_ = _027_[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[17];
-  assign _026_[6] = phase_inc[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _204_;
-  assign _204_ = _027_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[5];
-  assign _026_[22] = phase_inc[22] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _212_;
-  assign _026_[4] = phase_inc[4] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _203_;
-  assign _203_ = _027_[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[3];
-  assign _026_[16] = phase_inc[16] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _209_;
-  assign _026_[2] = phase_inc[2] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _202_;
-  assign _202_ = _027_[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  phase_inc[1];
-  assign _209_ = _027_[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[15];
-  assign _026_[21] = _221_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _201_;
-  assign _201_ = _189_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[19];
-  assign _026_[20] = phase_inc[20] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _211_;
-  assign _026_[17] = _219_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _200_;
-  assign _200_ = _187_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[15];
-  assign _026_[14] = phase_inc[14] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _208_;
-  assign _026_[13] = _217_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _199_;
-  assign _199_ = _185_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[11];
-  assign _208_ = _027_[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[13];
-  assign _026_[9] = _215_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _198_;
-  assign _198_ = _183_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[7];
-  assign _211_ = _027_[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[19];
-  assign _026_[5] = _213_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _197_;
-  assign _197_ = _181_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[3];
-  assign _026_[12] = phase_inc[12] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _207_;
-  assign _026_[19] = _225_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _196_;
-  assign _196_ = _193_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[15];
-  assign _207_ = _027_[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[11];
-  assign _026_[11] = _223_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _195_;
-  assign _195_ = _191_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[7];
-  assign _212_ = _027_[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[21];
-  assign _026_[10] = phase_inc[10] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _206_;
-  assign _026_[15] = _226_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _179_;
-  assign _179_ = _194_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _026_[7];
-  assign _194_ = _192_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _191_;
-  assign _226_ = _224_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _178_;
-  assign _178_ = _192_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _223_;
-  assign _206_ = _027_[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _026_[9];
-  assign _026_[7] = _222_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _177_;
-  assign _177_ = _190_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _026_[3];
-  assign _193_ = _188_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _187_;
-  assign _225_ = _220_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _176_;
-  assign _176_ = _188_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _219_;
-  assign _192_ = _186_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _185_;
-  assign _224_ = _218_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _175_;
-  assign _175_ = _186_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _217_;
-  assign _191_ = _184_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _183_;
-  assign _223_ = _216_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _174_;
-  assign _174_ = _184_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _215_;
-  assign _190_ = _182_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _181_;
-  assign _222_ = _214_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _173_;
-  assign _173_ = _182_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _213_;
-  assign _026_[18] = phase_inc[18] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _210_;
-  assign _026_[3] = _162_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _172_;
-  assign _172_ = _180_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[1];
-  assign _189_ = _027_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[20];
-  assign _221_ = phase_inc[21] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _171_;
-  assign _171_ = _027_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[20];
-  assign _188_ = _027_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[18];
-  assign _220_ = phase_inc[19] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _170_;
-  assign _170_ = _027_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[18];
-  assign _187_ = _027_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[16];
-  assign _219_ = phase_inc[17] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _169_;
-  assign _169_ = _027_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[16];
-  assign _186_ = _027_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[14];
-  assign _218_ = phase_inc[15] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _168_;
-  assign _168_ = _027_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[14];
-  assign _185_ = _027_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[12];
-  assign _217_ = phase_inc[13] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _167_;
-  assign _167_ = _027_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[12];
-  assign _184_ = _027_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[10];
-  assign _216_ = phase_inc[11] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _166_;
-  assign _166_ = _027_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[10];
-  assign _183_ = _027_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[8];
-  assign _215_ = phase_inc[9] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _165_;
-  assign _165_ = _027_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[8];
-  assign _182_ = _027_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[6];
-  assign _214_ = phase_inc[7] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _164_;
-  assign _164_ = _027_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[6];
-  assign _181_ = _027_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[4];
-  assign _213_ = phase_inc[5] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _163_;
-  assign _163_ = _027_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[4];
-  assign _180_ = phase_inc[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _027_[2];
-  assign _162_ = phase_inc[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[2];
-  assign _026_[8] = phase_inc[8] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _205_;
-  assign _006_ = _003_ & wr_en;
-  assign _003_ = freq_enc_up_latch | freq_enc_down_latch;
-  assign _005_ = wr_en & rst_n;
-  assign _004_ = _002_ & wr_en;
-  assign _007_ = ~(* src = "../src/synthesizer/hdl/wavetable_synth.sv:96.13-96.19" *) rst_n;
-  assign _008_[1] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _024_[1] : 1'hx;
-  assign _008_[2] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[2] : 1'hx;
-  assign _008_[3] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[3] : 1'hx;
-  assign _008_[4] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[4] : 1'hx;
-  assign _008_[5] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[5] : 1'hx;
-  assign _008_[6] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[6] : 1'hx;
-  assign _008_[7] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[7] : 1'hx;
-  assign _008_[8] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[8] : 1'hx;
-  assign _008_[9] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[9] : 1'hx;
-  assign _008_[10] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[10] : 1'hx;
-  assign _008_[11] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[11] : 1'hx;
-  assign _008_[12] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[12] : 1'hx;
-  assign _008_[13] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[13] : 1'hx;
-  assign _008_[14] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[14] : 1'hx;
-  assign _008_[15] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[15] : 1'hx;
-  assign _008_[16] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[16] : 1'hx;
-  assign _008_[17] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[17] : 1'hx;
-  assign _008_[18] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[18] : 1'hx;
-  assign _008_[19] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[19] : 1'hx;
-  assign _008_[20] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[20] : 1'hx;
-  assign _008_[21] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[21] : 1'hx;
-  assign _008_[22] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[22] : 1'hx;
-  assign _008_[23] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) _028_[23] : 1'hx;
-  assign _009_[1] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _024_[1] : _008_[1];
-  assign _009_[2] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[2] : _008_[2];
-  assign _009_[3] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[3] : _008_[3];
-  assign _009_[4] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[4] : _008_[4];
-  assign _009_[5] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[5] : _008_[5];
-  assign _009_[6] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[6] : _008_[6];
-  assign _009_[7] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[7] : _008_[7];
-  assign _009_[8] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[8] : _008_[8];
-  assign _009_[9] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[9] : _008_[9];
-  assign _009_[10] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[10] : _008_[10];
-  assign _009_[11] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[11] : _008_[11];
-  assign _009_[12] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[12] : _008_[12];
-  assign _009_[13] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[13] : _008_[13];
-  assign _009_[14] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[14] : _008_[14];
-  assign _009_[15] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[15] : _008_[15];
-  assign _009_[16] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[16] : _008_[16];
-  assign _009_[17] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[17] : _008_[17];
-  assign _009_[18] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[18] : _008_[18];
-  assign _009_[19] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[19] : _008_[19];
-  assign _009_[20] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[20] : _008_[20];
-  assign _009_[21] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[21] : _008_[21];
-  assign _009_[22] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[22] : _008_[22];
-  assign _009_[23] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _025_[23] : _008_[23];
-  assign _010_ = freq_enc_down ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:110.17-110.30|../src/synthesizer/hdl/wavetable_synth.sv:110.13-111.45" *) 1'h1 : freq_enc_down_latch;
-  assign _011_ = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.30-124.49|../src/synthesizer/hdl/wavetable_synth.sv:124.26-131.44" *) 1'h0 : _010_;
-  assign _012_ = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) _010_ : _011_;
-  assign _000_ = fifo_full ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:113.17-113.22|../src/synthesizer/hdl/wavetable_synth.sv:113.13-132.16" *) _010_ : _012_;
-  assign _013_ = freq_enc_up ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:106.17-106.28|../src/synthesizer/hdl/wavetable_synth.sv:106.13-107.43" *) 1'h1 : freq_enc_up_latch;
-  assign _014_ = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:121.21-121.38|../src/synthesizer/hdl/wavetable_synth.sv:121.17-131.44" *) 1'h0 : _013_;
-  assign _001_ = fifo_full ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:113.17-113.22|../src/synthesizer/hdl/wavetable_synth.sv:113.13-132.16" *) _013_ : _014_;
-  assign _002_ = ~(* src = "../src/synthesizer/hdl/wavetable_synth.sv:114.21-114.32|../src/synthesizer/hdl/wavetable_synth.sv:114.17-119.20" *) fifo_empty;
+  assign _026_[7] = ~phase_inc[7];
+  assign _026_[4] = ~phase_inc[4];
+  assign _026_[3] = ~phase_inc[3];
+  assign _026_[8] = ~phase_inc[8];
+  assign _026_[9] = ~phase_inc[9];
+  assign _026_[11] = ~phase_inc[11];
+  assign _026_[10] = ~phase_inc[10];
+  assign _026_[13] = ~phase_inc[13];
+  assign _026_[12] = ~phase_inc[12];
+  assign _026_[15] = ~phase_inc[15];
+  assign _026_[14] = ~phase_inc[14];
+  assign _026_[17] = ~phase_inc[17];
+  assign _026_[16] = ~phase_inc[16];
+  assign _026_[19] = ~phase_inc[19];
+  assign _026_[18] = ~phase_inc[18];
+  assign _026_[21] = ~phase_inc[21];
+  assign _026_[20] = ~phase_inc[20];
+  assign _026_[23] = ~phase_inc[23];
+  assign _026_[22] = ~phase_inc[22];
+  assign _023_[6] = ~phase_inc[6];
+  assign _023_[5] = ~phase_inc[5];
+  assign _023_[2] = ~phase_inc[2];
+  assign _019_[1] = ~phase_acc[1];
+  assign _020_[2] = _019_[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  phase_acc[1];
+  assign _020_[3] = _019_[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[2];
+  assign _020_[4] = _019_[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[3];
+  assign _020_[5] = _019_[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[4];
+  assign _020_[6] = _019_[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[5];
+  assign _020_[7] = _019_[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[6];
+  assign _020_[8] = _019_[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[7];
+  assign _020_[9] = _019_[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[8];
+  assign _020_[10] = _019_[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[9];
+  assign _020_[11] = _019_[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[10];
+  assign _020_[12] = _019_[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[11];
+  assign _020_[13] = _019_[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[12];
+  assign _020_[14] = _019_[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[13];
+  assign _020_[15] = _019_[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[14];
+  assign _020_[16] = _019_[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[15];
+  assign _020_[17] = _019_[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[16];
+  assign _020_[18] = _019_[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[17];
+  assign _020_[19] = _019_[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[18];
+  assign _020_[20] = _019_[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[19];
+  assign _020_[21] = _019_[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[20];
+  assign _020_[22] = _019_[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[21];
+  assign _020_[23] = _019_[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _018_[22];
+  assign _016_[3] = _015_[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[2];
+  assign _016_[4] = _015_[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[3];
+  assign _016_[5] = _015_[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[4];
+  assign _016_[6] = _015_[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[5];
+  assign _016_[7] = _015_[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[6];
+  assign _016_[8] = _015_[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[7];
+  assign _016_[9] = _015_[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[8];
+  assign _016_[10] = _015_[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[9];
+  assign _016_[11] = _015_[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[10];
+  assign _016_[12] = _015_[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[11];
+  assign _016_[13] = _015_[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[12];
+  assign _016_[14] = _015_[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[13];
+  assign _016_[15] = _015_[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[14];
+  assign _016_[16] = _015_[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[15];
+  assign _016_[17] = _015_[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[16];
+  assign _016_[18] = phase_inc[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[17];
+  assign _016_[19] = phase_inc[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[18];
+  assign _016_[20] = phase_inc[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[19];
+  assign _016_[21] = phase_inc[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[20];
+  assign _016_[22] = phase_inc[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[21];
+  assign _016_[23] = phase_inc[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _014_[22];
+  assign _024_[3] = phase_inc[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  phase_inc[2];
+  assign _024_[4] = phase_inc[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[3];
+  assign _024_[5] = _023_[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[4];
+  assign _024_[6] = _023_[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[5];
+  assign _024_[7] = phase_inc[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[6];
+  assign _024_[8] = phase_inc[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[7];
+  assign _024_[9] = phase_inc[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[8];
+  assign _024_[10] = phase_inc[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[9];
+  assign _024_[11] = phase_inc[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[10];
+  assign _024_[12] = phase_inc[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[11];
+  assign _024_[13] = phase_inc[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[12];
+  assign _024_[14] = phase_inc[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[13];
+  assign _024_[15] = phase_inc[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[14];
+  assign _024_[16] = phase_inc[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[15];
+  assign _024_[17] = phase_inc[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[16];
+  assign _024_[18] = phase_inc[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[17];
+  assign _024_[19] = phase_inc[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[18];
+  assign _024_[20] = phase_inc[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[19];
+  assign _024_[21] = phase_inc[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[20];
+  assign _024_[22] = phase_inc[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[21];
+  assign _024_[23] = phase_inc[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _022_[22];
+  assign _027_[3] = _026_[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  phase_inc[2];
+  assign _027_[4] = _026_[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[3];
+  assign _027_[5] = phase_inc[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[4];
+  assign _027_[6] = phase_inc[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[5];
+  assign _027_[7] = _026_[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[6];
+  assign _027_[8] = _026_[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[7];
+  assign _027_[9] = _026_[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[8];
+  assign _027_[10] = _026_[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[9];
+  assign _027_[11] = _026_[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[10];
+  assign _027_[12] = _026_[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[11];
+  assign _027_[13] = _026_[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[12];
+  assign _027_[14] = _026_[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[13];
+  assign _027_[15] = _026_[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[14];
+  assign _027_[16] = _026_[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[15];
+  assign _027_[17] = _026_[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[16];
+  assign _027_[18] = _026_[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[17];
+  assign _027_[19] = _026_[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[18];
+  assign _027_[20] = _026_[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[19];
+  assign _027_[21] = _026_[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[20];
+  assign _027_[22] = _026_[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[21];
+  assign _027_[23] = _026_[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:296.13-296.25" *)  _025_[22];
+  assign _014_[8] = _017_[8] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _065_;
+  assign _028_ = _015_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _014_[2];
+  assign _014_[3] = _017_[3] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _028_;
+  assign _029_ = _015_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _017_[4];
+  assign _070_ = _017_[5] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _029_;
+  assign _043_ = _015_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _015_[4];
+  assign _030_ = _015_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _017_[6];
+  assign _071_ = _017_[7] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _030_;
+  assign _044_ = _015_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _015_[6];
+  assign _031_ = _015_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _017_[8];
+  assign _072_ = _017_[9] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _031_;
+  assign _045_ = _015_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _015_[8];
+  assign _032_ = _015_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _017_[10];
+  assign _073_ = _017_[11] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _032_;
+  assign _046_ = _015_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _015_[10];
+  assign _033_ = _015_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _017_[12];
+  assign _074_ = _017_[13] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _033_;
+  assign _047_ = _015_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _015_[12];
+  assign _034_ = _015_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _017_[14];
+  assign _075_ = _017_[15] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _034_;
+  assign _048_ = _015_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _015_[14];
+  assign _035_ = _015_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _017_[16];
+  assign _076_ = _017_[17] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _035_;
+  assign _049_ = _015_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _015_[16];
+  assign _036_ = _044_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _070_;
+  assign _077_ = _071_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _036_;
+  assign _052_ = _044_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _043_;
+  assign _037_ = _046_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _072_;
+  assign _078_ = _073_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _037_;
+  assign _053_ = _046_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _045_;
+  assign _038_ = _048_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _074_;
+  assign _079_ = _075_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _038_;
+  assign _054_ = _048_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _047_;
+  assign _039_ = _050_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _076_;
+  assign _055_ = _050_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _049_;
+  assign _040_ = _052_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _014_[3];
+  assign _014_[7] = _077_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _040_;
+  assign _066_ = _015_[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[9];
+  assign _041_ = _054_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _078_;
+  assign _080_ = _079_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _041_;
+  assign _056_ = _054_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _053_;
+  assign _042_ = _056_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _014_[7];
+  assign _014_[15] = _080_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _042_;
+  assign _014_[10] = _017_[10] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _066_;
+  assign _014_[22] = phase_inc[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[21];
+  assign _057_ = _053_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[7];
+  assign _014_[11] = _078_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _057_;
+  assign _067_ = _015_[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[11];
+  assign _058_ = _055_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[15];
+  assign _014_[19] = _039_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _058_;
+  assign _014_[12] = _017_[12] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _067_;
+  assign _059_ = _043_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[3];
+  assign _014_[5] = _070_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _059_;
+  assign _014_[20] = phase_inc[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[19];
+  assign _060_ = _045_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[7];
+  assign _014_[9] = _072_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _060_;
+  assign _068_ = _015_[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[13];
+  assign _061_ = _047_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[11];
+  assign _014_[13] = _074_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _061_;
+  assign _014_[14] = _017_[14] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _068_;
+  assign _062_ = _049_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[15];
+  assign _014_[17] = _076_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _062_;
+  assign _014_[21] = _051_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[19];
+  assign _069_ = _015_[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[15];
+  assign _014_[16] = _017_[16] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _069_;
+  assign _063_ = _015_[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[3];
+  assign _014_[4] = _017_[4] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _063_;
+  assign _064_ = _015_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[5];
+  assign _014_[6] = _017_[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _064_;
+  assign _014_[18] = phase_inc[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[17];
+  assign _065_ = _015_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _014_[7];
+  assign _015_[2] = phase_inc[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[0];
+  assign _015_[3] = phase_inc[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[1];
+  assign _015_[4] = phase_inc[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[2];
+  assign _015_[5] = phase_inc[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[3];
+  assign _015_[6] = phase_inc[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[4];
+  assign _015_[7] = phase_inc[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[5];
+  assign _015_[8] = phase_inc[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[6];
+  assign _015_[9] = phase_inc[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[7];
+  assign _015_[10] = phase_inc[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[8];
+  assign _015_[11] = phase_inc[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[9];
+  assign _015_[12] = phase_inc[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[10];
+  assign _015_[13] = phase_inc[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[11];
+  assign _015_[14] = phase_inc[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[12];
+  assign _015_[15] = phase_inc[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[13];
+  assign _015_[16] = phase_inc[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[14];
+  assign _015_[17] = phase_inc[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  rd_data_latch[15];
+  assign _014_[2] = phase_inc[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[0];
+  assign _017_[3] = phase_inc[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[1];
+  assign _017_[4] = phase_inc[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[2];
+  assign _017_[5] = phase_inc[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[3];
+  assign _017_[6] = phase_inc[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[4];
+  assign _017_[7] = phase_inc[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[5];
+  assign _017_[8] = phase_inc[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[6];
+  assign _017_[9] = phase_inc[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[7];
+  assign _017_[10] = phase_inc[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[8];
+  assign _017_[11] = phase_inc[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[9];
+  assign _017_[12] = phase_inc[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[10];
+  assign _017_[13] = phase_inc[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[11];
+  assign _017_[14] = phase_inc[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[12];
+  assign _017_[15] = phase_inc[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[13];
+  assign _017_[16] = phase_inc[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[14];
+  assign _017_[17] = phase_inc[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  rd_data_latch[15];
+  assign _018_[8] = _021_[8] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _124_;
+  assign _081_ = _019_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[2];
+  assign _132_ = _021_[3] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _081_;
+  assign _099_ = _019_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[2];
+  assign _082_ = _019_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[4];
+  assign _133_ = _021_[5] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _082_;
+  assign _100_ = _019_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[4];
+  assign _083_ = _019_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[6];
+  assign _134_ = _021_[7] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _083_;
+  assign _101_ = _019_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[6];
+  assign _084_ = _019_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[8];
+  assign _135_ = _021_[9] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _084_;
+  assign _102_ = _019_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[8];
+  assign _085_ = _019_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[10];
+  assign _136_ = _021_[11] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _085_;
+  assign _103_ = _019_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[10];
+  assign _086_ = _019_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[12];
+  assign _137_ = _021_[13] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _086_;
+  assign _104_ = _019_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[12];
+  assign _087_ = _019_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[14];
+  assign _138_ = _021_[15] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _087_;
+  assign _105_ = _019_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[14];
+  assign _088_ = _019_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[16];
+  assign _139_ = _021_[17] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _088_;
+  assign _106_ = _019_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[16];
+  assign _089_ = _019_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[18];
+  assign _140_ = _021_[19] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _089_;
+  assign _107_ = _019_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[18];
+  assign _090_ = _019_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _021_[20];
+  assign _141_ = _021_[21] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _090_;
+  assign _108_ = _019_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _019_[20];
+  assign _091_ = _099_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_acc[1];
+  assign _018_[3] = _132_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _091_;
+  assign _018_[18] = _021_[18] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _129_;
+  assign _092_ = _101_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _133_;
+  assign _142_ = _134_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _092_;
+  assign _109_ = _101_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _100_;
+  assign _093_ = _103_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _135_;
+  assign _143_ = _136_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _093_;
+  assign _110_ = _103_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _102_;
+  assign _094_ = _105_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _137_;
+  assign _144_ = _138_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _094_;
+  assign _111_ = _105_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _104_;
+  assign _095_ = _107_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _139_;
+  assign _145_ = _140_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _095_;
+  assign _112_ = _107_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _106_;
+  assign _096_ = _109_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[3];
+  assign _018_[7] = _142_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _096_;
+  assign _125_ = _019_[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[9];
+  assign _097_ = _111_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _143_;
+  assign _146_ = _144_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _097_;
+  assign _113_ = _111_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _110_;
+  assign _098_ = _113_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _018_[7];
+  assign _018_[15] = _146_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _098_;
+  assign _018_[10] = _021_[10] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _125_;
+  assign _131_ = _019_[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[21];
+  assign _114_ = _110_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[7];
+  assign _018_[11] = _143_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _114_;
+  assign _126_ = _019_[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[11];
+  assign _115_ = _112_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[15];
+  assign _018_[19] = _145_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _115_;
+  assign _018_[12] = _021_[12] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _126_;
+  assign _116_ = _100_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[3];
+  assign _018_[5] = _133_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _116_;
+  assign _130_ = _019_[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[19];
+  assign _117_ = _102_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[7];
+  assign _018_[9] = _135_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _117_;
+  assign _127_ = _019_[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[13];
+  assign _118_ = _104_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[11];
+  assign _018_[13] = _137_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _118_;
+  assign _018_[14] = _021_[14] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _127_;
+  assign _119_ = _106_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[15];
+  assign _018_[17] = _139_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _119_;
+  assign _018_[20] = _021_[20] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _130_;
+  assign _120_ = _108_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[19];
+  assign _018_[21] = _141_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _120_;
+  assign _128_ = _019_[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[15];
+  assign _121_ = _019_[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  phase_acc[1];
+  assign _018_[2] = _021_[2] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _121_;
+  assign _018_[16] = _021_[16] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _128_;
+  assign _122_ = _019_[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[3];
+  assign _018_[4] = _021_[4] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _122_;
+  assign _018_[22] = _021_[22] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _131_;
+  assign _123_ = _019_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[5];
+  assign _018_[6] = _021_[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _123_;
+  assign _129_ = _019_[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[17];
+  assign _124_ = _019_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _018_[7];
+  assign _019_[2] = phase_acc[2] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _015_[2];
+  assign _019_[3] = phase_acc[3] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[3];
+  assign _019_[4] = phase_acc[4] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[4];
+  assign _019_[5] = phase_acc[5] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[5];
+  assign _019_[6] = phase_acc[6] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[6];
+  assign _019_[7] = phase_acc[7] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[7];
+  assign _019_[8] = phase_acc[8] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[8];
+  assign _019_[9] = phase_acc[9] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[9];
+  assign _019_[10] = phase_acc[10] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[10];
+  assign _019_[11] = phase_acc[11] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[11];
+  assign _019_[12] = phase_acc[12] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[12];
+  assign _019_[13] = phase_acc[13] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[13];
+  assign _019_[14] = phase_acc[14] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[14];
+  assign _019_[15] = phase_acc[15] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[15];
+  assign _019_[16] = phase_acc[16] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[16];
+  assign _019_[17] = phase_acc[17] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[17];
+  assign _019_[18] = phase_acc[18] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[18];
+  assign _019_[19] = phase_acc[19] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[19];
+  assign _019_[20] = phase_acc[20] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[20];
+  assign _019_[21] = phase_acc[21] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[21];
+  assign _019_[22] = phase_acc[22] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[22];
+  assign _019_[23] = phase_acc[23] ^(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.14-205.19" *)  _016_[23];
+  assign _021_[2] = phase_acc[2] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _015_[2];
+  assign _021_[3] = phase_acc[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[3];
+  assign _021_[4] = phase_acc[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[4];
+  assign _021_[5] = phase_acc[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[5];
+  assign _021_[6] = phase_acc[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[6];
+  assign _021_[7] = phase_acc[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[7];
+  assign _021_[8] = phase_acc[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[8];
+  assign _021_[9] = phase_acc[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[9];
+  assign _021_[10] = phase_acc[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[10];
+  assign _021_[11] = phase_acc[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[11];
+  assign _021_[12] = phase_acc[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[12];
+  assign _021_[13] = phase_acc[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[13];
+  assign _021_[14] = phase_acc[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[14];
+  assign _021_[15] = phase_acc[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[15];
+  assign _021_[16] = phase_acc[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[16];
+  assign _021_[17] = phase_acc[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[17];
+  assign _021_[18] = phase_acc[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[18];
+  assign _021_[19] = phase_acc[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[19];
+  assign _021_[20] = phase_acc[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[20];
+  assign _021_[21] = phase_acc[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[21];
+  assign _021_[22] = phase_acc[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:123.30-123.83|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:292.26-292.70|/opt/homebrew/bin/../share/yosys/techmap.v:205.26-205.31" *)  _016_[22];
+  assign _022_[8] = phase_inc[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[7];
+  assign _022_[18] = phase_inc[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[17];
+  assign _022_[6] = phase_inc[6] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _163_;
+  assign _163_ = _023_[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[5];
+  assign _022_[4] = phase_inc[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[3];
+  assign _022_[16] = phase_inc[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[15];
+  assign _022_[21] = _051_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[19];
+  assign _022_[17] = _156_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[15];
+  assign _022_[13] = _154_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[11];
+  assign _022_[14] = phase_inc[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[13];
+  assign _022_[9] = _152_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[7];
+  assign _022_[20] = phase_inc[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[19];
+  assign _022_[5] = phase_inc[5] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _162_;
+  assign _162_ = _150_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[3];
+  assign _022_[19] = _160_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[15];
+  assign _022_[12] = phase_inc[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[11];
+  assign _022_[11] = _158_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[7];
+  assign _022_[22] = phase_inc[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[21];
+  assign _022_[15] = _161_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[7];
+  assign _161_ = _159_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _158_;
+  assign _022_[10] = phase_inc[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _022_[9];
+  assign _022_[7] = _164_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _149_;
+  assign _149_ = _157_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _022_[3];
+  assign _160_ = _050_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _156_;
+  assign _159_ = _155_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _154_;
+  assign _158_ = _153_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _152_;
+  assign _157_ = _151_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _150_;
+  assign _164_ = _147_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _148_;
+  assign _148_ = _151_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[5];
+  assign _051_ = phase_inc[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[20];
+  assign _050_ = phase_inc[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[18];
+  assign _156_ = phase_inc[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[16];
+  assign _155_ = phase_inc[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[14];
+  assign _154_ = phase_inc[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[12];
+  assign _153_ = phase_inc[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[10];
+  assign _152_ = phase_inc[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[8];
+  assign _151_ = phase_inc[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _023_[6];
+  assign _147_ = phase_inc[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[6];
+  assign _150_ = _023_[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[4];
+  assign _022_[3] = phase_inc[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:125.34-125.53|../src/synthesizer/hdl/wavetable_synth.sv:123.43-123.82|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[2];
+  assign _203_ = _026_[8] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[7];
+  assign _208_ = _026_[18] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[17];
+  assign _025_[6] = phase_inc[6] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[5];
+  assign _025_[22] = phase_inc[22] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _210_;
+  assign _025_[4] = phase_inc[4] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _202_;
+  assign _202_ = _026_[4] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[3];
+  assign _025_[16] = phase_inc[16] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _207_;
+  assign _207_ = _026_[16] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[15];
+  assign _025_[21] = _217_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _201_;
+  assign _201_ = _189_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[19];
+  assign _025_[20] = phase_inc[20] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _209_;
+  assign _025_[17] = _215_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _200_;
+  assign _200_ = _187_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[15];
+  assign _025_[14] = phase_inc[14] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _206_;
+  assign _025_[13] = _213_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _199_;
+  assign _199_ = _185_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[11];
+  assign _206_ = _026_[14] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[13];
+  assign _025_[9] = _211_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _198_;
+  assign _198_ = _183_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[7];
+  assign _209_ = _026_[20] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[19];
+  assign _025_[5] = _165_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _197_;
+  assign _197_ = _181_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[3];
+  assign _025_[12] = phase_inc[12] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _205_;
+  assign _025_[19] = _221_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _196_;
+  assign _196_ = _193_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[15];
+  assign _205_ = _026_[12] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[11];
+  assign _025_[11] = _219_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _195_;
+  assign _195_ = _191_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[7];
+  assign _210_ = _026_[22] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[21];
+  assign _025_[10] = phase_inc[10] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _204_;
+  assign _025_[15] = _222_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _180_;
+  assign _180_ = _194_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _025_[7];
+  assign _194_ = _192_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _191_;
+  assign _222_ = _220_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _179_;
+  assign _179_ = _192_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _219_;
+  assign _204_ = _026_[10] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.19-248.41" *)  _025_[9];
+  assign _025_[7] = _218_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _178_;
+  assign _178_ = _190_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _025_[3];
+  assign _193_ = _188_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _187_;
+  assign _221_ = _216_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _177_;
+  assign _177_ = _188_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _215_;
+  assign _192_ = _186_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _185_;
+  assign _220_ = _214_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _176_;
+  assign _176_ = _186_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _213_;
+  assign _191_ = _184_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _183_;
+  assign _219_ = _212_ |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _175_;
+  assign _175_ = _184_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _211_;
+  assign _190_ = _182_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _181_;
+  assign _218_ = phase_inc[7] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _174_;
+  assign _174_ = _182_ &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  _165_;
+  assign _025_[18] = phase_inc[18] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _208_;
+  assign _025_[3] = phase_inc[3] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _173_;
+  assign _189_ = _026_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[20];
+  assign _217_ = phase_inc[21] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _172_;
+  assign _172_ = _026_[21] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[20];
+  assign _188_ = _026_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[18];
+  assign _216_ = phase_inc[19] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _171_;
+  assign _171_ = _026_[19] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[18];
+  assign _187_ = _026_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[16];
+  assign _215_ = phase_inc[17] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _170_;
+  assign _170_ = _026_[17] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[16];
+  assign _186_ = _026_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[14];
+  assign _214_ = phase_inc[15] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _169_;
+  assign _169_ = _026_[15] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[14];
+  assign _185_ = _026_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[12];
+  assign _213_ = phase_inc[13] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _168_;
+  assign _168_ = _026_[13] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[12];
+  assign _184_ = _026_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[10];
+  assign _212_ = phase_inc[11] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _167_;
+  assign _167_ = _026_[11] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[10];
+  assign _183_ = _026_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[8];
+  assign _211_ = phase_inc[9] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.12-240.41" *)  _166_;
+  assign _166_ = _026_[9] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[8];
+  assign _182_ = _026_[7] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[6];
+  assign _181_ = phase_inc[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  _026_[4];
+  assign _165_ = phase_inc[5] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:240.19-240.41" *)  phase_inc[4];
+  assign _173_ = _026_[3] &(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:241.12-241.34" *)  phase_inc[2];
+  assign _025_[8] = phase_inc[8] |(* src = "../src/synthesizer/hdl/wavetable_synth.sv:128.34-128.53|/opt/homebrew/bin/../share/yosys/techmap.v:293.27-293.63|/opt/homebrew/bin/../share/yosys/techmap.v:248.12-248.41" *)  _203_;
+  assign _003_ = wr_en & _002_;
+  assign _002_ = freq_enc_up_latch | freq_enc_down_latch;
+  assign _004_ = ~(* src = "../src/synthesizer/hdl/wavetable_synth.sv:97.13-97.19" *) rst_n;
+  assign _005_[0] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[0];
+  assign _005_[1] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[1];
+  assign _005_[2] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[2];
+  assign _005_[3] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[3];
+  assign _005_[4] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[4];
+  assign _005_[5] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[5];
+  assign _005_[6] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[6];
+  assign _005_[7] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[7];
+  assign _005_[8] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[8];
+  assign _005_[9] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[9];
+  assign _005_[10] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[10];
+  assign _005_[11] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[11];
+  assign _005_[12] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[12];
+  assign _005_[13] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[13];
+  assign _005_[14] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[14];
+  assign _005_[15] = fifo_empty ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) 1'h0 : rd_data[15];
+  assign _006_[2] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _023_[2] : 1'hx;
+  assign _006_[3] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[3] : 1'hx;
+  assign _006_[4] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[4] : 1'hx;
+  assign _006_[5] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[5] : 1'hx;
+  assign _006_[6] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[6] : 1'hx;
+  assign _006_[7] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[7] : 1'hx;
+  assign _006_[8] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[8] : 1'hx;
+  assign _006_[9] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[9] : 1'hx;
+  assign _006_[10] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[10] : 1'hx;
+  assign _006_[11] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[11] : 1'hx;
+  assign _006_[12] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[12] : 1'hx;
+  assign _006_[13] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[13] : 1'hx;
+  assign _006_[14] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[14] : 1'hx;
+  assign _006_[15] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[15] : 1'hx;
+  assign _006_[16] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[16] : 1'hx;
+  assign _006_[17] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[17] : 1'hx;
+  assign _006_[18] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[18] : 1'hx;
+  assign _006_[19] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[19] : 1'hx;
+  assign _006_[20] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[20] : 1'hx;
+  assign _006_[21] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[21] : 1'hx;
+  assign _006_[22] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[22] : 1'hx;
+  assign _006_[23] = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) _027_[23] : 1'hx;
+  assign _007_[2] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _023_[2] : _006_[2];
+  assign _007_[3] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[3] : _006_[3];
+  assign _007_[4] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[4] : _006_[4];
+  assign _007_[5] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[5] : _006_[5];
+  assign _007_[6] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[6] : _006_[6];
+  assign _007_[7] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[7] : _006_[7];
+  assign _007_[8] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[8] : _006_[8];
+  assign _007_[9] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[9] : _006_[9];
+  assign _007_[10] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[10] : _006_[10];
+  assign _007_[11] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[11] : _006_[11];
+  assign _007_[12] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[12] : _006_[12];
+  assign _007_[13] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[13] : _006_[13];
+  assign _007_[14] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[14] : _006_[14];
+  assign _007_[15] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[15] : _006_[15];
+  assign _007_[16] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[16] : _006_[16];
+  assign _007_[17] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[17] : _006_[17];
+  assign _007_[18] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[18] : _006_[18];
+  assign _007_[19] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[19] : _006_[19];
+  assign _007_[20] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[20] : _006_[20];
+  assign _007_[21] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[21] : _006_[21];
+  assign _007_[22] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[22] : _006_[22];
+  assign _007_[23] = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _024_[23] : _006_[23];
+  assign _008_ = freq_enc_down ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:112.17-112.30|../src/synthesizer/hdl/wavetable_synth.sv:112.13-113.45" *) 1'h1 : freq_enc_down_latch;
+  assign _009_ = freq_enc_down_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:127.30-127.49|../src/synthesizer/hdl/wavetable_synth.sv:127.26-134.44" *) 1'h0 : _008_;
+  assign _010_ = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) _008_ : _009_;
+  assign _000_ = fifo_full ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:116.17-116.22|../src/synthesizer/hdl/wavetable_synth.sv:116.13-135.16" *) _008_ : _010_;
+  assign _011_ = freq_enc_up ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:108.17-108.28|../src/synthesizer/hdl/wavetable_synth.sv:108.13-109.43" *) 1'h1 : freq_enc_up_latch;
+  assign _012_ = freq_enc_up_latch ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:124.21-124.38|../src/synthesizer/hdl/wavetable_synth.sv:124.17-134.44" *) 1'h0 : _011_;
+  assign _001_ = fifo_full ? (* src = "../src/synthesizer/hdl/wavetable_synth.sv:116.17-116.22|../src/synthesizer/hdl/wavetable_synth.sv:116.13-135.16" *) _011_ : _012_;
+  assign _013_ = ~(* src = "../src/synthesizer/hdl/wavetable_synth.sv:117.21-117.32|../src/synthesizer/hdl/wavetable_synth.sv:117.17-122.20" *) fifo_empty;
   assign wr_en = ~fifo_full;
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:75.7-82.6" *)
+  (* src = "../src/synthesizer/hdl/wavetable_synth.sv:76.7-83.6" *)
   pROM #(
     .BIT_WIDTH(32'sd16),
     .INIT_RAM_00(256'h0bc30afb0a32096a08a107d907100647057e04b603ed0324025b019200c90000),
@@ -7817,25 +7810,26 @@ module wavetable_synth(clk, clk_fs, rst_n, wr_en, wr_data, fifo_full, fifo_empty
     .CLK(clk),
     .DO(wr_data),
     .OCE(1'h1),
-    .RESET(_007_)
+    .RESET(_004_)
   );
-  assign { _018_[23:18], _018_[2:0] } = { 6'h00, _015_[2], 2'h0 };
-  assign _022_[1:0] = { _019_[1], 1'h0 };
-  assign _021_[1:0] = { _020_[1], phase_acc[0] };
-  assign _019_[0] = 1'h0;
-  assign _020_[0] = phase_acc[0];
-  assign _017_[2:0] = { _016_[2], phase_inc[1], 1'h0 };
-  assign _015_[1:0] = 2'h0;
-  assign { _016_[23:18], _016_[1:0] } = { phase_inc[23:18], phase_inc[1], 1'h0 };
-  assign _025_[1:0] = { _024_[1], 1'h0 };
-  assign _023_[1:0] = { phase_inc[1], 1'h0 };
-  assign { _024_[23:4], _024_[2], _024_[0] } = { phase_inc[23:4], phase_inc[2], 1'h0 };
-  assign _028_[1:0] = { _024_[1], 1'h0 };
-  assign _026_[1:0] = { phase_inc[1], 1'h1 };
-  assign { _027_[3], _027_[1] } = { phase_inc[3], phase_inc[1] };
-  assign _009_[0] = 1'hx;
-  assign _008_[0] = 1'hx;
+  assign { _017_[23:18], _017_[2:0] } = { 6'h00, _014_[2], 2'h0 };
+  assign _021_[1:0] = { phase_acc[1], 1'h0 };
+  assign _020_[1:0] = { _019_[1], phase_acc[0] };
+  assign _018_[1:0] = { phase_acc[1], 1'h0 };
+  assign _019_[0] = phase_acc[0];
+  assign _016_[2:0] = { _015_[2], 2'h2 };
+  assign _014_[1:0] = 2'h0;
+  assign { _015_[23:18], _015_[1:0] } = { phase_inc[23:18], 2'h2 };
+  assign _024_[2:0] = { _023_[2], 2'h2 };
+  assign _022_[2:0] = { phase_inc[2], 2'h0 };
+  assign { _023_[23:7], _023_[4:3], _023_[1:0] } = { phase_inc[23:7], phase_inc[4:3], 2'h2 };
+  assign _027_[2:0] = { _023_[2], 2'h2 };
+  assign _025_[2:0] = { phase_inc[2], 2'h3 };
+  assign { _026_[6:5], _026_[2] } = { phase_inc[6:5], phase_inc[2] };
+  assign _006_[1:0] = 2'hx;
+  assign _007_[1:0] = 2'hx;
   assign addr = phase_acc[23:14];
   assign wave_offset = 10'h000;
-  assign phase_inc[0] = 1'h0;
+  assign phase_inc_enc = 24'h000000;
+  assign phase_inc[1:0] = 2'h2;
 endmodule

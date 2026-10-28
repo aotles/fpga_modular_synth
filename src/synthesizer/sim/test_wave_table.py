@@ -2,106 +2,98 @@
 # SPDX-License-Identifier: CC0-1.0
 from __future__ import annotations
 
-import os
 from pathlib import Path
 
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
-from cocotb_tools.runner import get_runner
 
-module_name = "wave_table"
+HEX = Path(__file__).resolve().parent / "../hdl/wavetable.hex"
+ROM = [int(line, 16) for line in HEX.read_text().split()]
 
-LANGUAGE = os.getenv("TOPLEVEL_LANG", "verilog").lower().strip()
+PHASE_W = 24
+ADDR_W = 10
+DEFAULT_PHASE_INC = 157482
+ENC_INC = 100  # non-LFO
 
-# Must match the SQUARE_TABLE_FLAT contents in wave_table_pkg.sv (raw 16-bit two's complement bit patterns)
-EXPECTED_TABLE = [
-    0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF,
-    0x7FFF, 0x7FFF, 0x7FFF, 0x7FFF,
-    0x8000, 0x8000, 0x8000, 0x8000,
-    0x8000, 0x8000, 0x8000, 0x8000,
-]
 
-# Must match wave_table.sv's default parameters and DDS phase accumulator math
-DEPTH      = len(EXPECTED_TABLE)
-ADDR_W     = DEPTH.bit_length() - 1
-FREQ_HZ    = 440
-SAMPLE_RATE = 44_100
-FRAC_W     = 16
-ACC_W      = ADDR_W + FRAC_W
-PHASE_INC  = (FREQ_HZ * (1 << ACC_W)) // SAMPLE_RATE
+async def reset(dut):
+    dut.rst_n.value = 0
+    dut.clk_fs.value = 0
+    dut.fifo_full.value = 0
+    dut.fifo_empty.value = 1
+    dut.rd_data.value = 0
+    dut.freq_enc_up.value = 0
+    dut.freq_enc_down.value = 0
+    dut.freq_enc_press.value = 0
+    cocotb.start_soon(Clock(dut.clk, 10, unit="ns").start(start_high=False))
+    for _ in range(3):
+        await RisingEdge(dut.clk)
+    dut.rst_n.value = 1
 
 
 @cocotb.test()
-async def wave_table_outputs_samples_in_order(dut):
-    """The table should advance its DDS phase accumulator and stream samples at FREQ_HZ"""
-
-    dut.rst_n.value = 0
-    dut.fifo_full.value = 0
-
-    clock = Clock(dut.clk, 10, unit="ns")
-    clock.start(start_high=False)
-
-    await RisingEdge(dut.clk)
-    dut.rst_n.value = 1
-    await RisingEdge(dut.clk)
+async def streams_rom_samples_at_dds_rate(dut):
+    """wr_data follows ROM[phase_acc >> (PHASE_W-ADDR_W)] (registered ROM output)"""
+    await reset(dut)
 
     phase_acc = 0
-    for i in range(DEPTH * 8):
-        addr = phase_acc >> FRAC_W
-        expected = EXPECTED_TABLE[addr]
-        assert dut.wr_en.value == 1, f"wr_en should be high on cycle {i}"
-        assert dut.wr_data.value == expected, (
-            f"wr_data was {int(dut.wr_data.value):#x} on cycle {i}, expected {expected:#x}"
-        )
-        phase_acc = (phase_acc + PHASE_INC) & ((1 << ACC_W) - 1)
+    for i in range(3000):
         await RisingEdge(dut.clk)
+        await cocotb.triggers.ReadOnly()
+        exp = ROM[phase_acc >> (PHASE_W - ADDR_W)]
+        got = int(dut.wr_data.value)
+        assert got == exp, f"cycle {i}: wr_data {got:#06x}, expected {exp:#06x}"
+        phase_acc = (phase_acc + DEFAULT_PHASE_INC) % (1 << PHASE_W)
+        await cocotb.triggers.Timer(1, unit="ps")
 
 
 @cocotb.test()
-async def wave_table_holds_address_when_fifo_full(dut):
-    """The table should stop advancing and de-assert wr_en while the FIFO is full"""
-
-    dut.rst_n.value = 0
-    dut.fifo_full.value = 0
-
-    clock = Clock(dut.clk, 10, unit="ns")
-    clock.start(start_high=False)
-
-    await RisingEdge(dut.clk)
-    dut.rst_n.value = 1
-    await RisingEdge(dut.clk)
+async def holds_when_fifo_full(dut):
+    """wr_en drops and wr_data holds while the FIFO is full"""
+    await reset(dut)
+    for _ in range(20):
+        await RisingEdge(dut.clk)
 
     dut.fifo_full.value = 1
     await RisingEdge(dut.clk)
-
-    held_data = dut.wr_data.value
-    for _ in range(4):
-        assert dut.wr_en.value == 0, "wr_en should be low while fifo_full is asserted"
-        assert dut.wr_data.value == held_data, "wr_data should hold while fifo_full is asserted"
+    await RisingEdge(dut.clk)
+    held = int(dut.wr_data.value)
+    for _ in range(8):
         await RisingEdge(dut.clk)
+        assert dut.wr_en.value == 0
+        assert int(dut.wr_data.value) == held
 
 
-def test_wave_table_runner():
-    sim = os.getenv("SIM", "icarus")
+@cocotb.test()
+async def encoder_changes_phase_increment(dut):
+    """An up pulse adds ENC_INC to phase_inc, a down pulse subtracts it"""
+    await reset(dut)
+    await RisingEdge(dut.clk)
 
-    proj_path = Path(__file__).resolve().parent
-
-    sources = [
-        proj_path / "../wave_table_pkg.sv",
-        proj_path / "../wave_table.sv",
-    ]
-
-    runner = get_runner(sim)
-    runner.build(
-        sources=sources,
-        hdl_toplevel=module_name,
-        always=True,
-        defines={"COCOTB_SIM": 1},
-    )
-
-    runner.test(hdl_toplevel=module_name, test_module="test_wave_table")
+    for pin, expected in ((dut.freq_enc_up, DEFAULT_PHASE_INC + ENC_INC), (dut.freq_enc_down, DEFAULT_PHASE_INC)):
+        pin.value = 1
+        await RisingEdge(dut.clk)
+        pin.value = 0
+        for _ in range(4):
+            await RisingEdge(dut.clk)
+        assert int(dut.phase_inc.value) == expected
 
 
-if __name__ == "__main__":
-    test_wave_table_runner()
+@cocotb.test()
+async def control_sample_is_held_between_samples(dut):
+    """A control sample keeps modulating the phase step until the input goes quiet"""
+    await reset(dut)
+    dut.rd_data.value = 1000
+    dut.fifo_empty.value = 0
+    for _ in range(3):
+        await RisingEdge(dut.clk)
+    dut.fifo_empty.value = 1
+
+    for _ in range(500):
+        await RisingEdge(dut.clk)
+    assert int(dut.rd_data_latch.value) == 1000
+
+    for _ in range(5000):
+        await RisingEdge(dut.clk)
+    assert int(dut.rd_data_latch.value) == 0
