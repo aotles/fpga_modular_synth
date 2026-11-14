@@ -1,6 +1,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 //model based on note_mapping.ipynb
 int BIT_WIDTH = 14;
@@ -84,9 +85,13 @@ int increment_calc(int control_value, int frac_lut_hex[]) {
   return result;
 }
 
+int mult_and_shift(int a, int b, int shift) {
+  return (a >> shift) * b; //doing it in this order means we need less bits to fit the data
+}
+
 //def phase_inc_to_freq(phase_inc):
 //    return phase_inc * SAMPLE_RATE / 2**PHASE_W
-double phase_inc_to_freq(int phase_inc) {
+double phase_inc_to_freq(uint64_t phase_inc) {
   return (double)phase_inc * SAMPLE_RATE / pow(2, PHASE_W);
 }
 
@@ -146,23 +151,35 @@ int main(int argc, char const *argv[])
   //input range is 2^16 bits signed
   int CONTROL_VALUE_MIN = -(1 << (BIT_WIDTH - 1));
   int CONTROL_VALUE_MAX = (1 << (BIT_WIDTH - 1)) - 1;
-  printf("CONTROL_VALUE_MIN: %d, 0x%04X, CONTROL_VALUE_MAX: %d, 0x%04X\n", CONTROL_VALUE_MIN, CONTROL_VALUE_MIN, CONTROL_VALUE_MAX, CONTROL_VALUE_MAX);
+  //printf("CONTROL_VALUE_MIN: %d, 0x%04X, CONTROL_VALUE_MAX: %d, 0x%04X\n", CONTROL_VALUE_MIN, CONTROL_VALUE_MIN, CONTROL_VALUE_MAX, CONTROL_VALUE_MAX);
   u_int16_t input_array[(int)pow(2, BIT_WIDTH)];
   for (int i = 0; i <= (CONTROL_VALUE_MAX - CONTROL_VALUE_MIN); i++) {
     input_array[i] = i - CONTROL_VALUE_MIN;
   }
   MID_INDEX_LUT = 1 << (FRAC_BITS-1);
-  printf("MID_INDEX_LUT: %d\n", MID_INDEX_LUT);
+  //printf("MID_INDEX_LUT: %d\n", MID_INDEX_LUT);
   LUT_SIZE = pow(2, FRAC_BITS);
   int mid_input_array = input_array[(CONTROL_VALUE_MAX - CONTROL_VALUE_MIN) / 2];
+
+  //printf("input value at mid index: %d\n", input_array);
   
   //increment_calc(input_array[0], frac_lut_hex); //example call with control_value 0
   //test midpoint 
   int mid_index = pow(2, BIT_WIDTH-1);
-  printf("mid_index: %d\n", mid_index);
-  int mid_phase_inc = increment_calc(mid_index, frac_lut_hex); //example call with control_value at midpoint
+  //printf("mid_index: %d\n", mid_index);
+  int mid_phase_inc = increment_calc((int)0, frac_lut_hex); //example call with control_value at midpoint
   printf("mid_phase_inc: %d\n", mid_phase_inc);
-  double mid_freq = phase_inc_to_freq(mid_phase_inc);
+  int mid_phase_inc_hex = mid_phase_inc;
+  printf("mid_phase_inc_hex: 0x%04X\n", mid_phase_inc_hex);
+  int adjusted_phase_inc = mult_and_shift(mid_phase_inc, BASE_PHASE_INC, LUT_FRAC_BITS);
+  /*
+  printf("Mid_phase_inc: %d\n", mid_phase_inc);
+  printf("BASE_PHASE_INC: %d\n", BASE_PHASE_INC);
+  printf("Numerator: %llu\n", (uint64_t) ((uint64_t)mid_phase_inc * (uint64_t)BASE_PHASE_INC));
+  printf("32 bit max: %u, Numerator calc: %u\n", UINT32_MAX, (uint32_t)((uint32_t)(157482)*(uint32_t)(32768)));
+  printf("adjusted_phase_inc: %d\n", adjusted_phase_inc);
+  */
+  double mid_freq = phase_inc_to_freq(adjusted_phase_inc);
   printf("mid_freq: %f\n", mid_freq);
 
   return 0;
