@@ -2,186 +2,147 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include "new_note_map.h"
 
-//model based on note_mapping.ipynb
-int BIT_WIDTH = 14;
-int FRAC_BITS = 10;
-int INT_BITS = 3;
-int PHASE_W = 24;
+/* This file implements the 2^X mapping algorithm dictated in note_mapping.ipynb
+This algorithm takes a 16 bit control value which dictates how much we should multiply the base increment by
+Control word format:
+  bit 15: sign bit
+  bits 14-10: integer part
+  bits 9-0: fractional part
+  The integer parts are full bit shifts so that means we can reach 2^5 octaves above or below the base increment.
+  -- we will probably need to gate this becasue 16 octaves above A-440Hz is outside of our sample rate range
+
+  The fractional part is computed using a precomputed lookup table (LUT) that stores values for 2^x where x ranges from -0.5 to 0.5.
+
+  example: if we have a control word of 0, we should should multiply the base increment by 1 (2^0). 
+  if the control word has the integer part set to 1 and the fractional part set to 0, we should multiply the base increment by 2 (2^1).
+
+
+*/
+
+
+
 int SAMPLE_RATE = 46875;
-int MID_INDEX_LUT;
-int LUT_SIZE;
-int INT_MAX_VAL;
-
-// Function for generating PROM svh file for fractional LUT
-void generate_frac_lut(int frac_lut_hex[]) {
-  //PROM info
-  int WIDTH = 16; // data width, adjust as needed
-  int ADDR_SIZE = 10; // example address size for 1024 entries
-  int BRAM_SIZE = pow(2, ADDR_SIZE); 
-  int ROM_SIZE = WIDTH * BRAM_SIZE; //size in bits
-  int WAVE_SIZE = BRAM_SIZE; // number of entries in the wave table divided by 4 to have 4 different waveforms
-  int MAX_AMPLITUDE = (1 << (WIDTH - 1)) - 1; // maximum amplitude for the waveforms
-  int NUM_LINES = ROM_SIZE / 256; // number of lines for FPGA ROM initialization
-  int NUM_ENTRIES_PER_LINE = 256/16; // number of entries per line for FPGA ROM initialization
-
-  // Function to generate fractional LUT
-  //export to .svh file for PROM for fractional LUT
-  FILE *fp = fopen("../hdl/frac_lut.svh", "w");
-  if (fp == NULL) {
-    printf("Error opening file for writing\n");
-    return;
-  }
-  for (int i = 0; i < NUM_LINES; i++) {
-    //write each corresponding svh file
-    //write in following format for FPGA ROM initialization
-    //INIT words are packed with entry 0 in the right-most 16 bits, so emit each line highest entry first
-    //.INIT_RAM_00(256'h000003240647096A0C8B0FAB12C715E118F81C0B1F192223252728262B1E2E10),
-    fprintf(fp, ".INIT_RAM_%02X(256'h", i);
-    //has to reverse each lines entries hence the odd indexing order
-    for (int j=0; j<NUM_ENTRIES_PER_LINE; j++) {
-      fprintf(fp, "%04X", (unsigned int)(frac_lut_hex[i*NUM_ENTRIES_PER_LINE + (NUM_ENTRIES_PER_LINE - 1 - j)] & 0xFFFF));
-    }
-    if (i == NUM_LINES - 1) {
-      fprintf(fp, ")\n");
-    } else {
-      fprintf(fp, "),\n");
-    }
-  }
-}
-
-//Function that takes a 14 bit control value
-int increment_calc(int control_value, int frac_lut_hex[]) {
-  //int sign_bit = (control_value >> (BIT_WIDTH-1)) & 1;
-  //int int_bits = (control_value >> FRAC_BITS) & ((1 << INT_BITS) - 1);
-  //int frac_bits = control_value & ((1 << FRAC_BITS) - 1);
-
-  int sign_bit = (control_value >> (BIT_WIDTH-1)) & 1;
-  int int_bits = (control_value >> FRAC_BITS) & ((1 << INT_BITS) - 1);
-  int frac_bits = control_value & ((1 << FRAC_BITS) - 1);
-  printf("DBG sign bit: %d, BIT_WIDTH: %d, control_value: %d\n", sign_bit, BIT_WIDTH, control_value);
-//  printf("value: %d, hex: 0x%04X, sign_bit: %d, int_bits: %d, frac_bits: %d\n", control_value, control_value, sign_bit, int_bits, frac_bits);
-
-  int value_from_lut = frac_lut_hex[(frac_bits + MID_INDEX_LUT) % LUT_SIZE];
-  printf("value_from_lut: %d, hex: 0x%04X\n", value_from_lut, value_from_lut);
-  int shift_val = 0;
-  int result = 0;
-  if (sign_bit) {
-    // handle negative case
-    if (frac_bits < MID_INDEX_LUT) {
-      shift_val = 1;
-    }
-    //value = (value_from_lut) >> (2**INT_BITS-(int_bits)+ shift_val - 1) 
-    result = value_from_lut >> (INT_MAX_VAL - int_bits + shift_val);
-  } else {
-    // handle positive case
-    if (frac_bits > MID_INDEX_LUT) {
-      shift_val = 1;
-    }
-    //value = (value_from_lut) << (int_bits + shift_val)
-    result = value_from_lut << (int_bits + shift_val);
-  }
-  printf("result: %d\n", result);
-  return result;
-}
-
-int mult_and_shift(int a, int b, int shift) {
-  return (a >> shift) * b; //doing it in this order means we need less bits to fit the data
-}
-
-//def phase_inc_to_freq(phase_inc):
-//    return phase_inc * SAMPLE_RATE / 2**PHASE_W
-double phase_inc_to_freq(uint64_t phase_inc) {
-  return (double)phase_inc * SAMPLE_RATE / pow(2, PHASE_W);
-}
+int PHASE_W = 24;
+int LUT_SIZE = 1024;
+int LUT_BIT_WIDTH = 16;
+int CONTROL_BIT_WIDTH = 16;
+int CONTROL_FRAC_BITS = 10;
+int CONTROL_INTEGER_BITS = 5; //int + frac + 1 = bit width
 
 
 int main(int argc, char const *argv[])
 {
-  //solve global vars
-  INT_MAX_VAL = (1 << INT_BITS) - 1;
+  int default_phase_inc = round(440 * pow(2, PHASE_W) / SAMPLE_RATE);
+  printf("default_phase_inc: %d\n", default_phase_inc);
+  double default_freq = phase_inc_to_freq(default_phase_inc); //default value is hardcoded to 157482 in HDL
+  printf("default_freq: %f\n", default_freq);
+  double lut[LUT_SIZE];
+  uint16_t lut_16bit[LUT_SIZE];
+  make_lut(lut, lut_16bit);
+  //convert lut to 16 bit values, where bit 15 is the integer part and bit 0-14 are the fractional part
 
-  int BASE_FREQ = 440;
-  int BASE_PHASE_INC = round(BASE_FREQ * pow(2, PHASE_W) / SAMPLE_RATE);
-  //printf("BASE_PHASE_INC: %d\n", BASE_PHASE_INC);
-  //in the SV the default value will be derived from BASE_PHASE_INC - 24'd157482
-
-  //Generate 2^FRAC_BITS LUT for fractional part
-  int LUT_BIT_WIDTH = 16;
-  int LUT_FRAC_BITS = 15;
-  int LUT_SIZE = pow(2, FRAC_BITS); //size of lut is determined by fractional bits (used as address into LUT)
-  //range of LUT values are from -0.5 to 0.5 in fixed point representation
-  double frac_val[LUT_SIZE];
-  double frac_lut_val[LUT_SIZE];
-  int frac_lut_hex[LUT_SIZE];
-  for (int i = 0; i < LUT_SIZE; i++) {
-    frac_val[i] = pow(2, (double) (i - pow(2, FRAC_BITS-1)) / pow(2, FRAC_BITS));
-    frac_lut_val[i] = round(frac_val[i] * pow(2, LUT_BIT_WIDTH-1));
-    frac_lut_hex[i] = (int)frac_lut_val[i]; 
-  }
-  //print out first 3 fixed point LUT values
   /*
-  for (int i = 0; i < 3; i++) {
-    printf("frac_lut_val[%d] = %f, 0x%04X\n", i, frac_val[i], frac_lut_hex[i]);
-  }
-  //print out last 3 fixed point LUT values
-  for (int i = LUT_SIZE - 3; i < LUT_SIZE; i++) {
-    printf("frac_lut_val[%d] = %f, 0x%04X\n", i, frac_val[i], frac_lut_hex[i]);
-  }
+  //Test to showcase a few important points
+  uint32_t phase_inc = control_to_phase_inc((uint16_t)0, default_phase_inc, lut_16bit, true);
+  printf("phase_inc: %d\n", phase_inc);
+  double freq = phase_inc_to_freq(phase_inc);
+  printf("freq: %f\n", freq);
+  printf("0 value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0000, default_phase_inc, lut_16bit, true)));
+  printf("first negative value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xFFFF, default_phase_inc, lut_16bit, true)));
+  printf("last negative before shift value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xFC00, default_phase_inc, lut_16bit, true)));
+  printf("first negative after shift value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xFBFF, default_phase_inc, lut_16bit, true)));
+  printf("last negative before 2nd shift value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xF800, default_phase_inc, lut_16bit, true)));
+
+  printf("first positive value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0001, default_phase_inc, lut_16bit, true)));
+  printf("last positive value before 1st shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x03FF, default_phase_inc, lut_16bit, true)));
+  printf("first positive after 1st shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0400, default_phase_inc, lut_16bit, true)));
+  printf("last positive value before 2nd shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x07FF, default_phase_inc, lut_16bit, true)));
+  printf("first positive after 2nd shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0800, default_phase_inc, lut_16bit, true)));
   */
-
-  //check values stored in the LUT
-  //frac_lut_dec[i] = int(frac_lut_hex[i], LUT_BIT_WIDTH) / (2**(LUT_BIT_WIDTH-1))
-  double frac_lut_dec[LUT_SIZE]; 
-  for (int i = 0; i < LUT_SIZE; i++) {
-    frac_lut_dec[i] = (double)frac_lut_hex[i] / pow(2, LUT_BIT_WIDTH-1);
+  //file outputs
+  FILE *f = fopen("input_vector.txt", "w");
+  FILE *f_hex = fopen("input_hex_vector.txt", "w");
+  FILE *f_out = fopen("output_vector.txt", "w");
+  uint16_t all_inputs[1 << CONTROL_BIT_WIDTH];
+  if (f == NULL || f_hex == NULL || f_out == NULL) {
+    printf("Error opening file!\n");
+    return 1;
   }
-  /*
-  //check first 3 and last 3 values of the LUT in decimal
-  for (int i = 0; i < 3; i++) {
-    printf("frac_lut_dec[%d] = %f\n", i, frac_lut_dec[i]);
+  // 2^CONTROL_BIT_WIDTH - 1 : maximum value for control input
+  for (int i = 0; i < (1 << CONTROL_BIT_WIDTH); i++) {
+    all_inputs[i] = (uint16_t)i;
+    uint32_t phase_inc = control_to_phase_inc(all_inputs[i], default_phase_inc, lut_16bit, true);
+    double freq = phase_inc_to_freq(phase_inc);
+    fprintf(f_out, "%f\n", freq);
+    fprintf(f_hex, "%04x\n", all_inputs[i]);
+    fprintf(f, "%d\n", all_inputs[i]);
   }
-  for (int i = LUT_SIZE - 3; i < LUT_SIZE; i++) {
-    printf("frac_lut_dec[%d] = %f\n", i, frac_lut_dec[i]);
-  }
-  */
-
-  generate_frac_lut(frac_lut_hex);
-
-  //input range is 2^16 bits signed
-  int CONTROL_VALUE_MIN = -(1 << (BIT_WIDTH - 1));
-  int CONTROL_VALUE_MAX = (1 << (BIT_WIDTH - 1)) - 1;
-  //printf("CONTROL_VALUE_MIN: %d, 0x%04X, CONTROL_VALUE_MAX: %d, 0x%04X\n", CONTROL_VALUE_MIN, CONTROL_VALUE_MIN, CONTROL_VALUE_MAX, CONTROL_VALUE_MAX);
-  u_int16_t input_array[(int)pow(2, BIT_WIDTH)];
-  for (int i = 0; i <= (CONTROL_VALUE_MAX - CONTROL_VALUE_MIN); i++) {
-    input_array[i] = i - CONTROL_VALUE_MIN;
-  }
-  MID_INDEX_LUT = 1 << (FRAC_BITS-1);
-  //printf("MID_INDEX_LUT: %d\n", MID_INDEX_LUT);
-  LUT_SIZE = pow(2, FRAC_BITS);
-  int mid_input_array = input_array[(CONTROL_VALUE_MAX - CONTROL_VALUE_MIN) / 2];
-
-  //printf("input value at mid index: %d\n", input_array);
-  
-  //increment_calc(input_array[0], frac_lut_hex); //example call with control_value 0
-  //test midpoint 
-  int mid_index = pow(2, BIT_WIDTH-1);
-  //printf("mid_index: %d\n", mid_index);
-  int mid_phase_inc = increment_calc((int)0, frac_lut_hex); //example call with control_value at midpoint
-  printf("mid_phase_inc: %d\n", mid_phase_inc);
-  int mid_phase_inc_hex = mid_phase_inc;
-  printf("mid_phase_inc_hex: 0x%04X\n", mid_phase_inc_hex);
-  int adjusted_phase_inc = mult_and_shift(mid_phase_inc, BASE_PHASE_INC, LUT_FRAC_BITS);
-  /*
-  printf("Mid_phase_inc: %d\n", mid_phase_inc);
-  printf("BASE_PHASE_INC: %d\n", BASE_PHASE_INC);
-  printf("Numerator: %llu\n", (uint64_t) ((uint64_t)mid_phase_inc * (uint64_t)BASE_PHASE_INC));
-  printf("32 bit max: %u, Numerator calc: %u\n", UINT32_MAX, (uint32_t)((uint32_t)(157482)*(uint32_t)(32768)));
-  printf("adjusted_phase_inc: %d\n", adjusted_phase_inc);
-  */
-  double mid_freq = phase_inc_to_freq(adjusted_phase_inc);
-  printf("mid_freq: %f\n", mid_freq);
+  fclose(f);
+  fclose(f_hex);
+  fclose(f_out);
 
   return 0;
 }
  
+double phase_inc_to_freq(uint32_t phase_inc) {
+  return (double)(phase_inc & 0xFFFFFFFF) * SAMPLE_RATE / pow(2, PHASE_W);
+}
+
+//function that makes 1024 LUT of 2^0 to 2^(LUT_SIZE-1)/LUT_SIZE  so range of values should be 1 to almost 1.99999
+void make_lut(double lut[LUT_SIZE], uint16_t lut_16bit[LUT_SIZE]) {
+  for (int i = 0; i < LUT_SIZE; i++) {
+    lut[i] = pow(2, (double)i / (LUT_SIZE)) - 1;
+
+    lut_16bit[i] = (uint16_t)(lut[i] * pow(2, LUT_BIT_WIDTH));
+  }
+}
+
+//function that takes 16 bit control value and uses it to index into the LUT
+//bit 15 is the sign bit
+//bits 14-10 are the integer part, so they just shift entire value 
+//bits 9-0 are the fractional part, so they index into the LUT
+
+uint16_t control_to_lut_index(uint16_t control) {
+  //extract fractional part
+  uint16_t frac = control & ((1 << CONTROL_FRAC_BITS) - 1); 
+  return frac;
+}
+
+uint16_t control_to_integer_part(uint16_t control) {
+  //extract integer part
+  uint16_t integer = (control >> CONTROL_FRAC_BITS) & ((1 << CONTROL_INTEGER_BITS) - 1);
+  return integer;
+}
+
+bool is_negative_control(uint16_t control) {
+  //extract sign bit
+  uint16_t sign = (control >> (CONTROL_BIT_WIDTH - 1)) & 0x1; //bit 15
+  return sign == 1;
+}
+
+uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_t lut_16bit[LUT_SIZE], bool dbg) {
+  uint16_t integer_part = control_to_integer_part(control);
+  uint16_t frac_part = control_to_lut_index(control);
+  //step 1 grab value from LUT based on fractional part and append 1 as the integer part
+  uint32_t value_from_lut = lut_16bit[frac_part] + (1 << LUT_BIT_WIDTH);  //bit width of this value must be LUT_BIT_WIDTH + 1
+  //step 2 shift according to the integer part adn sign
+  //if our integer part is capped at 3 bits then the maximum shift would be 7 (2^3 - 1)
+  uint64_t total_multiplier; // in our end case we will have 17 bit lut value and a 24 bit value phase increment result of mult must be stored in at least 41 bits
+  if (is_negative_control(control)) {
+     total_multiplier = value_from_lut >> (int) (pow(2, CONTROL_INTEGER_BITS) -  integer_part);
+  } else {
+     total_multiplier = value_from_lut << integer_part;
+  }
+  //step 3 multiply base_phase_inc by total_multiplier and shift down by LUT_BIT_WIDTH to maintain correct scaling
+  uint64_t result = (base_phase_inc * total_multiplier) >> LUT_BIT_WIDTH;
+
+
+  if (dbg) {
+    printf("control: %04x, integer_part: %d, frac_part: %d, value_from_lut: %04x, total_multiplier: %016llx, result: %016llx\n",
+           control, integer_part, frac_part, value_from_lut, total_multiplier, result);
+  }
+  return (uint32_t)result;
+}
+
