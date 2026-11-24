@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include "new_note_map.h"
+#include "note_mapping_model.h"
 
 /* This file implements the 2^X mapping algorithm dictated in note_mapping.ipynb
 This algorithm takes a 16 bit control value which dictates how much we should multiply the base increment by
@@ -27,14 +27,14 @@ int SAMPLE_RATE = 46875;
 int PHASE_W = 24;
 int LUT_SIZE = 1024;
 int LUT_BIT_WIDTH = 16;
-int CONTROL_BIT_WIDTH = 16;
+int CONTROL_BIT_WIDTH = 14;
 int CONTROL_FRAC_BITS = 10;
-int CONTROL_INTEGER_BITS = 5; //int + frac + 1 = bit width
+int CONTROL_INTEGER_BITS = 3; //int + frac + 1 = bit width
 
 
 int main(int argc, char const *argv[])
 {
-  int default_phase_inc = round(440 * pow(2, PHASE_W) / SAMPLE_RATE);
+  int default_phase_inc = round(20 * pow(2, PHASE_W) / SAMPLE_RATE);
   printf("default_phase_inc: %d\n", default_phase_inc);
   double default_freq = phase_inc_to_freq(default_phase_inc); //default value is hardcoded to 157482 in HDL
   printf("default_freq: %f\n", default_freq);
@@ -43,24 +43,15 @@ int main(int argc, char const *argv[])
   make_lut(lut, lut_16bit);
   //convert lut to 16 bit values, where bit 15 is the integer part and bit 0-14 are the fractional part
 
-  /*
-  //Test to showcase a few important points
-  uint32_t phase_inc = control_to_phase_inc((uint16_t)0, default_phase_inc, lut_16bit, true);
-  printf("phase_inc: %d\n", phase_inc);
-  double freq = phase_inc_to_freq(phase_inc);
-  printf("freq: %f\n", freq);
-  printf("0 value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0000, default_phase_inc, lut_16bit, true)));
-  printf("first negative value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xFFFF, default_phase_inc, lut_16bit, true)));
-  printf("last negative before shift value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xFC00, default_phase_inc, lut_16bit, true)));
-  printf("first negative after shift value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xFBFF, default_phase_inc, lut_16bit, true)));
-  printf("last negative before 2nd shift value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0xF800, default_phase_inc, lut_16bit, true)));
-
-  printf("first positive value: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0001, default_phase_inc, lut_16bit, true)));
-  printf("last positive value before 1st shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x03FF, default_phase_inc, lut_16bit, true)));
-  printf("first positive after 1st shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0400, default_phase_inc, lut_16bit, true)));
-  printf("last positive value before 2nd shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x07FF, default_phase_inc, lut_16bit, true)));
-  printf("first positive after 2nd shift: %f\n", phase_inc_to_freq(control_to_phase_inc((uint16_t)0x0800, default_phase_inc, lut_16bit, true)));
-  */
+  //check nyquist critieria so we have a limiter on frequecies we try to generate
+  // Nyquist frequency is half the sample rate
+  int f_max = (int) SAMPLE_RATE / 2.0;
+  int max_phase_inc = (int) (f_max * pow(2, PHASE_W) / SAMPLE_RATE);
+  printf("max_phase_inc: %d\n", max_phase_inc);
+  
+  //test overflow
+  //printf("control_to_phase_inc(%04x): %d\n", 29989, control_to_phase_inc(29989, default_phase_inc, lut_16bit, max_phase_inc, true));
+  
   //file outputs
   FILE *f = fopen("input_vector.txt", "w");
   FILE *f_hex = fopen("input_hex_vector.txt", "w");
@@ -73,7 +64,7 @@ int main(int argc, char const *argv[])
   // 2^CONTROL_BIT_WIDTH - 1 : maximum value for control input
   for (int i = 0; i < (1 << CONTROL_BIT_WIDTH); i++) {
     all_inputs[i] = (uint16_t)i;
-    uint32_t phase_inc = control_to_phase_inc(all_inputs[i], default_phase_inc, lut_16bit, true);
+    uint32_t phase_inc = control_to_phase_inc(all_inputs[i], default_phase_inc, lut_16bit, max_phase_inc, false);
     double freq = phase_inc_to_freq(phase_inc);
     fprintf(f_out, "%f\n", freq);
     fprintf(f_hex, "%04x\n", all_inputs[i]);
@@ -122,13 +113,18 @@ bool is_negative_control(uint16_t control) {
   return sign == 1;
 }
 
-uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_t lut_16bit[LUT_SIZE], bool dbg) {
+uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_t lut_16bit[LUT_SIZE], int max_phase_inc, bool dbg) {
   uint16_t integer_part = control_to_integer_part(control);
   uint16_t frac_part = control_to_lut_index(control);
   //step 1 grab value from LUT based on fractional part and append 1 as the integer part
   uint32_t value_from_lut = lut_16bit[frac_part] + (1 << LUT_BIT_WIDTH);  //bit width of this value must be LUT_BIT_WIDTH + 1
   //step 2 shift according to the integer part adn sign
   //if our integer part is capped at 3 bits then the maximum shift would be 7 (2^3 - 1)
+
+  //total_multiplier is value_from_lut = Q1.16 format, shifted up by the integer part, so the max size is then
+  // 2^(CONTROL_INTEGER_BITS) - 1 + Q1.16 = 31 + 17 = 48 bits
+  //48 bits * base_phase_inc (24 bits)
+
   uint64_t total_multiplier; // in our end case we will have 17 bit lut value and a 24 bit value phase increment result of mult must be stored in at least 41 bits
   if (is_negative_control(control)) {
      total_multiplier = value_from_lut >> (int) (pow(2, CONTROL_INTEGER_BITS) -  integer_part);
@@ -137,6 +133,10 @@ uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_
   }
   //step 3 multiply base_phase_inc by total_multiplier and shift down by LUT_BIT_WIDTH to maintain correct scaling
   uint64_t result = (base_phase_inc * total_multiplier) >> LUT_BIT_WIDTH;
+
+  if (result > max_phase_inc && !is_negative_control(control)) {
+    result = max_phase_inc;
+  }
 
 
   if (dbg) {
