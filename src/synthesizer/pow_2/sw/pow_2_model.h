@@ -19,5 +19,6 @@ uint16_t control_to_lut_index(uint16_t control);
 uint16_t control_to_integer_part(uint16_t control);
 bool is_negative_control(uint16_t control);
 uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_t lut_16bit[LUT_SIZE], int max_phase_inc, bool dbg);
+void generate_frac_lut_file(uint16_t lut_16bit[LUT_SIZE]);
 
 #endif // NEW_NOTE_MAP_H

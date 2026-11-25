@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
   fclose(f);
   fclose(f_hex);
   fclose(f_out);
-
+  generate_frac_lut_file(lut_16bit);
   return 0;
 }
  
@@ -144,5 +144,31 @@ uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_
            control, integer_part, frac_part, value_from_lut, total_multiplier, result);
   }
   return (uint32_t)result;
+}
+
+void generate_frac_lut_file(uint16_t lut_16bit[LUT_SIZE]) {
+  //FRAC LUT parameters
+  int WIDTH = 16; // data width, adjust as needed
+  int ADDR_SIZE = 10; // example address size for 1024 entries
+  int BRAM_SIZE = pow(2, ADDR_SIZE); 
+  int ROM_SIZE = WIDTH * BRAM_SIZE; //size in bits
+  int NUM_LINES = ROM_SIZE / 256; // number of lines for FPGA ROM initialization
+  int NUM_ENTRIES_PER_LINE = 256/16; // number of entries per line for FPGA ROM initialization
+
+
+  FILE *f_frac_lut = fopen("../hdl/pow_2_frac_lut.svh", "w");
+  for (int i = 0; i < NUM_LINES; i++) {
+    fprintf(f_frac_lut, ".INIT_RAM_%02X(256'h", i);
+    for (int j = 0; j < NUM_ENTRIES_PER_LINE; j++) {
+      int index = i * NUM_ENTRIES_PER_LINE + j;
+      fprintf(f_frac_lut, "%04X", (unsigned int)(lut_16bit[i*NUM_ENTRIES_PER_LINE + (NUM_ENTRIES_PER_LINE - 1 - j)] & 0xFFFF));
+    }
+    if (i == NUM_LINES - 1) {
+      fprintf(f_frac_lut, ")\n");
+    } else {
+      fprintf(f_frac_lut, "),\n");
+    }
+  }
+  fclose(f_frac_lut);
 }
 
