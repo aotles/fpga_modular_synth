@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include "note_mapping_model.h"
+#include "pow_2_model.h"
 
 /* This file implements the 2^X mapping algorithm dictated in note_mapping.ipynb
 This algorithm takes a 16 bit control value which dictates how much we should multiply the base increment by
@@ -34,7 +34,7 @@ int CONTROL_INTEGER_BITS = 3; //int + frac + 1 = bit width
 
 int main(int argc, char const *argv[])
 {
-  int default_phase_inc = round(20 * pow(2, PHASE_W) / SAMPLE_RATE);
+  int default_phase_inc = round(440 * pow(2, PHASE_W) / SAMPLE_RATE);
   printf("default_phase_inc: %d\n", default_phase_inc);
   double default_freq = phase_inc_to_freq(default_phase_inc); //default value is hardcoded to 157482 in HDL
   printf("default_freq: %f\n", default_freq);
