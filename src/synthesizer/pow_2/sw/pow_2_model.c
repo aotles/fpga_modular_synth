@@ -135,7 +135,7 @@ uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_
   uint64_t result = (base_phase_inc * total_multiplier) >> LUT_BIT_WIDTH;
 
   if (result > max_phase_inc && !is_negative_control(control)) {
-    result = max_phase_inc;
+    result = max_phase_inc; //max phase inc for our setup is 8388429 - after which we get aliasing
   }
 
 
