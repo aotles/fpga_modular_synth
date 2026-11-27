@@ -21,8 +21,6 @@ Control word format:
 
 */
 
-
-
 int SAMPLE_RATE = 46875;
 int PHASE_W = 24;
 int LUT_SIZE = 1024;
@@ -55,23 +53,27 @@ int main(int argc, char const *argv[])
   //file outputs
   FILE *f = fopen("input_vector.txt", "w");
   FILE *f_hex = fopen("input_hex_vector.txt", "w");
+  FILE *f_total_mult = fopen("total_mult_vector.txt", "w");
   FILE *f_out = fopen("output_vector.txt", "w");
   uint16_t all_inputs[1 << CONTROL_BIT_WIDTH];
-  if (f == NULL || f_hex == NULL || f_out == NULL) {
+  if (f == NULL || f_hex == NULL || f_out == NULL || f_total_mult == NULL) {
     printf("Error opening file!\n");
     return 1;
   }
   // 2^CONTROL_BIT_WIDTH - 1 : maximum value for control input
   for (int i = 0; i < (1 << CONTROL_BIT_WIDTH); i++) {
     all_inputs[i] = (uint16_t)i;
-    uint32_t phase_inc = control_to_phase_inc(all_inputs[i], default_phase_inc, lut_16bit, max_phase_inc, false);
+    uint64_t total_mult = control_to_total_multiplier(all_inputs[i], default_phase_inc, lut_16bit, max_phase_inc, false);
+    uint32_t phase_inc = total_mult_to_phase_inc(total_mult, default_phase_inc, max_phase_inc, false);
     double freq = phase_inc_to_freq(phase_inc);
     fprintf(f_out, "%f\n", freq);
     fprintf(f_hex, "%04x\n", all_inputs[i]);
     fprintf(f, "%d\n", all_inputs[i]);
+    fprintf(f_total_mult, "%016llx\n", total_mult);
   }
   fclose(f);
   fclose(f_hex);
+  fclose(f_total_mult);
   fclose(f_out);
   generate_frac_lut_file(lut_16bit);
   return 0;
@@ -113,7 +115,7 @@ bool is_negative_control(uint16_t control) {
   return sign == 1;
 }
 
-uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_t lut_16bit[LUT_SIZE], int max_phase_inc, bool dbg) {
+uint64_t control_to_total_multiplier(uint16_t control, uint32_t base_phase_inc, uint16_t lut_16bit[LUT_SIZE], int max_phase_inc, bool dbg) {
   uint16_t integer_part = control_to_integer_part(control);
   uint16_t frac_part = control_to_lut_index(control);
   //step 1 grab value from LUT based on fractional part and append 1 as the integer part
@@ -131,17 +133,21 @@ uint32_t control_to_phase_inc(uint16_t control, uint32_t base_phase_inc, uint16_
   } else {
      total_multiplier = value_from_lut << integer_part;
   }
-  //step 3 multiply base_phase_inc by total_multiplier and shift down by LUT_BIT_WIDTH to maintain correct scaling
-  uint64_t result = (base_phase_inc * total_multiplier) >> LUT_BIT_WIDTH;
-
-  if (result > max_phase_inc && !is_negative_control(control)) {
-    result = max_phase_inc; //max phase inc for our setup is 8388429 - after which we get aliasing
-  }
-
-
+ 
   if (dbg) {
-    printf("control: %04x, integer_part: %d, frac_part: %d, value_from_lut: %04x, total_multiplier: %016llx, result: %016llx\n",
-           control, integer_part, frac_part, value_from_lut, total_multiplier, result);
+    printf("control: %04x, integer_part: %d, frac_part: %d, value_from_lut: %04x, total_multiplier: %016llx\n",
+           control, integer_part, frac_part, value_from_lut, total_multiplier);
+  }
+  return total_multiplier;
+}
+
+uint32_t total_mult_to_phase_inc(uint64_t total_mult, uint32_t base_phase_inc, int max_phase_inc, bool dbg) {
+  uint64_t result = (base_phase_inc * total_mult) >> LUT_BIT_WIDTH;
+  if (result > max_phase_inc) {
+    result = max_phase_inc;
+  }
+  if (dbg) {
+    printf("total_mult: %016llx, base_phase_inc: %08x, result: %016llx\n", total_mult, base_phase_inc, result);
   }
   return (uint32_t)result;
 }

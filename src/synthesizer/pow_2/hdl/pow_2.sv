@@ -83,7 +83,7 @@ always_comb begin
     frac_lut_addr       = frac_lut_addr_r;
     int_part            = int_part_r;
     sign_part           = sign_part_r;
-    frac_lut_addr_valid = frac_lut_addr_valid_r;
+    frac_lut_addr_valid = 1'b0;
     pow_2_valid_c       = 1'b0;
     case (curr_state)
         IDLE: begin
